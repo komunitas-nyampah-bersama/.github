@@ -1,0 +1,1195 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Living Journal - Nyampah Bersama 2BCycle</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2ecc71;
+            --primary-dark: #27ae60;
+            --secondary: #3498db;
+            --accent: #9b59b6;
+            --dark: #2c3e50;
+            --light: #ecf0f1;
+            --gray: #95a5a6;
+            --success: #2ecc71;
+            --warning: #f39c12;
+            --danger: #e74c3c;
+            --blockchain-blue: #0f2b4d;
+            --blockchain-green: #1c7c54;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: #fff;
+            line-height: 1.6;
+            min-height: 100vh;
+            padding-bottom: 60px;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            color: white;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo-icon {
+            font-size: 2rem;
+        }
+        
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+        
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 8px 12px;
+            border-radius: 5px;
+        }
+        
+        .nav-menu a:hover {
+            background-color: rgba(255,255,255,0.2);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(15, 32, 39, 0.9), rgba(32, 58, 67, 0.9)), url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3') no-repeat center center/cover;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            color: white;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: var(--light);
+        }
+        
+        .web3-badges {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .web3-badge {
+            background: rgba(255,255,255,0.15);
+            border-radius: 20px;
+            padding: 8px 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-align: center;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--blockchain-green));
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .btn-secondary:hover {
+            background-color: rgba(255,255,255,0.1);
+            transform: translateY(-3px);
+        }
+        
+        .btn-blockchain {
+            background: linear-gradient(135deg, var(--blockchain-blue), #1a3b5a);
+            color: white;
+        }
+        
+        /* Journal Section */
+        .journal-section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary);
+            border-radius: 2px;
+        }
+        
+        .section-title p {
+            color: var(--light);
+            max-width: 700px;
+            margin: 20px auto 0;
+            opacity: 0.8;
+        }
+        
+        .journal-container {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .journal-form {
+            flex: 1;
+            min-width: 300px;
+            background: rgba(15, 32, 39, 0.7);
+            border-radius: 15px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--light);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            background: rgba(0,0,0,0.2);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s;
+            color: white;
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(46, 204, 113, 0.2);
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .journal-blockchain {
+            flex: 2;
+            min-width: 300px;
+            background: rgba(15, 32, 39, 0.7);
+            border-radius: 15px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            max-height: 600px;
+            overflow-y: auto;
+        }
+        
+        .blockchain-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .blockchain-chain {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+        
+        .block {
+            background: linear-gradient(135deg, var(--blockchain-blue), #1a3b5a);
+            border-radius: 10px;
+            padding: 20px;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            border-left: 5px solid var(--primary);
+            transition: all 0.3s;
+        }
+        
+        .block:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+        
+        .block-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            color: var(--light);
+        }
+        
+        .block-id {
+            font-weight: bold;
+            color: var(--primary);
+        }
+        
+        .block-hash {
+            font-family: monospace;
+            font-size: 0.8rem;
+            background: rgba(0,0,0,0.3);
+            padding: 5px 10px;
+            border-radius: 4px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        .block-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: white;
+        }
+        
+        .block-content {
+            color: var(--light);
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+        
+        .block-footer {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: var(--light);
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 10px;
+        }
+        
+        .blockchain-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .token-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            background: rgba(46, 204, 113, 0.2);
+            color: var(--primary);
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        
+        .chain-connector {
+            position: absolute;
+            left: -25px;
+            top: 50%;
+            width: 20px;
+            height: 2px;
+            background: var(--primary);
+        }
+        
+        .chain-connector:after {
+            content: '';
+            position: absolute;
+            right: -6px;
+            top: -4px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--primary);
+        }
+        
+        /* Blockchain Visualization */
+        .blockchain-visual {
+            margin-top: 50px;
+            background: rgba(15, 32, 39, 0.7);
+            border-radius: 15px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        
+        .visualization {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 200px;
+            position: relative;
+            margin: 40px 0;
+        }
+        
+        .block-vis {
+            width: 100px;
+            height: 140px;
+            background: linear-gradient(135deg, var(--blockchain-blue), #1a3b5a);
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            margin: 0 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            transition: all 0.3s;
+            cursor: pointer;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .block-vis:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+        }
+        
+        .block-vis i {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        .block-vis .block-id {
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .chain-line {
+            height: 4px;
+            background: var(--primary);
+            flex-grow: 1;
+            position: relative;
+        }
+        
+        .chain-line:after {
+            content: '';
+            position: absolute;
+            right: -8px;
+            top: -6px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--primary);
+        }
+        
+        .genesis-block {
+            background: linear-gradient(135deg, var(--blockchain-green), #1c7c54);
+        }
+        
+        /* Stats Section */
+        .stats-section {
+            background: rgba(15, 32, 39, 0.7);
+            border-radius: 15px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            margin-top: 50px;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .stat-card {
+            background: rgba(0,0,0,0.2);
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+            transition: all 0.3s;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-family: monospace;
+        }
+        
+        /* Footer */
+        footer {
+            background: rgba(15, 32, 39, 0.9);
+            color: white;
+            padding: 40px 0 20px;
+            margin-top: 80px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .footer-links a {
+            color: var(--light);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary);
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .animate {
+            animation: fadeIn 0.8s ease forwards;
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .journal-container {
+                flex-direction: column;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--dark);
+                flex-direction: column;
+                padding: 20px;
+                gap: 10px;
+            }
+            
+            .nav-menu.active {
+                display: flex;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero {
+                padding: 80px 0;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .visualization {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .block-vis {
+                margin: 20px 0;
+            }
+            
+            .chain-line {
+                width: 4px;
+                height: 40px;
+            }
+            
+            .chain-line:after {
+                left: -6px;
+                top: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-recycle"></i>
+                </div>
+                <div class="logo-text">Living Journal</div>
+            </div>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="#journal"><i class="fas fa-book"></i> Jurnal Saya</a></li>
+                <li><a href="#blockchain"><i class="fas fa-link"></i> Blockchain</a></li>
+                <li><a href="#stats"><i class="fas fa-chart-line"></i> Statistik</a></li>
+                <li><a href="#"><i class="fas fa-coins"></i> Token 2BCycle</a></li>
+                <li><a href="#"><i class="fas fa-question-circle"></i> Bantuan</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="animate">Living Journal - Sistem Dokumentasi Semi-Blockchain</h1>
+            <p class="animate delay-1">Platform EU Survey yang berevolusi menjadi jurnal hidup dengan teknologi semi-blockchain untuk transparansi dan keabadian data</p>
+            
+            <div class="web3-badges animate delay-2">
+                <div class="web3-badge">
+                    <i class="fas fa-shield-alt"></i> Data Immutable
+                </div>
+                <div class="web3-badge">
+                    <i class="fas fa-link"></i> Blockchain-like Structure
+                </div>
+                <div class="web3-badge">
+                    <i class="fas fa-trophy"></i> PoAV (Proof of Attentive Value)
+                </div>
+            </div>
+            
+            <div class="cta-buttons animate delay-3">
+                <a href="#journal" class="btn btn-primary">Buat Entri Baru</a>
+                <a href="#blockchain" class="btn btn-secondary">Lihat Blockchain</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Journal Section -->
+    <section id="journal" class="journal-section">
+        <div class="container">
+            <div class="section-title animate">
+                <h2>Jurnal Hidup Saya</h2>
+                <p>Dokumentasikan aktivitas Anda dalam struktur semi-blockchain yang aman dan transparan</p>
+            </div>
+            
+            <div class="journal-container">
+                <div class="journal-form animate">
+                    <h3><i class="fas fa-plus-circle"></i> Buat Entri Baru</h3>
+                    <form id="journalForm">
+                        <div class="form-group">
+                            <label for="journalTitle">Judul Aktivitas</label>
+                            <input type="text" id="journalTitle" class="form-control" placeholder="Apa yang Anda lakukan hari ini?" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="journalCategory">Kategori</label>
+                            <select id="journalCategory" class="form-control" required>
+                                <option value="">Pilih Kategori</option>
+                                <option value="research">Penelitian</option>
+                                <option value="recycling">Daur Ulang</option>
+                                <option value="education">Edukasi</option>
+                                <option value="community">Komunitas</option>
+                                <option value="other">Lainnya</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="journalContent">Deskripsi Aktivitas</label>
+                            <textarea id="journalContent" class="form-control" placeholder="Deskripsikan aktivitas Anda secara detail..." required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="journalProof">Bukti Pendukung (URL gambar/dokumen)</label>
+                            <input type="text" id="journalProof" class="form-control" placeholder="https://">
+                        </div>
+                        <div class="form-group">
+                            <label>Nilai PoAV (Proof of Attentive Value)</label>
+                            <div class="poav-slider-container">
+                                <input type="range" id="poavSlider" min="1" max="10" value="5" class="form-control">
+                                <div class="poav-value">
+                                    <span>Nilai: </span>
+                                    <span id="poavValue">5</span>
+                                    <span class="token-badge"><i class="fas fa-coins"></i> +25 Token</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-blockchain btn-block">
+                            <i class="fas fa-link"></i> Tambahkan ke Blockchain
+                        </button>
+                    </form>
+                </div>
+                
+                <div class="journal-blockchain animate delay-1">
+                    <div class="blockchain-header">
+                        <h3><i class="fas fa-link"></i> Rantai Blok Saya</h3>
+                        <div class="token-badge">
+                            <i class="fas fa-coins"></i> Total Token: <span id="totalTokens">175</span>
+                        </div>
+                    </div>
+                    
+                    <div class="blockchain-chain" id="blockchainChain">
+                        <!-- Blocks will be added here dynamically -->
+                    </div>
+                    
+                    <div class="blockchain-actions">
+                        <button class="btn btn-secondary">
+                            <i class="fas fa-download"></i> Ekspor Data
+                        </button>
+                        <button class="btn btn-primary">
+                            <i class="fas fa-share-alt"></i> Bagikan
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blockchain Visualization -->
+    <section id="blockchain" class="journal-section">
+        <div class="container">
+            <div class="section-title animate">
+                <h2>Visualisasi Blockchain</h2>
+                <p>Struktur rantai blok yang menunjukkan integritas data Anda</p>
+            </div>
+            
+            <div class="blockchain-visual animate">
+                <div class="visualization">
+                    <div class="block-vis genesis-block pulse">
+                        <i class="fas fa-cube"></i>
+                        <div class="block-id">Block #0</div>
+                        <div>Genesis</div>
+                    </div>
+                    
+                    <div class="chain-line"></div>
+                    
+                    <div class="block-vis">
+                        <i class="fas fa-seedling"></i>
+                        <div class="block-id">Block #1</div>
+                        <div>Penelitian</div>
+                    </div>
+                    
+                    <div class="chain-line"></div>
+                    
+                    <div class="block-vis">
+                        <i class="fas fa-recycle"></i>
+                        <div class="block-id">Block #2</div>
+                        <div>Daur Ulang</div>
+                    </div>
+                    
+                    <div class="chain-line"></div>
+                    
+                    <div class="block-vis">
+                        <i class="fas fa-users"></i>
+                        <div class="block-id">Block #3</div>
+                        <div>Komunitas</div>
+                    </div>
+                    
+                    <div class="chain-line"></div>
+                    
+                    <div class="block-vis">
+                        <i class="fas fa-graduation-cap"></i>
+                        <div class="block-id">Block #4</div>
+                        <div>Edukasi</div>
+                    </div>
+                </div>
+                
+                <div class="blockchain-explanation">
+                    <h3><i class="fas fa-info-circle"></i> Bagaimana Sistem Semi-Blockchain Bekerja?</h3>
+                    <p>Sistem Living Journal menggunakan pendekatan semi-blockchain untuk memastikan integritas data:</p>
+                    <ul>
+                        <li>Setiap entri jurnal disimpan sebagai "blok" dalam rantai</li>
+                        <li>Setiap blok mengandung hash dari blok sebelumnya</li>
+                        <li>Data disimpan secara lokal dengan kapasitas besar</li>
+                        <li>Setiap entri divalidasi dengan PoAV (Proof of Attentive Value)</li>
+                        <li>Token 2BCycle diberikan sebagai insentif untuk kontribusi</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section id="stats" class="journal-section">
+        <div class="container">
+            <div class="section-title animate">
+                <h2>Statistik & Analitik</h2>
+                <p>Pantau kontribusi dan perkembangan Anda dalam Living Journal</p>
+            </div>
+            
+            <div class="stats-section animate delay-1">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">17</div>
+                        <h3>Total Entri</h3>
+                        <p>Jumlah entri dalam jurnal</p>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">175</div>
+                        <h3>Token 2BCycle</h3>
+                        <p>Total token yang diperoleh</p>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">8.2</div>
+                        <h3>Rata-rata PoAV</h3>
+                        <p>Nilai Proof of Attentive Value</p>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">92%</div>
+                        <h3>Integritas Data</h3>
+                        <p>Tingkat keutuhan blockchain</p>
+                    </div>
+                </div>
+                
+                <div class="activity-chart" style="margin-top: 40px;">
+                    <h3><i class="fas fa-chart-bar"></i> Aktivitas Bulan Ini</h3>
+                    <div class="chart-container" style="background: rgba(0,0,0,0.2); border-radius: 10px; padding: 20px; margin-top: 20px; height: 200px; display: flex; align-items: flex-end; gap: 10px;">
+                        <div style="flex: 1; display: flex; flex-direction: column; align-items: center;">
+                            <div style="height: 150px; width: 100%; display: flex; align-items: flex-end;">
+                                <div style="background: linear-gradient(to top, var(--primary), var(--blockchain-green)); width: 100%; height: 30%; border-radius: 5px 5px 0 0;"></div>
+                            </div>
+                            <div style="margin-top: 10px;">Sen</div>
+                        </div>
+                        <div style="flex: 1; display: flex; flex-direction: column; align-items: center;">
+                            <div style="height: 150px; width: 100%; display: flex; align-items: flex-end;">
+                                <div style="background: linear-gradient(to top, var(--primary), var(--blockchain-green)); width: 100%; height: 50%; border-radius: 5px 5px 0 0;"></div>
+                            </div>
+                            <div style="margin-top: 10px;">Sel</div>
+                        </div>
+                        <div style="flex: 1; display: flex; flex-direction: column; align-items: center;">
+                            <div style="height: 150px; width: 100%; display: flex; align-items: flex-end;">
+                                <div style="background: linear-gradient(to top, var(--primary), var(--blockchain-green)); width: 100%; height: 70%; border-radius: 5px 5px 0 0;"></div>
+                            </div>
+                            <div style="margin-top: 10px;">Rab</div>
+                        </div>
+                        <div style="flex: 1; display: flex; flex-direction: column; align-items: center;">
+                            <div style="height: 150px; width: 100%; display: flex; align-items: flex-end;">
+                                <div style="background: linear-gradient(to top, var(--primary), var(--blockchain-green)); width: 100%; height: 90%; border-radius: 5px 5px 0 0;"></div>
+                            </div>
+                            <div style="margin-top: 10px;">Kam</div>
+                        </div>
+                        <div style="flex: 1; display: flex; flex-direction: column; align-items: center;">
+                            <div style="height: 150px; width: 100%; display: flex; align-items: flex-end;">
+                                <div style="background: linear-gradient(to top, var(--primary), var(--blockchain-green)); width: 100%; height: 65%; border-radius: 5px 5px 0 0;"></div>
+                            </div>
+                            <div style="margin-top: 10px;">Jum</div>
+                        </div>
+                        <div style="flex: 1; display: flex; flex-direction: column; align-items: center;">
+                            <div style="height: 150px; width: 100%; display: flex; align-items: flex-end;">
+                                <div style="background: linear-gradient(to top, var(--primary), var(--blockchain-green)); width: 100%; height: 40%; border-radius: 5px 5px 0 0;"></div>
+                            </div>
+                            <div style="margin-top: 10px;">Sab</div>
+                        </div>
+                        <div style="flex: 1; display: flex; flex-direction: column; align-items: center;">
+                            <div style="height: 150px; width: 100%; display: flex; align-items: flex-end;">
+                                <div style="background: linear-gradient(to top, var(--primary), var(--blockchain-green)); width: 100%; height: 20%; border-radius: 5px 5px 0 0;"></div>
+                            </div>
+                            <div style="margin-top: 10px;">Min</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Living Journal</h3>
+                    <p>Sistem dokumentasi semi-blockchain untuk riset dan aktivitas lingkungan berbasis PoAV.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-discord"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Navigasi</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-book"></i> Jurnal Saya</a></li>
+                        <li><a href="#"><i class="fas fa-link"></i> Blockchain</a></li>
+                        <li><a href="#"><i class="fas fa-chart-line"></i> Statistik</a></li>
+                        <li><a href="#"><i class="fas fa-coins"></i> Token 2BCycle</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Sumber Daya</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-file-alt"></i> Whitepaper PoAV</a></li>
+                        <li><a href="#"><i class="fas fa-book"></i> Dokumentasi Teknis</a></li>
+                        <li><a href="#"><i class="fas fa-download"></i> Template Entri</a></li>
+                        <li><a href="#"><i class="fas fa-graduation-cap"></i> Tutorial</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Komunitas</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-users"></i> Anggota: 1,250+</li>
+                        <li><i class="fas fa-cube"></i> Total Entri: 24,580</li>
+                        <li><i class="fas fa-coins"></i> Token Teredar: 5.2M</li>
+                        <li><i class="fas fa-link"></i> Integritas Data: 99.8%</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2025 Living Journal - Nyampah Bersama 2BCycle. Semua data disimpan secara lokal dengan struktur semi-blockchain.</p>
+                <p>Didukung oleh European Union Research Program</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('.nav-menu').classList.toggle('active');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                document.querySelector('.nav-menu').classList.remove('active');
+            });
+        });
+        
+        // POAV Slider
+        const poavSlider = document.getElementById('poavSlider');
+        const poavValue = document.getElementById('poavValue');
+        
+        poavSlider.addEventListener('input', function() {
+            poavValue.textContent = this.value;
+        });
+        
+        // Sample blockchain data
+        const sampleBlocks = [
+            {
+                id: 1,
+                title: "Penelitian Daur Ulang Plastik",
+                content: "Melakukan penelitian tentang metode daur ulang plastik yang efisien dengan pendekatan kimiawi...",
+                category: "research",
+                timestamp: "28 Juli 2025 14:30",
+                hash: "0001a3f5c9b2d4e6f8a7c5b3d9e1f2a4",
+                tokens: 30
+            },
+            {
+                id: 2,
+                title: "Workshop Pengelolaan Sampah",
+                content: "Mengadakan workshop untuk masyarakat tentang teknik pengelolaan sampah rumah tangga...",
+                category: "education",
+                timestamp: "26 Juli 2025 10:15",
+                hash: "0002b4e6d8a7c5f9e1b3d2a4c6f8e9d7",
+                tokens: 45
+            },
+            {
+                id: 3,
+                title: "Pengumpulan Sampah Elektronik",
+                content: "Mengorganisir pengumpulan sampah elektronik di lingkungan sekitar dan mengirimkannya ke pusat daur ulang...",
+                category: "recycling",
+                timestamp: "24 Juli 2025 09:00",
+                hash: "0003c5f9e1b3d2a4c6f8e9d7b4e6d8a7",
+                tokens: 25
+            }
+        ];
+        
+        // Render blockchain
+        const blockchainChain = document.getElementById('blockchainChain');
+        
+        function renderBlockchain() {
+            blockchainChain.innerHTML = '';
+            
+            // Add genesis block
+            blockchainChain.innerHTML += `
+                <div class="block">
+                    <div class="chain-connector"></div>
+                    <div class="block-header">
+                        <span class="block-id">GENESIS BLOCK</span>
+                        <span>01 Juni 2025 00:00</span>
+                    </div>
+                    <div class="block-title">Blok Awal Sistem</div>
+                    <div class="block-content">Blok genesis yang menandai dimulainya Living Journal dengan teknologi semi-blockchain.</div>
+                    <div class="block-footer">
+                        <span>HASH: 00000000000000000000000000000000</span>
+                        <span class="token-badge"><i class="fas fa-coins"></i> 0 Token</span>
+                    </div>
+                </div>
+            `;
+            
+            // Add user blocks
+            sampleBlocks.forEach(block => {
+                blockchainChain.innerHTML += `
+                    <div class="block">
+                        <div class="chain-connector"></div>
+                        <div class="block-header">
+                            <span class="block-id">BLOCK #${block.id}</span>
+                            <span>${block.timestamp}</span>
+                        </div>
+                        <div class="block-title">${block.title}</div>
+                        <div class="block-content">${block.content}</div>
+                        <div class="block-footer">
+                            <span class="block-hash">HASH: ${block.hash}</span>
+                            <span class="token-badge"><i class="fas fa-coins"></i> +${block.tokens} Token</span>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+        
+        // Form submission
+        const journalForm = document.getElementById('journalForm');
+        
+        journalForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const title = document.getElementById('journalTitle').value;
+            const category = document.getElementById('journalCategory').value;
+            const content = document.getElementById('journalContent').value;
+            const poav = poavSlider.value;
+            const tokens = poav * 5;
+            
+            // Generate random hash
+            const hash = '000' + Math.random().toString(16).substr(2, 13) + Math.random().toString(16).substr(2, 13);
+            
+            // Create new block
+            const newBlock = `
+                <div class="block">
+                    <div class="chain-connector"></div>
+                    <div class="block-header">
+                        <span class="block-id">NEW BLOCK</span>
+                        <span>${new Date().toLocaleString()}</span>
+                    </div>
+                    <div class="block-title">${title}</div>
+                    <div class="block-content">${content}</div>
+                    <div class="block-footer">
+                        <span class="block-hash">HASH: ${hash}</span>
+                        <span class="token-badge"><i class="fas fa-coins"></i> +${tokens} Token</span>
+                    </div>
+                </div>
+            `;
+            
+            // Add to top of blockchain
+            blockchainChain.insertAdjacentHTML('afterbegin', newBlock);
+            
+            // Update token count
+            const totalTokens = document.getElementById('totalTokens');
+            totalTokens.textContent = parseInt(totalTokens.textContent) + tokens;
+            
+            // Show success message
+            alert(`Entri jurnal berhasil ditambahkan!\nAnda mendapatkan ${tokens} Token 2BCycle.`);
+            
+            // Reset form
+            journalForm.reset();
+            poavValue.textContent = '5';
+            poavSlider.value = '5';
+        });
+        
+        // Initialize blockchain
+        document.addEventListener('DOMContentLoaded', function() {
+            renderBlockchain();
+            
+            // Calculate total tokens
+            let total = 0;
+            sampleBlocks.forEach(block => {
+                total += block.tokens;
+            });
+            document.getElementById('totalTokens').textContent = total;
+        });
+        
+        // Animation on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        document.querySelectorAll('.section-title, .journal-container > *, .blockchain-visual, .stats-section').forEach(el => {
+            observer.observe(el);
+        });
+        
+        // Make blockchain blocks clickable
+        document.addEventListener('click', function(e) {
+            if (e.target.closest('.block-vis')) {
+                alert('Detail blok blockchain akan ditampilkan di sini.');
+            }
+        });
+    </script>
+</body>
+</html>
