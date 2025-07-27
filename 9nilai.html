@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Hierarki Komunitas - Standar Uni Eropa</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --eu-blue: #004494;
+            --eu-yellow: #FFCC00;
+            --eu-dark: #003082;
+            --primary: #2ecc71;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --gray: #95a5a6;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            color: var(--eu-dark);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--eu-blue), var(--eu-dark));
+            color: white;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo-icon {
+            font-size: 2rem;
+            color: var(--eu-yellow);
+        }
+        
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+        
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 8px 12px;
+            border-radius: 5px;
+        }
+        
+        .nav-menu a:hover {
+            background-color: rgba(255,255,255,0.2);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 68, 148, 0.9), rgba(0, 48, 130, 0.9)), url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3') no-repeat center center/cover;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            color: white;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        .eu-badges {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .eu-badge {
+            background: rgba(255,255,255,0.2);
+            border-radius: 20px;
+            padding: 8px 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-align: center;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+        
+        .btn-primary {
+            background-color: var(--eu-yellow);
+            color: var(--eu-dark);
+        }
+        
+        .btn-primary:hover {
+            background-color: #e6b800;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .btn-secondary:hover {
+            background-color: rgba(255,255,255,0.1);
+            transform: translateY(-3px);
+        }
+        
+        /* Hierarchy Section */
+        .hierarchy-section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--eu-yellow);
+            border-radius: 2px;
+        }
+        
+        .section-title p {
+            color: var(--gray);
+            max-width: 700px;
+            margin: 20px auto 0;
+        }
+        
+        .hierarchy-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
+        
+        .hierarchy-level {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+        
+        .level-header {
+            background: linear-gradient(135deg, var(--eu-blue), var(--eu-dark));
+            color: white;
+            padding: 15px 30px;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 800px;
+            text-align: center;
+            margin-bottom: 20px;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .level-header:before {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-width: 10px;
+            border-style: solid;
+            border-color: var(--eu-dark) transparent transparent transparent;
+        }
+        
+        .level-positions {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            width: 100%;
+            max-width: 1000px;
+        }
+        
+        .position-card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            width: 280px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            border-top: 4px solid var(--eu-yellow);
+            position: relative;
+        }
+        
+        .position-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .position-card h3 {
+            color: var(--eu-blue);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .position-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--eu-yellow);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--eu-blue);
+            font-size: 1.2rem;
+        }
+        
+        .position-details {
+            margin: 15px 0;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        
+        .position-details ul {
+            padding-left: 20px;
+            margin: 10px 0;
+        }
+        
+        .position-details li {
+            margin-bottom: 8px;
+        }
+        
+        .position-action {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        
+        .btn-apply {
+            background: linear-gradient(135deg, var(--eu-blue), var(--eu-dark));
+            color: white;
+            padding: 8px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+        
+        .btn-apply:hover {
+            background: var(--eu-dark);
+        }
+        
+        .position-status {
+            background: #e9ecef;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+        
+        .status-open {
+            background: #d4edda;
+            color: #155724;
+        }
+        
+        .status-closed {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        
+        .position-form {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-top: 40px;
+            max-width: 800px;
+            width: 100%;
+            display: none;
+        }
+        
+        .form-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .form-title {
+            color: var(--eu-blue);
+        }
+        
+        .close-form {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--gray);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+        
+        .form-control:focus {
+            border-color: var(--eu-blue);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(0, 68, 148, 0.2);
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .form-footer {
+            display: flex;
+            justify-content: flex-end;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        /* Principles Section */
+        .principles-section {
+            background: linear-gradient(135deg, var(--eu-blue), var(--eu-dark));
+            padding: 80px 0;
+            color: white;
+        }
+        
+        .principles-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .principle-card {
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .principle-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255,255,255,0.15);
+        }
+        
+        .principle-icon {
+            font-size: 3rem;
+            color: var(--eu-yellow);
+            margin-bottom: 20px;
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--eu-dark), #002b6b);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            color: var(--eu-yellow);
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: var(--light);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--eu-yellow);
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255,255,255,0.1);
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--eu-yellow);
+            color: var(--eu-dark);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: var(--eu-yellow);
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .level-positions {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--eu-dark);
+                flex-direction: column;
+                padding: 20px;
+                gap: 10px;
+            }
+            
+            .nav-menu.active {
+                display: flex;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero {
+                padding: 80px 0;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate {
+            animation: fadeIn 0.8s ease forwards;
+        }
+        
+        .delay-1 {
+            animation-delay: 0.2s;
+        }
+        
+        .delay-2 {
+            animation-delay: 0.4s;
+        }
+        
+        .delay-3 {
+            animation-delay: 0.6s;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <div class="logo-text">Struktur Hierarki Komunitas</div>
+            </div>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="#hierarchy"><i class="fas fa-sitemap"></i> Struktur</a></li>
+                <li><a href="#positions"><i class="fas fa-briefcase"></i> Jabatan</a></li>
+                <li><a href="#principles"><i class="fas fa-balance-scale"></i> Prinsip</a></li>
+                <li><a href="#apply"><i class="fas fa-edit"></i> Daftar</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="animate">Sistem Hierarki Berstandar Uni Eropa</h1>
+            <p class="animate delay-1">Struktur organisasi komunitas yang memenuhi standar tata kelola Uni Eropa dengan penekanan pada transparansi, akuntabilitas, dan etika</p>
+            
+            <div class="eu-badges animate delay-2">
+                <div class="eu-badge">
+                    <i class="fas fa-shield-alt"></i> Tata Kelola Baik
+                </div>
+                <div class="eu-badge">
+                    <i class="fas fa-lock"></i> Perlindungan Data
+                </div>
+                <div class="eu-badge">
+                    <i class="fas fa-balance-scale"></i> Akuntabilitas
+                </div>
+            </div>
+            
+            <div class="cta-buttons animate delay-3">
+                <a href="#positions" class="btn btn-primary">Lihat Jabatan Tersedia</a>
+                <a href="#apply" class="btn btn-secondary">Ajukan Diri Sekarang</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hierarchy Section -->
+    <section id="hierarchy" class="hierarchy-section">
+        <div class="container">
+            <div class="section-title animate">
+                <h2>Struktur Hierarki Komunitas</h2>
+                <p>Sistem organisasi yang memenuhi standar tata kelola Uni Eropa untuk transparansi dan akuntabilitas</p>
+            </div>
+            
+            <div class="hierarchy-container">
+                <!-- Dewan Pengawas -->
+                <div class="hierarchy-level animate">
+                    <div class="level-header">
+                        <h3><i class="fas fa-gavel"></i> Dewan Pengawas / Komite Etik</h3>
+                    </div>
+                    <div class="level-positions">
+                        <div class="position-card">
+                            <h3><span class="position-icon"><i class="fas fa-user-tie"></i></span> Ketua Komite Etik</h3>
+                            <p>Mengawasi kepatuhan etika dan tata kelola organisasi</p>
+                            <div class="position-details">
+                                <strong>Wewenang:</strong>
+                                <ul>
+                                    <li>Memberikan rekomendasi strategis</li>
+                                    <li>Mengeluarkan peringatan etika</li>
+                                    <li>Meninjau kebijakan perlindungan data</li>
+                                </ul>
+                            </div>
+                            <div class="position-action">
+                                <a href="#" class="btn-apply apply-btn" data-position="Ketua Komite Etik">Daftar</a>
+                                <span class="position-status status-open">Tersedia</span>
+                            </div>
+                        </div>
+                        
+                        <div class="position-card">
+                            <h3><span class="position-icon"><i class="fas fa-balance-scale"></i></span> Anggota Komite</h3>
+                            <p>Mendukung pengawasan etika dan tata kelola</p>
+                            <div class="position-details">
+                                <strong>Wewenang:</strong>
+                                <ul>
+                                    <li>Menyelidiki keluhan etika</li>
+                                    <li>Memantau kepatuhan regulasi</li>
+                                    <li>Mengawasi pelaksanaan kode etik</li>
+                                </ul>
+                            </div>
+                            <div class="position-action">
+                                <a href="#" class="btn-apply apply-btn" data-position="Anggota Komite">Daftar</a>
+                                <span class="position-status status-open">Tersedia</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Manajemen Eksekutif -->
+                <div class="hierarchy-level animate delay-1">
+                    <div class="level-header">
+                        <h3><i class="fas fa-crown"></i> Manajemen Eksekutif</h3>
+                    </div>
+                    <div class="level-positions">
+                        <div class="position-card">
+                            <h3><span class="position-icon"><i class="fas fa-user"></i></span> Ketua Komunitas</h3>
+                            <p>Pemimpin tertinggi yang bertanggung jawab atas seluruh operasional</p>
+                            <div class="position-details">
+                                <strong>Wewenang:</strong>
+                                <ul>
+                                    <li>Pengambil keputusan tertinggi</li>
+                                    <li>Perwakilan komunitas</li>
+                                    <li>Penanggung jawab integritas</li>
+                                </ul>
+                            </div>
+                            <div class="position-action">
+                                <a href="#" class="btn-apply apply-btn" data-position="Ketua Komunitas">Daftar</a>
+                                <span class="position-status status-closed">Terisi</span>
+                            </div>
+                        </div>
+                        
+                        <div class="position-card">
+                            <h3><span class="position-icon"><i class="fas fa-user-friends"></i></span> Wakil Ketua</h3>
+                            <p>Mendukung ketua dalam menjalankan tugas dan operasional</p>
+                            <div class="position-details">
+                                <strong>Wewenang:</strong>
+                                <ul>
+                                    <li>Bertindak atas nama ketua</li>
+                                    <li>Mengawasi koordinasi divisi</li>
+                                    <li>Menginisiasi perbaikan proses</li>
+                                </ul>
+                            </div>
+                            <div class="position-action">
+                                <a href="#" class="btn-apply apply-btn" data-position="Wakil Ketua">Daftar</a>
+                                <span class="position-status status-open">Tersedia</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Manajemen Administratif -->
+                <div class="hierarchy-level animate delay-2">
+                    <div class="level-header">
+                        <h3><i class="fas fa-file-alt"></i> Manajemen Administratif</h3>
+                    </div>
+                    <div class="level-positions">
+                        <div class="position-card">
+                            <h3><span class="position-icon"><i class="fas fa-file-contract"></i></span> Sekretaris Jenderal</h3>
+                            <p>Bertanggung jawab atas administrasi dan kepatuhan</p>
+                            <div class="position-details">
+                                <strong>Wewenang:</strong>
+                                <ul>
+                                    <li>Mengelola dokumentasi</li>
+                                    <li>Memastikan kepatuhan GDPR</li>
+                                    <li>Menyusun kebijakan internal</li>
+                                </ul>
+                            </div>
+                            <div class="position-action">
+                                <a href="#" class="btn-apply apply-btn" data-position="Sekretaris Jenderal">Daftar</a>
+                                <span class="position-status status-open">Tersedia</span>
+                            </div>
+                        </div>
+                        
+                        <div class="position-card">
+                            <h3><span class="position-icon"><i class="fas fa-coins"></i></span> Bendahara</h3>
+                            <p>Mengelola keuangan dan audit internal</p>
+                            <div class="position-details">
+                                <strong>Wewenang:</strong>
+                                <ul>
+                                    <li>Mengelola aset finansial</li>
+                                    <li>Memastikan transparansi keuangan</li>
+                                    <li>Melakukan audit internal</li>
+                                </ul>
+                            </div>
+                            <div class="position-action">
+                                <a href="#" class="btn-apply apply-btn" data-position="Bendahara">Daftar</a>
+                                <span class="position-status status-open">Tersedia</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Koordinator Divisi -->
+                <div class="hierarchy-level animate delay-3">
+                    <div class="level-header">
+                        <h3><i class="fas fa-network-wired"></i> Koordinator Divisi</h3>
+                    </div>
+                    <div class="level-positions">
+                        <div class="position-card">
+                            <h3><span class="position-icon"><i class="fas fa-calendar-alt"></i></span> Koordinator Acara</h3>
+                            <p>Memimpin pelaksanaan kegiatan dan acara komunitas</p>
+                            <div class="position-details">
+                                <strong>Wewenang:</strong>
+                                <ul>
+                                    <li>Merencanakan program acara</li>
+                                    <li>Mengelola anggaran acara</li>
+                                    <li>Mengkoordinasikan tim</li>
+                                </ul>
+                            </div>
+                            <div class="position-action">
+                                <a href="#" class="btn-apply apply-btn" data-position="Koordinator Acara">Daftar</a>
+                                <span class="position-status status-open">Tersedia</span>
+                            </div>
+                        </div>
+                        
+                        <div class="position-card">
+                            <h3><span class="position-icon"><i class="fas fa-comments"></i></span> Koordinator Komunikasi</h3>
+                            <p>Mengelola komunikasi internal dan eksternal</p>
+                            <div class="position-details">
+                                <strong>Wewenang:</strong>
+                                <ul>
+                                    <li>Mengelola media sosial</li>
+                                    <li>Mengembangkan materi komunikasi</li>
+                                    <li>Menjaga citra komunitas</li>
+                                </ul>
+                            </div>
+                            <div class="position-action">
+                                <a href="#" class="btn-apply apply-btn" data-position="Koordinator Komunikasi">Daftar</a>
+                                <span class="position-status status-open">Tersedia</span>
+                            </div>
+                        </div>
+                        
+                        <div class="position-card">
+                            <h3><span class="position-icon"><i class="fas fa-users"></i></span> Koordinator SDM</h3>
+                            <p>Mengelola keanggotaan dan pengembangan sumber daya manusia</p>
+                            <div class="position-details">
+                                <strong>Wewenang:</strong>
+                                <ul>
+                                    <li>Mengelola database anggota</li>
+                                    <li>Mengembangkan program pelatihan</li>
+                                    <li>Menangani rekrutmen</li>
+                                </ul>
+                            </div>
+                            <div class="position-action">
+                                <a href="#" class="btn-apply apply-btn" data-position="Koordinator SDM">Daftar</a>
+                                <span class="position-status status-open">Tersedia</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Form Pendaftaran -->
+                <div id="position-form" class="position-form">
+                    <div class="form-header">
+                        <h3 class="form-title" id="form-position-title">Ajukan Diri untuk Jabatan</h3>
+                        <button class="close-form">&times;</button>
+                    </div>
+                    <form id="applicationForm">
+                        <input type="hidden" id="positionName" name="positionName">
+                        
+                        <div class="form-group">
+                            <label for="fullName">Nama Lengkap</label>
+                            <input type="text" id="fullName" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Nomor Telepon</label>
+                            <input type="tel" id="phone" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="experience">Pengalaman Relevan</label>
+                            <textarea id="experience" class="form-control" required></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="motivation">Motivasi Mengajukan Diri</label>
+                            <textarea id="motivation" class="form-control" required></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="vision">Visi untuk Jabatan Ini</label>
+                            <textarea id="vision" class="form-control" required></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="cv">Upload CV (PDF, max 5MB)</label>
+                            <input type="file" id="cv" class="form-control" accept=".pdf" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <div class="eu-compliance">
+                                <input type="checkbox" id="gdpr" required>
+                                <label for="gdpr">Saya menyetujui kebijakan perlindungan data sesuai standar GDPR Uni Eropa</label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-footer">
+                            <button type="reset" class="btn btn-secondary">Reset</button>
+                            <button type="submit" class="btn btn-primary">Ajukan Lamaran</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Principles Section -->
+    <section id="principles" class="principles-section">
+        <div class="container">
+            <div class="section-title animate">
+                <h2>Prinsip Tata Kelola Uni Eropa</h2>
+                <p>Standar yang kami terapkan dalam pengelolaan komunitas</p>
+            </div>
+            
+            <div class="principles-container">
+                <div class="principle-card animate">
+                    <div class="principle-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Transparansi</h3>
+                    <p>Semua proses pengambilan keputusan dan keuangan terbuka untuk diawasi oleh anggota</p>
+                </div>
+                
+                <div class="principle-card animate delay-1">
+                    <div class="principle-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h3>Akuntabilitas</h3>
+                    <p>Setiap pengurus bertanggung jawab atas keputusan dan tindakan mereka kepada anggota</p>
+                </div>
+                
+                <div class="principle-card animate delay-2">
+                    <div class="principle-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3>Perlindungan Data</h3>
+                    <p>Penerapan standar GDPR untuk keamanan data pribadi anggota komunitas</p>
+                </div>
+                
+                <div class="principle-card animate delay-3">
+                    <div class="principle-icon">
+                        <i class="fas fa-gavel"></i>
+                    </div>
+                    <h3>Kepatuhan Hukum</h3>
+                    <p>Seluruh aktivitas mematuhi regulasi nasional dan prinsip hukum internasional</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Komunitas Berstandar EU</h3>
+                    <p>Struktur organisasi yang memenuhi standar tata kelola Uni Eropa untuk transparansi dan akuntabilitas</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Navigasi</h3>
+                    <ul class="footer-links">
+                        <li><a href="#hierarchy">Struktur Hierarki</a></li>
+                        <li><a href="#positions">Jabatan Tersedia</a></li>
+                        <li><a href="#principles">Prinsip Tata Kelola</a></li>
+                        <li><a href="#apply">Pendaftaran Jabatan</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Dokumen</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Kode Etik Komunitas</a></li>
+                        <li><a href="#">Kebijakan Perlindungan Data</a></li>
+                        <li><a href="#">Panduan Tata Kelola</a></li>
+                        <li><a href="#">Standar Akuntansi EU</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Kontak</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-envelope"></i> info@komunitaseu.org</li>
+                        <li><i class="fas fa-phone"></i> +32 2 299 9696</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Brussels, Belgia</li>
+                        <li><i class="fas fa-globe-europe"></i> europa.eu</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2023 Komunitas Berstandar Uni Eropa. Semua hak dilindungi sesuai dengan standar GDPR dan kerangka tata kelola Uni Eropa.</p>
+                <p>Didukung oleh Program Tata Kelola Uni Eropa</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('.nav-menu').classList.toggle('active');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                document.querySelector('.nav-menu').classList.remove('active');
+            });
+        });
+        
+        // Application form functionality
+        const applyButtons = document.querySelectorAll('.apply-btn');
+        const positionForm = document.getElementById('position-form');
+        const formPositionTitle = document.getElementById('form-position-title');
+        const positionNameInput = document.getElementById('positionName');
+        const closeFormBtn = document.querySelector('.close-form');
+        const applicationForm = document.getElementById('applicationForm');
+        
+        applyButtons.forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                const position = this.getAttribute('data-position');
+                
+                // Update form with position
+                formPositionTitle.textContent = `Ajukan Diri untuk ${position}`;
+                positionNameInput.value = position;
+                
+                // Show form
+                positionForm.style.display = 'block';
+                
+                // Scroll to form
+                positionForm.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+        
+        closeFormBtn.addEventListener('click', function() {
+            positionForm.style.display = 'none';
+        });
+        
+        applicationForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const position = positionNameInput.value;
+            const name = document.getElementById('fullName').value;
+            
+            // Show success message
+            alert(`Terima kasih ${name}! Pendaftaran Anda untuk posisi ${position} telah berhasil diajukan. Tim kami akan menghubungi Anda dalam waktu 7 hari kerja.`);
+            
+            // Reset form
+            applicationForm.reset();
+            positionForm.style.display = 'none';
+        });
+        
+        // Animation on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        document.querySelectorAll('.section-title, .hierarchy-level, .principle-card').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
