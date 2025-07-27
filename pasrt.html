@@ -1,0 +1,1832 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nyampah Bersama 2BCycle - Komunitas Riset Desentralisasi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2ecc71;
+            --primary-dark: #27ae60;
+            --secondary: #3498db;
+            --accent: #9b59b6;
+            --dark: #2c3e50;
+            --light: #ecf0f1;
+            --gray: #95a5a6;
+            --success: #2ecc71;
+            --warning: #f39c12;
+            --danger: #e74c3c;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            color: var(--dark);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo-icon {
+            font-size: 2rem;
+        }
+        
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+        
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 8px 12px;
+            border-radius: 5px;
+        }
+        
+        .nav-menu a:hover {
+            background-color: rgba(255,255,255,0.2);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.9)), url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3') no-repeat center center/cover;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            color: white;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        .web3-badges {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .web3-badge {
+            background: rgba(255,255,255,0.2);
+            border-radius: 20px;
+            padding: 8px 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-align: center;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+            border: 2px solid var(--primary);
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .btn-secondary:hover {
+            background-color: rgba(255,255,255,0.1);
+            transform: translateY(-3px);
+        }
+        
+        .btn-warning {
+            background-color: var(--warning);
+            color: white;
+            border: 2px solid var(--warning);
+        }
+        
+        .btn-warning:hover {
+            background-color: #e67e22;
+            transform: translateY(-3px);
+        }
+        
+        /* Section Styles */
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary);
+            border-radius: 2px;
+        }
+        
+        .section-title p {
+            color: var(--gray);
+            max-width: 700px;
+            margin: 20px auto 0;
+        }
+        
+        /* About Section */
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .vision-mission {
+            background-color: var(--light);
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+        
+        /* Values Section */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .value-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .value-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        /* Programs Section */
+        .programs-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .program-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .program-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .program-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .program-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.5s ease;
+        }
+        
+        .program-card:hover .program-image img {
+            transform: scale(1.1);
+        }
+        
+        .program-content {
+            padding: 25px;
+        }
+        
+        /* Research Section */
+        .research-section {
+            background-color: var(--light);
+        }
+        
+        .research-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .research-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .research-card h3 {
+            color: var(--secondary);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .research-badge {
+            background-color: var(--accent);
+            color: white;
+            padding: 3px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+        }
+        
+        /* Publications Section */
+        .publications-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .publications-table th {
+            background-color: var(--primary);
+            color: white;
+            padding: 15px;
+            text-align: left;
+        }
+        
+        .publications-table td {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .publications-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .publications-table tr:hover {
+            background-color: #f9f9f9;
+        }
+        
+        .doi-link {
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .doi-link:hover {
+            text-decoration: underline;
+        }
+        
+        /* Impact Section */
+        .impact-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .stat-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        /* Testimonials */
+        .testimonials-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .testimonial {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        .testimonial:before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 4rem;
+            color: var(--light);
+            font-family: serif;
+            line-height: 1;
+        }
+        
+        .testimonial-content {
+            position: relative;
+            z-index: 1;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            background-color: var(--light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-weight: bold;
+        }
+        
+        /* Join Section */
+        .join-container {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            border-radius: 15px;
+            padding: 60px;
+            color: white;
+            text-align: center;
+        }
+        
+        .join-container h2 {
+            color: white;
+            margin-bottom: 20px;
+        }
+        
+        .join-container p {
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        .eu-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255,255,255,0.2);
+            padding: 10px 20px;
+            border-radius: 30px;
+            margin-top: 20px;
+        }
+        
+        /* Roadmap Section */
+        .roadmap-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 40px;
+        }
+        
+        .roadmap-card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            width: 280px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-left: 4px solid var(--primary);
+        }
+        
+        .roadmap-card h3 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .roadmap-card.completed {
+            border-left-color: var(--success);
+        }
+        
+        .roadmap-card.in-progress {
+            border-left-color: var(--warning);
+        }
+        
+        .roadmap-card.planned {
+            border-left-color: var(--gray);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .footer-links a {
+            color: var(--light);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary);
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255,255,255,0.1);
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: var(--gray);
+        }
+        
+        /* MODAL STYLES */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.7);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .modal-content {
+            background-color: white;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 500px;
+            overflow: hidden;
+            animation: modalFadeIn 0.3s ease;
+        }
+        
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .modal-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .modal-header h3 {
+            color: white;
+            margin: 0;
+        }
+        
+        .close-modal {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        .modal-body {
+            padding: 30px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(46, 204, 113, 0.2);
+        }
+        
+        .form-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+        }
+        
+        /* Dashboard Styles */
+        .dashboard-section {
+            background-color: var(--light);
+            padding: 40px 0;
+        }
+        
+        .dashboard-container {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            padding: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .user-profile {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+        }
+        
+        .user-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        
+        .user-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+        }
+        
+        .user-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .stat-item {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .stat-item .number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+        
+        .stat-item .label {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        .leaderboard {
+            margin-top: 40px;
+        }
+        
+        .leaderboard-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .leaderboard-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .leaderboard-table th {
+            background-color: var(--primary);
+            color: white;
+            padding: 15px;
+            text-align: left;
+        }
+        
+        .leaderboard-table td {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .leaderboard-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .leaderboard-table tr:hover {
+            background-color: #f9f9f9;
+        }
+        
+        .rank-cell {
+            font-weight: bold;
+            width: 40px;
+        }
+        
+        .user-cell {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .user-initial {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: var(--light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: var(--primary);
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--dark);
+                flex-direction: column;
+                padding: 20px;
+                gap: 10px;
+            }
+            
+            .nav-menu.active {
+                display: flex;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero {
+                padding: 80px 0;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .join-container {
+                padding: 40px 20px;
+            }
+            
+            .publications-table {
+                display: block;
+                overflow-x: auto;
+            }
+            
+            .modal-content {
+                width: 95%;
+            }
+            
+            .user-profile {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate {
+            animation: fadeIn 0.8s ease forwards;
+        }
+        
+        .delay-1 {
+            animation-delay: 0.2s;
+        }
+        
+        .delay-2 {
+            animation-delay: 0.4s;
+        }
+        
+        .delay-3 {
+            animation-delay: 0.6s;
+        }
+        
+        /* Wallet Connect Button */
+        .wallet-connect {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--dark);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+        }
+        
+        .wallet-connect:hover {
+            background: #1a252f;
+        }
+        
+        .wallet-address {
+            font-family: monospace;
+            font-size: 0.8rem;
+            background: rgba(0,0,0,0.2);
+            padding: 3px 8px;
+            border-radius: 4px;
+        }
+        
+        /* Progress Bars */
+        .progress-container {
+            margin: 20px 0;
+        }
+        
+        .progress-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+        
+        .progress-bar {
+            height: 10px;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 5px;
+        }
+        
+        /* FAQ Styles */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            background: white;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 600;
+        }
+        
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+        
+        .faq-item.active .faq-answer {
+            padding: 0 20px 20px;
+            max-height: 500px;
+        }
+        
+        /* Gallery */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .gallery-item {
+            border-radius: 10px;
+            overflow: hidden;
+            height: 200px;
+            position: relative;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 10px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-recycle"></i>
+                </div>
+                <div class="logo-text">Nyampah Bersama 2BCycle</div>
+            </div>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="#about">Tentang Kami</a></li>
+                <li><a href="#research">Riset</a></li>
+                <li><a href="#values">Nilai Inti</a></li>
+                <li><a href="#programs">Program</a></li>
+                <li><a href="#impact">Dampak</a></li>
+                <li><a href="#roadmap">Roadmap</a></li>
+                <li><a href="#join">Bergabung</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#gallery">Galeri</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="animate">Membangun Pusat Riset Berbasis Rakyat dengan Teknologi Desentralisasi</h1>
+            <p class="animate delay-1">Komunitas riset desentralisasi yang mengintegrasikan PoAV, 2BCycle, dan ekonomi sirkular untuk menciptakan perubahan lingkungan yang berkelanjutan.</p>
+            
+            <div class="web3-badges animate delay-2">
+                <div class="web3-badge">
+                    <i class="fab fa-ethereum"></i> Blockchain Research
+                </div>
+                <div class="web3-badge">
+                    <i class="fas fa-seedling"></i> Ekonomi Sirkular
+                </div>
+                <div class="web3-badge">
+                    <i class="fas fa-users"></i> Komunitas Desentralisasi
+                </div>
+            </div>
+            
+            <div class="cta-buttons animate delay-3">
+                <a href="#join" class="btn btn-primary">Bergabung Sekarang</a>
+                <a href="https://ec.europa.eu/eusurvey/runner/d9508257-4c05-4109-74d8-cac7c261a9a6" target="_blank" class="btn btn-secondary">Ikuti Survei EU</a>
+                <button id="loginEuSurveyBtn" class="btn btn-warning">Login EU Survey</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- EU Survey Modal -->
+    <div id="euSurveyModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Login EU Survey</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="euSurveyForm">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="wallet">Wallet Address</label>
+                        <input type="text" id="wallet" class="form-control" placeholder="0x..." required>
+                    </div>
+                    <div class="form-footer">
+                        <button type="button" class="btn btn-secondary" id="cancelLogin">Batal</button>
+                        <button type="submit" class="btn btn-primary">Login</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dashboard Section -->
+    <section id="dashboard" class="dashboard-section" style="display: none;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Dashboard Anggota</h2>
+                <p>Pantau kontribusi dan pencapaian Anda dalam komunitas</p>
+            </div>
+            
+            <div class="dashboard-container">
+                <div class="user-profile">
+                    <div class="user-avatar" id="userAvatar">U</div>
+                    <div class="user-info">
+                        <h3 id="userName">User Name</h3>
+                        <p>Anggota sejak: <span id="joinDate">Juni 2025</span></p>
+                        <p>Wallet: <span class="wallet-address" id="userWallet">0x7Af07c98e1B47FD...36162</span></p>
+                    </div>
+                </div>
+                
+                <div class="user-stats">
+                    <div class="stat-item">
+                        <div class="number" id="userXP">1,250</div>
+                        <div class="label">Total XP</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="number" id="userTokens">350</div>
+                        <div class="label">2B Tokens</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="number" id="userRank">#48</div>
+                        <div class="label">Peringkat</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="number" id="userActions">27</div>
+                        <div class="label">Aksi Lingkungan</div>
+                    </div>
+                </div>
+                
+                <div class="progress-container">
+                    <div class="progress-label">
+                        <span>Level 3</span>
+                        <span>XP: 1,250/2,000</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 62.5%;"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="leaderboard">
+                <div class="leaderboard-header">
+                    <h3>Leaderboard Komunitas</h3>
+                    <span>Updated: 28 Juli 2025</span>
+                </div>
+                
+                <table class="leaderboard-table">
+                    <thead>
+                        <tr>
+                            <th width="50">#</th>
+                            <th>Anggota</th>
+                            <th>XP</th>
+                            <th>Token</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="rank-cell">1</td>
+                            <td class="user-cell">
+                                <div class="user-initial">A</div>
+                                <div>Ani</div>
+                            </td>
+                            <td>8,450</td>
+                            <td>2,350</td>
+                        </tr>
+                        <tr>
+                            <td class="rank-cell">2</td>
+                            <td class="user-cell">
+                                <div class="user-initial">B</div>
+                                <div>Budi</div>
+                            </td>
+                            <td>7,890</td>
+                            <td>2,100</td>
+                        </tr>
+                        <tr>
+                            <td class="rank-cell">3</td>
+                            <td class="user-cell">
+                                <div class="user-initial">C</div>
+                                <div>Cahyo</div>
+                            </td>
+                            <td>6,720</td>
+                            <td>1,890</td>
+                        </tr>
+                        <tr>
+                            <td class="rank-cell">48</td>
+                            <td class="user-cell">
+                                <div class="user-initial">U</div>
+                                <div>Anda</div>
+                            </td>
+                            <td>1,250</td>
+                            <td>350</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-title animate">
+                <h2>Tentang Komunitas Kami</h2>
+                <p>Mengubah sampah menjadi nilai melalui teknologi desentralisasi dan partisipasi masyarakat</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text animate">
+                    <p>Nyampah Bersama 2B adalah gerakan rakyat yang menyatukan sampah, nilai, dan teknologi. Didirikan pada 1 Juni 2025, kami percaya bahwa setiap orang bisa berkontribusi tanpa alat, tanpa modal, dan tanpa status tertentu.</p>
+                    <div class="vision-mission animate delay-1">
+                        <h3><i class="fas fa-bullseye"></i> Visi Kami</h3>
+                        <p>Membangun pusat riset berbasis rakyat, teknologi desentralisasi, dan aksi lingkungan.</p>
+                        <h3 class="mt-3"><i class="fas fa-tasks"></i> Misi Kami</h3>
+                        <p>Mengintegrasikan PoAV, 2BCycle, dan ekonomi sirkular ke dalam riset sosial-terapan.</p>
+                    </div>
+                </div>
+                <div class="about-image animate delay-2">
+                    <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80" alt="Komunitas Nyampah Bersama">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Section -->
+    <section id="research" class="research-section">
+        <div class="container">
+            <div class="section-title animate">
+                <h2>Riset & Publikasi</h2>
+                <p>Karya penelitian dan publikasi ilmiah komunitas kami</p>
+            </div>
+            
+            <div class="research-container">
+                <div class="research-card animate">
+                    <h3><i class="fab fa-orcid"></i> ORCID ID <span class="research-badge">Terintegrasi</span></h3>
+                    <p>Identitas peneliti digital yang memastikan karya Anda dikenali dan terhubung dengan penelitian Anda.</p>
+                    <p><strong>ID: 0009‑0003‑5705‑8107</strong></p>
+                    <a href="https://orcid.org/0009-0003-5705-8107" target="_blank" class="btn btn-primary mt-2">Lihat Profil ORCID</a>
+                </div>
+                
+                <div class="research-card animate delay-1">
+                    <h3><i class="fab fa-connectdevelop"></i> Zenodo Community <span class="research-badge">Aktif</span></h3>
+                    <p>Repositori penelitian terbuka untuk semua karya ilmiah komunitas kami.</p>
+                    <a href="https://zenodo.org/communities/nyampahbersama" target="_blank" class="btn btn-primary mt-2">Kunjungi Zenodo</a>
+                </div>
+                
+                <div class="research-card animate delay-2">
+                    <h3><i class="fab fa-ethereum"></i> Blockchain Research <span class="research-badge">Inovasi</span></h3>
+                    <p>Registri penelitian desentralisasi menggunakan teknologi blockchain dan Web3.</p>
+                    <p><strong>Wallet: 0x7Af07c98e1B47FD...36162</strong></p>
+                    <button class="wallet-connect mt-2">
+                        <i class="fab fa-ethereum"></i> Connect Wallet
+                    </button>
+                </div>
+            </div>
+            
+            <div class="section-title animate delay-1" style="margin-top: 60px;">
+                <h3>Publikasi Terbaru</h3>
+                <p>Karya penelitian yang telah dipublikasikan oleh komunitas kami</p>
+            </div>
+            
+            <table class="publications-table animate delay-2">
+                <thead>
+                    <tr>
+                        <th>Judul</th>
+                        <th>Penulis</th>
+                        <th>Tahun</th>
+                        <th>Platform</th>
+                        <th>DOI / CID</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Paradigma Baru</td>
+                        <td>Muhamad Oky, M.</td>
+                        <td>2025</td>
+                        <td>Zenodo</td>
+                        <td><a href="https://doi.org/10.5281/zenodo.15736119" target="_blank" class="doi-link">10.5281/zenodo.15736119</a></td>
+                    </tr>
+                    <tr>
+                        <td>Whitepaper 2BCycle & PoAV</td>
+                        <td>Oky & Nyampah Bersama</td>
+                        <td>2025</td>
+                        <td>IPFS</td>
+                        <td><a href="https://peach-absolute-quelea-879.mypinata.cloud/ipfs/bafkreihmp4xvifhw6gqebgyijizylsdlgomedq5qc22ulpc6dhraynjcry" target="_blank" class="doi-link">CID: bafkreih...jcry</a></td>
+                    </tr>
+                    <tr>
+                        <td>Proposal Hibah 2BCycle</td>
+                        <td>Oky</td>
+                        <td>2025</td>
+                        <td>IPFS</td>
+                        <td><a href="https://peach-absolute-quelea-879.mypinata.cloud/ipfs/bafkreig57lmqmkowj2vokkzvxqd3hefffwcrbzkzt53qchuj7a7rvhr5xq" target="_blank" class="doi-link">CID: bafkreig...hr5xq</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section id="values" class="values">
+        <div class="container">
+            <div class="section-title animate">
+                <h2>Nilai Inti 2BCycle</h2>
+                <p>Prinsip dasar yang memandu setiap aktivitas dan inisiatif komunitas kami</p>
+            </div>
+            <div class="values-grid">
+                <div class="value-card animate">
+                    <div class="value-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>BlockCycle</h3>
+                    <p>Penyimpanan nilai proses yang mencakup atensi, perilaku, tindakan kecil, pola pikir, dan niat melalui teknologi blockchain.</p>
+                </div>
+                <div class="value-card animate delay-1">
+                    <div class="value-icon">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <h3>BurnCycle</h3>
+                    <p>Transformasi hasil, nilai, dan penciptaan perubahan nyata dalam kehidupan masyarakat melalui proses daur ulang dan pemberdayaan.</p>
+                </div>
+                <div class="value-card animate delay-2">
+                    <div class="value-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Desentralisasi</h3>
+                    <p>Setiap anggota memiliki peran dan suara dalam pengambilan keputusan komunitas melalui sistem berbasis blockchain.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section id="programs" class="programs" style="background-color: #f8f9fa;">
+        <div class="container">
+            <div class="section-title animate">
+                <h2>Program Utama</h2>
+                <p>Inisiatif yang kami jalankan untuk menciptakan dampak nyata</p>
+            </div>
+            <div class="programs-container">
+                <div class="program-card animate">
+                    <div class="program-image">
+                        <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80" alt="Tokenisasi Aksi Lingkungan">
+                    </div>
+                    <div class="program-content">
+                        <h3>Tokenisasi Aksi Lingkungan</h3>
+                        <p>Mengubah kontribusi lingkungan menjadi token digital yang memiliki nilai ekonomi.</p>
+                    </div>
+                </div>
+                <div class="program-card animate delay-1">
+                    <div class="program-image">
+                        <img src="https://images.unsplash.com/photo-1583512603806-077998240c7a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80" alt="Edukasi Pengelolaan Sampah">
+                    </div>
+                    <div class="program-content">
+                        <h3>Edukasi Pengelolaan Sampah</h3>
+                        <p>Program edukasi masyarakat tentang teknik pengelolaan sampah yang efektif dan berkelanjutan.</p>
+                    </div>
+                </div>
+                <div class="program-card animate delay-2">
+                    <div class="program-image">
+                        <img src="https://images.unsplash.com/photo-1556761175-129418cb2dfe?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80" alt="Sistem Reward Blockchain">
+                    </div>
+                    <div class="program-content">
+                        <h3>Sistem Reward Berbasis Blockchain</h3>
+                        <p>Memberikan reward digital untuk setiap aksi positif melalui teknologi blockchain.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section id="impact" class="impact">
+        <div class="container">
+            <div class="section-title animate">
+                <h2>Dampak Nyata</h2>
+                <p>Kontribusi komunitas kami dalam menciptakan perubahan lingkungan dan sosial</p>
+            </div>
+            <div class="impact-stats">
+                <div class="stat-card animate">
+                    <div class="stat-number">5+ ton</div>
+                    <h3>Sampah Terkelola</h3>
+                    <p>Sampah yang berhasil dikelola dalam 1 bulan terakhir</p>
+                </div>
+                <div class="stat-card animate delay-1">
+                    <div class="stat-number">1000+</div>
+                    <h3>Anggota Aktif</h3>
+                    <p>Anggota komunitas yang aktif berkontribusi</p>
+                </div>
+                <div class="stat-card animate delay-2">
+                    <div class="stat-number">50+</div>
+                    <h3>Lokasi Daur Ulang</h3>
+                    <p>Pusat pengelolaan sampah berbasis komunitas</p>
+                </div>
+                <div class="stat-card animate delay-3">
+                    <div class="stat-number">10.000+</div>
+                    <h3>Token Diberikan</h3>
+                    <p>Token reward yang didistribusikan ke anggota</p>
+                </div>
+            </div>
+            
+            <div class="section-title animate">
+                <h3>Testimoni Anggota</h3>
+                <p>Dengar langsung dari mereka yang telah merasakan manfaat bergabung dengan komunitas kami</p>
+            </div>
+            <div class="testimonials-container">
+                <div class="testimonial animate">
+                    <div class="testimonial-content">
+                        <p>"Awalnya saya hanya iseng mengumpulkan sampah plastik di sekitar rumah, tapi setelah bergabung dengan komunitas ini dan melihat XP saya bertambah, jadi ketagihan! Sekarang keluarga saya ikut terlibat."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">A</div>
+                        <div>
+                            <h4>Ani</h4>
+                            <p>Anggota sejak Juli 2025</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial animate delay-1">
+                    <div class="testimonial-content">
+                        <p>"Token yang saya dapatkan dari aktivitas mengumpulkan sampah sudah bisa ditukar dengan voucher belanja. Sangat memotivasi untuk terus berkontribusi pada lingkungan!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">B</div>
+                        <div>
+                            <h4>Budi</h4>
+                            <p>Anggota sejak Juni 2025</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roadmap Section -->
+    <section id="roadmap" class="roadmap" style="background-color: #f8f9fa;">
+        <div class="container">
+            <div class="section-title animate">
+                <h2>Roadmap Pengembangan</h2>
+                <p>Rencana strategis dan pengembangan komunitas ke depan</p>
+            </div>
+            
+            <div class="roadmap-container">
+                <div class="roadmap-card completed">
+                    <h3><i class="fas fa-check-circle"></i> Pendirian Komunitas</h3>
+                    <p>Deklarasi komunitas dan pembentukan struktur dasar</p>
+                    <p><strong>Juni 2025</strong></p>
+                </div>
+                
+                <div class="roadmap-card in-progress">
+                    <h3><i class="fas fa-sync-alt"></i> Integrasi ORCID</h3>
+                    <p>Memasukkan publikasi ke ORCID dan implementasi API</p>
+                    <p><strong>Juli 2025</strong></p>
+                </div>
+                
+                <div class="roadmap-card in-progress">
+                    <h3><i class="fas fa-sync-alt"></i> Survei Uni Eropa</h3>
+                    <p>Partisipasi dalam program riset Uni Eropa</p>
+                    <a href="https://ec.europa.eu/eusurvey/runner/d9508257-4c05-4109-74d8-cac7c261a9a6" target="_blank" class="btn btn-primary mt-2">Ikuti Survei</a>
+                </div>
+                
+                <div class="roadmap-card planned">
+                    <h3><i class="fas fa-flag"></i> Pengajuan Hibah</h3>
+                    <p>Submission grant ke Horizon, Gitcoin, dan UNDP</p>
+                    <p><strong>Q4 2025</strong></p>
+                </div>
+                
+                <div class="roadmap-card planned">
+                    <h3><i class="fas fa-coins"></i> NFT Identitas</h3>
+                    <p>Peluncuran NFT identitas komunitas dan dokumen ilmiah</p>
+                    <p><strong>Q1 2026</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <div class="section-title animate">
+                <h2>Pertanyaan Umum</h2>
+                <p>Temukan jawaban untuk pertanyaan yang sering diajukan</p>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item animate">
+                    <div class="faq-question">
+                        Bagaimana cara bergabung dengan komunitas?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Anda dapat bergabung dengan komunitas kami dengan mendaftar melalui form pendaftaran di halaman "Bergabung". Setelah mendaftar, Anda akan mendapatkan akses ke dashboard anggota dan dapat mulai berkontribusi.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item animate delay-1">
+                    <div class="faq-question">
+                        Apa itu PoAV dan 2BCycle?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>PoAV (Proof of Attentive Value) adalah sistem yang menghargai atensi dan kontribusi anggota. 2BCycle adalah model ekonomi sirkular berbasis blockchain yang mengubah sampah menjadi nilai ekonomi.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item animate delay-2">
+                    <div class="faq-question">
+                        Bagaimana cara mendapatkan token?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Token dapat diperoleh dengan melakukan berbagai aksi lingkungan seperti mengumpulkan sampah, mendaur ulang, berpartisipasi dalam riset, dan mengedukasi masyarakat. Setiap aksi akan memberikan XP dan token sesuai dengan kontribusi.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item animate delay-3">
+                    <div class="faq-question">
+                        Apa kegunaan token yang saya dapatkan?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Token dapat digunakan untuk berbagai keperluan seperti: menukar dengan voucher belanja, mengakses fasilitas komunitas, berpartisipasi dalam pengambilan keputusan, dan mendapatkan akses ke penelitian eksklusif.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery" style="background-color: var(--light);">
+        <div class="container">
+            <div class="section-title animate">
+                <h2>Galeri Dokumentasi</h2>
+                <p>Kegiatan dan pencapaian komunitas kami</p>
+            </div>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item animate">
+                    <img src="https://images.unsplash.com/photo-1603575448878-868a20723f5d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80" alt="Kegiatan Pengumpulan Sampah">
+                    <div class="gallery-caption">
+                        Kegiatan Pengumpulan Sampah - Juni 2025
+                    </div>
+                </div>
+                
+                <div class="gallery-item animate delay-1">
+                    <img src="https://images.unsplash.com/photo-1596466596120-2a8e4b5d7a0e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80" alt="Workshop Daur Ulang">
+                    <div class="gallery-caption">
+                        Workshop Daur Ulang - Mei 2025
+                    </div>
+                </div>
+                
+                <div class="gallery-item animate delay-2">
+                    <img src="https://images.unsplash.com/photo-1527525443983-6e60c75fff46?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80" alt="Pelatihan Blockchain">
+                    <div class="gallery-caption">
+                        Pelatihan Blockchain - April 2025
+                    </div>
+                </div>
+                
+                <div class="gallery-item animate delay-3">
+                    <img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80" alt="Penghargaan Komunitas">
+                    <div class="gallery-caption">
+                        Penghargaan Komunitas - Maret 2025
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Join Section -->
+    <section id="join" class="join">
+        <div class="container">
+            <div class="join-container animate">
+                <h2>Bergabung Dengan Revolusi Lingkungan Berbasis Teknologi</h2>
+                <p>Mari menjadi bagian dari perubahan yang memberikan nilai pada setiap aksi positif Anda. Dapatkan akses ke portal komunitas, NFT bukti aksi, dan sistem reward berbasis blockchain.</p>
+                <div class="cta-buttons">
+                    <a href="#" class="btn btn-primary" id="registerBtn">Daftar Sekarang</a>
+                    <a href="https://zenodo.org/communities/nyampahbersama" target="_blank" class="btn btn-secondary">Lihat Riset Kami</a>
+                </div>
+                
+                <div class="eu-badge">
+                    <i class="fas fa-star"></i> Didukung oleh European Union
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Nyampah Bersama 2BCycle</h3>
+                    <p>Komunitas riset desentralisasi yang mengintegrasikan teknologi Web3 dengan aksi lingkungan untuk menciptakan ekonomi sirkular berkelanjutan.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-discord"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Navigasi</h3>
+                    <ul class="footer-links">
+                        <li><a href="#about">Tentang Kami</a></li>
+                        <li><a href="#research">Riset</a></li>
+                        <li><a href="#values">Nilai Inti</a></li>
+                        <li><a href="#programs">Program Utama</a></li>
+                        <li><a href="#impact">Dampak</a></li>
+                        <li><a href="#roadmap">Roadmap</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#gallery">Galeri</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Sumber Daya</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://zenodo.org/communities/nyampahbersama" target="_blank"><i class="fas fa-external-link-alt"></i> Zenodo Community</a></li>
+                        <li><a href="https://ec.europa.eu/eusurvey/runner/d9508257-4c05-4109-74d8-cac7c261a9a6" target="_blank"><i class="fas fa-poll"></i> Survei Uni Eropa</a></li>
+                        <li><a href="#"><i class="fas fa-file-alt"></i> Whitepaper</a></li>
+                        <li><a href="#"><i class="fas fa-book"></i> Dokumentasi Teknis</a></li>
+                        <li><a href="#faq"><i class="fas fa-question-circle"></i> Glosarium</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Kontak</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> Lokasi Kantor: 6P962QW7+25</li>
+                        <li><i class="fas fa-phone"></i> Telepon/WA: 0831-7782-8139</li>
+                        <li><i class="fas fa-envelope"></i> Email: admin@nyampahbersama.com</li>
+                        <li><i class="fas fa-wallet"></i> Wallet: 0x7Af07c98e1B47FD...36162</li>
+                        <li><i class="fab fa-orcid"></i> ORCID: 0009-0003-5705-8107</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2025 Nyampah Bersama 2BCycle. Semua konten dilindungi di bawah lisensi CC-BY-NC-SA dan didokumentasikan di blockchain melalui IPFS.</p>
+                <p>Didukung oleh European Union</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('.nav-menu').classList.toggle('active');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                document.querySelector('.nav-menu').classList.remove('active');
+            });
+        });
+        
+        // Animation on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        document.querySelectorAll('.section-title, .about-content > *, .values-grid > *, .programs-container > *, .impact-stats > *, .testimonials-container > *, .join-container, .research-container > *, .publications-table, .roadmap-card, .faq-item, .gallery-item').forEach(el => {
+            observer.observe(el);
+        });
+        
+        // Modal functionality
+        const modal = document.getElementById('euSurveyModal');
+        const loginBtn = document.getElementById('loginEuSurveyBtn');
+        const closeModal = document.querySelector('.close-modal');
+        const cancelBtn = document.getElementById('cancelLogin');
+        const euSurveyForm = document.getElementById('euSurveyForm');
+        
+        loginBtn.addEventListener('click', () => {
+            modal.style.display = 'flex';
+        });
+        
+        closeModal.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+        
+        cancelBtn.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+        
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+        
+        // Form submission
+        euSurveyForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const wallet = document.getElementById('wallet').value;
+            
+            // Save user data to localStorage
+            const userData = {
+                email,
+                wallet,
+                joinDate: new Date().toLocaleDateString('id-ID', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                }),
+                name: email.split('@')[0],
+                xp: 1250,
+                tokens: 350,
+                actions: 27
+            };
+            
+            localStorage.setItem('euSurveyUser', JSON.stringify(userData));
+            
+            // Update UI
+            updateDashboard(userData);
+            
+            // Hide modal
+            modal.style.display = 'none';
+            
+            alert('Login berhasil! Dashboard anggota sekarang tersedia.');
+        });
+        
+        // Dashboard functionality
+        function updateDashboard(userData) {
+            document.getElementById('dashboard').style.display = 'block';
+            document.getElementById('userName').textContent = userData.name;
+            document.getElementById('userAvatar').textContent = userData.name.charAt(0).toUpperCase();
+            document.getElementById('joinDate').textContent = userData.joinDate;
+            document.getElementById('userWallet').textContent = userData.wallet;
+            document.getElementById('userXP').textContent = userData.xp.toLocaleString();
+            document.getElementById('userTokens').textContent = userData.tokens;
+            document.getElementById('userActions').textContent = userData.actions;
+            
+            // Calculate rank based on XP
+            const rank = Math.floor(Math.random() * 100) + 1;
+            document.getElementById('userRank').textContent = `#${rank}`;
+        }
+        
+        // Check if user is already logged in
+        const savedUser = localStorage.getItem('euSurveyUser');
+        if (savedUser) {
+            const userData = JSON.parse(savedUser);
+            updateDashboard(userData);
+        }
+        
+        // FAQ functionality
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            
+            question.addEventListener('click', () => {
+                item.classList.toggle('active');
+                
+                const icon = question.querySelector('i');
+                if (item.classList.contains('active')) {
+                    icon.classList.remove('fa-chevron-down');
+                    icon.classList.add('fa-chevron-up');
+                } else {
+                    icon.classList.remove('fa-chevron-up');
+                    icon.classList.add('fa-chevron-down');
+                }
+            });
+        });
+        
+        // Wallet connect simulation
+        const walletConnectBtn = document.querySelector('.wallet-connect');
+        walletConnectBtn.addEventListener('click', () => {
+            walletConnectBtn.innerHTML = '<i class="fab fa-ethereum"></i> Connected';
+            walletConnectBtn.style.background = '#27ae60';
+            alert('Wallet connected! Address: 0x7Af07c98e1B47FD...36162');
+        });
+        
+        // Register button
+        document.getElementById('registerBtn').addEventListener('click', (e) => {
+            e.preventDefault();
+            alert('Form pendaftaran akan segera tersedia! Silakan coba lagi nanti.');
+        });
+    </script>
+</body>
+</html>
