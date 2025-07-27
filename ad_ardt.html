@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AD/ART Komunitas Nyampah Bersama - Standar Uni Eropa</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --eu-blue: #004494;
+            --eu-yellow: #FFCC00;
+            --eu-dark: #003082;
+            --eco-green: #27ae60;
+            --eco-light: #2ecc71;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --gray: #95a5a6;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            color: #333;
+            line-height: 1.6;
+            padding-bottom: 50px;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            color: var(--eu-dark);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--eco-green), var(--eu-blue));
+            color: white;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo-icon {
+            font-size: 2rem;
+            color: var(--eu-yellow);
+        }
+        
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+        
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 8px 12px;
+            border-radius: 5px;
+        }
+        
+        .nav-menu a:hover {
+            background-color: rgba(255,255,255,0.2);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(39, 174, 96, 0.9), rgba(0, 68, 148, 0.9)), url('https://images.unsplash.com/photo-1606787366850-de6330128bfc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            color: white;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        .eu-badges {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .eu-badge {
+            background: rgba(255,255,255,0.2);
+            border-radius: 20px;
+            padding: 8px 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+        }
+        
+        /* AD/ART Section */
+        .adart-section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--eco-green);
+            border-radius: 2px;
+        }
+        
+        .section-title p {
+            color: var(--gray);
+            max-width: 700px;
+            margin: 20px auto 0;
+        }
+        
+        .adart-container {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+        
+        .adart-chapter {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-left: 5px solid var(--eco-green);
+        }
+        
+        .chapter-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .chapter-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--eu-yellow);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--eu-blue);
+            font-size: 1.5rem;
+        }
+        
+        .chapter-title {
+            font-size: 1.8rem;
+            color: var(--eu-blue);
+        }
+        
+        .chapter-content {
+            padding-left: 20px;
+        }
+        
+        .article {
+            margin-bottom: 30px;
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            position: relative;
+        }
+        
+        .article:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 4px;
+            background-color: var(--eco-green);
+            border-radius: 2px;
+        }
+        
+        .article-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .article-number {
+            background: var(--eu-blue);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        
+        .article-title {
+            font-size: 1.4rem;
+            color: var(--eu-dark);
+        }
+        
+        .article-content {
+            padding-left: 40px;
+        }
+        
+        .article-content h4 {
+            color: var(--eco-green);
+            margin: 15px 0 10px;
+            font-size: 1.1rem;
+        }
+        
+        .article-content ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .article-content li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .article-content li:before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--eco-green);
+            font-weight: bold;
+        }
+        
+        .important-note {
+            background: #e3f2fd;
+            border-left: 4px solid var(--eu-blue);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .note-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+            color: var(--eu-blue);
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--eu-dark), #002b6b);
+            color: white;
+            padding: 60px 0 30px;
+            margin-top: 60px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            color: var(--eu-yellow);
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: var(--light);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--eu-yellow);
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255,255,255,0.1);
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--eu-yellow);
+            color: var(--eu-dark);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: var(--eu-yellow);
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--eu-dark);
+                flex-direction: column;
+                padding: 20px;
+                gap: 10px;
+            }
+            
+            .nav-menu.active {
+                display: flex;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero {
+                padding: 80px 0;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .chapter-header {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate {
+            animation: fadeIn 0.8s ease forwards;
+        }
+        
+        .delay-1 {
+            animation-delay: 0.2s;
+        }
+        
+        .delay-2 {
+            animation-delay: 0.4s;
+        }
+        
+        .delay-3 {
+            animation-delay: 0.6s;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-recycle"></i>
+                </div>
+                <div class="logo-text">Nyampah Bersama</div>
+            </div>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="#hierarchy"><i class="fas fa-sitemap"></i> Struktur</a></li>
+                <li><a href="#positions"><i class="fas fa-briefcase"></i> Jabatan</a></li>
+                <li><a href="#adart"><i class="fas fa-file-alt"></i> AD/ART</a></li>
+                <li><a href="#principles"><i class="fas fa-balance-scale"></i> Prinsip</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="animate">AD/ART Komunitas Nyampah Bersama</h1>
+            <p class="animate delay-1">Anggaran Dasar dan Anggaran Rumah Tangga dengan standar tata kelola Uni Eropa untuk komunitas lingkungan berkelanjutan</p>
+            
+            <div class="eu-badges animate delay-2">
+                <div class="eu-badge">
+                    <i class="fas fa-leaf"></i> Berkelanjutan
+                </div>
+                <div class="eu-badge">
+                    <i class="fas fa-shield-alt"></i> Transparan
+                </div>
+                <div class="eu-badge">
+                    <i class="fas fa-handshake"></i> Partisipatif
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AD/ART Section -->
+    <section id="adart" class="adart-section">
+        <div class="container">
+            <div class="section-title animate">
+                <h2>Anggaran Dasar dan Anggaran Rumah Tangga</h2>
+                <p>Dokumen resmi yang mengatur tata kelola, hak, dan kewajiban anggota Komunitas "Nyampah Bersama"</p>
+            </div>
+            
+            <div class="adart-container">
+                <!-- Bab Keanggotaan -->
+                <div class="adart-chapter animate">
+                    <div class="chapter-header">
+                        <div class="chapter-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 class="chapter-title">Bab III: Keanggotaan</h3>
+                    </div>
+                    
+                    <div class="chapter-content">
+                        <!-- Pasal Jenis Keanggotaan -->
+                        <div class="article">
+                            <div class="article-header">
+                                <div class="article-number">1</div>
+                                <h4 class="article-title">Pasal 1: Jenis Keanggotaan</h4>
+                            </div>
+                            <div class="article-content">
+                                <ul>
+                                    <li><strong>Anggota Umum</strong>: Setiap individu yang terdaftar secara resmi sebagai anggota komunitas "Nyampah Bersama" dan memiliki hak serta kewajiban dasar.</li>
+                                    <li><strong>Anggota Aktif</strong>: Anggota Umum yang secara sukarela dan konsisten berpartisipasi dalam program dan kegiatan komunitas, serta berkontribusi nyata dalam pencapaian tujuan.</li>
+                                    <li><strong>Pengurus</strong>: Anggota Aktif yang diberi amanah untuk menempati posisi dalam struktur hierarki komunitas melalui mekanisme pemilihan atau penunjukan.</li>
+                                    <li><strong>Dewan Pengawas / Komite Etik</strong>: Anggota senior atau individu yang ditunjuk/dipilih berdasarkan kualifikasi khusus untuk melakukan fungsi pengawasan dan menjaga integritas serta etika komunitas.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- Pasal Syarat Keanggotaan -->
+                        <div class="article">
+                            <div class="article-header">
+                                <div class="article-number">2</div>
+                                <h4 class="article-title">Pasal 2: Syarat Keanggotaan</h4>
+                            </div>
+                            <div class="article-content">
+                                <h4>Syarat Umum (Untuk Anggota Umum):</h4>
+                                <ul>
+                                    <li>Warga Negara Indonesia (atau warga negara lain dengan izin tinggal sah di wilayah operasional)</li>
+                                    <li>Berusia minimal 17 tahun</li>
+                                    <li>Memiliki ketertarikan dan kepedulian terhadap isu lingkungan, pengelolaan sampah, dan ekonomi sirkular</li>
+                                    <li>Bersedia mendukung visi, misi, dan tujuan Komunitas "Nyampah Bersama"</li>
+                                    <li>Mengisi formulir pendaftaran anggota yang disediakan oleh komunitas</li>
+                                    <li>Menyetujui dan berkomitmen untuk mematuhi seluruh ketentuan AD/ART, Kode Etik Komunitas, serta Kebijakan Perlindungan Data Pribadi yang berlaku</li>
+                                </ul>
+                                
+                                <h4>Syarat Tambahan untuk Anggota Aktif:</h4>
+                                <ul>
+                                    <li>Telah terdaftar sebagai Anggota Umum minimal 3 bulan</li>
+                                    <li>Secara sukarela mengajukan diri atau direkomendasikan untuk terlibat dalam kegiatan operasional komunitas</li>
+                                    <li>Menunjukkan komitmen dan partisipasi aktif dalam kegiatan komunitas</li>
+                                </ul>
+                                
+                                <h4>Syarat Tambahan untuk Pengurus:</h4>
+                                <ul>
+                                    <li>Telah terdaftar sebagai Anggota Aktif minimal 6 bulan</li>
+                                    <li>Memiliki integritas, kepemimpinan, dan komitmen tinggi terhadap komunitas</li>
+                                    <li>Mampu bekerja sama dalam tim dan memiliki keterampilan relevan</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- Pasal Hak Anggota -->
+                        <div class="article">
+                            <div class="article-header">
+                                <div class="article-number">3</div>
+                                <h4 class="article-title">Pasal 3: Hak Anggota</h4>
+                            </div>
+                            <div class="article-content">
+                                <h4>Hak Anggota Umum:</h4>
+                                <ul>
+                                    <li>Mengikuti kegiatan dan program yang diselenggarakan oleh komunitas</li>
+                                    <li>Memperoleh informasi yang transparan dan akuntabel mengenai kegiatan dan keuangan komunitas</li>
+                                    <li>Memberikan usulan, saran, kritik, dan masukan yang konstruktif untuk kemajuan komunitas</li>
+                                    <li>Memiliki hak suara dalam pemilihan pengurus sesuai ketentuan</li>
+                                </ul>
+                                
+                                <h4>Hak Anggota Aktif:</h4>
+                                <ul>
+                                    <li>Semua hak Anggota Umum</li>
+                                    <li>Berhak dipilih dan memilih dalam proses pemilihan pengurus</li>
+                                    <li>Mendapatkan prioritas dalam mengikuti pelatihan atau program pengembangan</li>
+                                </ul>
+                                
+                                <h4>Hak Pengurus:</h4>
+                                <ul>
+                                    <li>Semua hak Anggota Aktif</li>
+                                    <li>Mendapatkan delegasi wewenang dan sumber daya yang diperlukan untuk menjalankan tugas</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- Pasal Kewajiban Anggota -->
+                        <div class="article">
+                            <div class="article-header">
+                                <div class="article-number">4</div>
+                                <h4 class="article-title">Pasal 4: Kewajiban Anggota</h4>
+                            </div>
+                            <div class="article-content">
+                                <h4>Kewajiban Umum Seluruh Anggota:</h4>
+                                <ul>
+                                    <li>Mematuhi dan melaksanakan seluruh ketentuan AD/ART, Kode Etik Komunitas, Kebijakan Perlindungan Data Pribadi, dan peraturan lainnya</li>
+                                    <li>Menjaga nama baik, citra, dan reputasi Komunitas "Nyampah Bersama"</li>
+                                    <li>Menjunjung tinggi nilai-nilai komunitas: integritas, transparansi, akuntabilitas, non-diskriminasi, inklusivitas, dan keberlanjutan</li>
+                                    <li>Berpartisipasi aktif dalam kegiatan dan program komunitas sesuai dengan kemampuannya</li>
+                                </ul>
+                                
+                                <h4>Kewajiban Tambahan Anggota Aktif & Pengurus:</h4>
+                                <ul>
+                                    <li>Melaksanakan tugas dan tanggung jawab sesuai dengan peran atau jabatannya dengan penuh dedikasi</li>
+                                    <li>Berkoordinasi secara efektif dengan sesama pengurus dan anggota lain</li>
+                                    <li>Melaporkan setiap potensi konflik kepentingan yang mungkin timbul</li>
+                                </ul>
+                                
+                                <div class="important-note">
+                                    <div class="note-title">
+                                        <i class="fas fa-info-circle"></i>
+                                        <strong>Catatan Penting</strong>
+                                    </div>
+                                    <p>Setiap anggota wajib memahami dan menerapkan prinsip ekonomi sirkular dalam kegiatan komunitas serta berpartisipasi aktif dalam program daur ulang dan pengurangan sampah.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Bab Berakhirnya Keanggotaan -->
+                <div class="adart-chapter animate delay-1">
+                    <div class="chapter-header">
+                        <div class="chapter-icon">
+                            <i class="fas fa-user-times"></i>
+                        </div>
+                        <h3 class="chapter-title">Bab IV: Berakhirnya Keanggotaan</h3>
+                    </div>
+                    
+                    <div class="chapter-content">
+                        <!-- Pasal Sebab-Sebab Berakhirnya Keanggotaan -->
+                        <div class="article">
+                            <div class="article-header">
+                                <div class="article-number">1</div>
+                                <h4 class="article-title">Pasal 1: Sebab-Sebab Berakhirnya Keanggotaan</h4>
+                            </div>
+                            <div class="article-content">
+                                <p>Keanggotaan dalam Komunitas "Nyampah Bersama" akan berakhir karena salah satu sebab berikut:</p>
+                                
+                                <ul>
+                                    <li><strong>Mengundurkan Diri</strong>: Anggota mengajukan permohonan pengunduran diri secara tertulis dan disetujui oleh pengurus inti. Pengunduran diri efektif setelah 7 hari sejak permohonan diterima dan semua kewajiban telah diselesaikan.</li>
+                                    <li><strong>Meninggal Dunia</strong>: Keanggotaan secara otomatis berakhir.</li>
+                                    <li><strong>Diberhentikan (Pemecatan)</strong>: Anggota dapat diberhentikan berdasarkan keputusan Dewan Pengawas/Komite Etik dan/atau Rapat Pengurus dengan alasan sebagai berikut:
+                                        <ul>
+                                            <li>Melanggar ketentuan AD/ART, Kode Etik Komunitas, atau peraturan komunitas lainnya secara serius</li>
+                                            <li>Melakukan tindakan yang mencemarkan nama baik Komunitas "Nyampah Bersama" atau merugikan kepentingan komunitas</li>
+                                            <li>Terlibat dalam tindak pidana atau pelanggaran hukum yang telah memiliki putusan hukum tetap</li>
+                                            <li>Tidak aktif dalam jangka waktu 1 tahun tanpa alasan yang jelas dan sah</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- Pasal Prosedur Pemberhentian Anggota -->
+                        <div class="article">
+                            <div class="article-header">
+                                <div class="article-number">2</div>
+                                <h4 class="article-title">Pasal 2: Prosedur Pemberhentian Anggota</h4>
+                            </div>
+                            <div class="article-content">
+                                <ul>
+                                    <li>Setiap usulan pemberhentian anggota harus diajukan secara tertulis kepada Dewan Pengawas/Komite Etik atau Ketua Komunitas dengan menyertakan bukti-bukti yang relevan.</li>
+                                    <li>Dewan Pengawas/Komite Etik atau pengurus yang berwenang akan melakukan investigasi atau verifikasi terhadap laporan/usulan tersebut.</li>
+                                    <li>Anggota yang bersangkutan akan diberikan kesempatan untuk memberikan klarifikasi atau pembelaan diri secara tertulis atau lisan dalam forum yang ditetapkan.</li>
+                                    <li>Berdasarkan hasil investigasi dan klarifikasi, Dewan Pengawas/Komite Etik akan memberikan rekomendasi kepada Rapat Pengurus.</li>
+                                    <li>Keputusan pemberhentian akan ditetapkan dalam Rapat Pengurus atau Rapat Anggota Luar Biasa.</li>
+                                    <li>Keputusan pemberhentian bersifat final dan akan diberitahukan secara tertulis kepada anggota yang bersangkutan.</li>
+                                </ul>
+                                
+                                <div class="important-note">
+                                    <div class="note-title">
+                                        <i class="fas fa-exclamation-triangle"></i>
+                                        <strong>Prinsip Keadilan</strong>
+                                    </div>
+                                    <p>Setiap proses pemberhentian harus memenuhi prinsip keadilan prosedural Uni Eropa, termasuk hak untuk didengar dan hak untuk membela diri sebelum keputusan akhir diambil.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Pasal Hak Anggota yang Diberhentikan -->
+                        <div class="article">
+                            <div class="article-header">
+                                <div class="article-number">3</div>
+                                <h4 class="article-title">Pasal 3: Hak Anggota yang Diberhentikan</h4>
+                            </div>
+                            <div class="article-content">
+                                <ul>
+                                    <li>Anggota yang diberhentikan kehilangan seluruh hak keanggotaannya dan tidak berhak lagi mengatasnamakan Komunitas "Nyampah Bersama".</li>
+                                    <li>Anggota yang diberhentikan tetap wajib menyelesaikan kewajiban finansial atau pengembalian aset komunitas (jika ada).</li>
+                                    <li>Anggota yang diberhentikan memiliki hak untuk mengajukan banding kepada Dewan Pengawas/Komite Etik dalam waktu 14 hari setelah menerima surat keputusan pemberhentian, jika terdapat bukti baru yang relevan atau prosedur yang tidak sesuai.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Bab Prinsip Dasar -->
+                <div class="adart-chapter animate delay-2">
+                    <div class="chapter-header">
+                        <div class="chapter-icon">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                        <h3 class="chapter-title">Bab V: Prinsip Dasar Komunitas</h3>
+                    </div>
+                    
+                    <div class="chapter-content">
+                        <div class="article">
+                            <div class="article-content">
+                                <ul>
+                                    <li><strong>Keberlanjutan Lingkungan</strong>: Setiap kegiatan dan keputusan harus mempertimbangkan dampak lingkungan dan mendukung prinsip ekonomi sirkular.</li>
+                                    <li><strong>Transparansi Uni Eropa</strong>: Semua proses pengambilan keputusan dan keuangan terbuka untuk diawasi oleh anggota sesuai standar tata kelola Uni Eropa.</li>
+                                    <li><strong>Partisipasi Aktif</strong>: Anggota didorong untuk berpartisipasi aktif dalam program daur ulang, pengurangan sampah, dan edukasi lingkungan.</li>
+                                    <li><strong>Inklusivitas</strong>: Komunitas terbuka bagi semua kalangan tanpa memandang latar belakang sosial, ekonomi, atau pendidikan.</li>
+                                    <li><strong>Akuntabilitas</strong>: Setiap pengurus bertanggung jawab atas keputusan dan tindakan mereka kepada anggota.</li>
+                                </ul>
+                                
+                                <div class="important-note">
+                                    <div class="note-title">
+                                        <i class="fas fa-recycle"></i>
+                                        <strong>Komitmen Lingkungan</strong>
+                                    </div>
+                                    <p>Setiap anggota berkomitmen untuk menerapkan prinsip 3R (Reduce, Reuse, Recycle) dalam kehidupan sehari-hari dan kegiatan komunitas, serta mendukung program zero waste yang diinisiasi oleh "Nyampah Bersama".</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Nyampah Bersama</h3>
+                    <p>Komunitas lingkungan yang berfokus pada pengelolaan sampah berkelanjutan dan ekonomi sirkular dengan standar tata kelola Uni Eropa</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Navigasi</h3>
+                    <ul class="footer-links">
+                        <li><a href="#hierarchy">Struktur Hierarki</a></li>
+                        <li><a href="#positions">Jabatan Tersedia</a></li>
+                        <li><a href="#adart">AD/ART Komunitas</a></li>
+                        <li><a href="#principles">Prinsip Tata Kelola</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Dokumen</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">AD/ART Lengkap</a></li>
+                        <li><a href="#">Kebijakan Perlindungan Data</a></li>
+                        <li><a href="#">Panduan Tata Kelola EU</a></li>
+                        <li><a href="#">Kode Etik Komunitas</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Kontak</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-envelope"></i> info@nyampahbersama.org</li>
+                        <li><i class="fas fa-phone"></i> +62 21 1234 5678</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Jakarta, Indonesia</li>
+                        <li><i class="fas fa-globe-asia"></i> www.nyampahbersama.org</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2023 Komunitas Lingkungan "Nyampah Bersama". Semua hak dilindungi dengan standar tata kelola Uni Eropa dan prinsip keberlanjutan lingkungan.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('.nav-menu').classList.toggle('active');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                document.querySelector('.nav-menu').classList.remove('active');
+            });
+        });
+        
+        // Animation on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        document.querySelectorAll('.section-title, .adart-chapter, .article').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
