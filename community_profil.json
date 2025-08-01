@@ -1,0 +1,418 @@
+{
+  "community_profile": {
+    "official_name": "Nyampah Bersama",
+    "founding_year": 2023,
+    "headquarters": "Palembang, Indonesia",
+    "field_of_activity": [
+      "Pengelolaan Sampah",
+      "Edukasi Lingkungan",
+      "Teknologi Sosial",
+      "Ekonomi Kerakyatan"
+    ],
+    "legal_status": "Gerakan Masyarakat Sipil",
+    "core_philosophy": "Mengubah sampah menjadi emas, kehidupan menjadi nilai",
+    "tagline": "Kutemani Nyampahmu Sampai Tua",
+    "digital_identity": {
+      "official_wallet": "0x7Af07c98efB47FD928E5e761B7477074DD536162",
+      "orcid_community": "0009-0003-5705-8107",
+      "eu_registration_id": "E10404020"
+    }
+  },
+
+  "founder_leadership": {
+    "name": "Muhamad Oky Muhisin",
+    "role": "Pendiri & Manajer Komunitas",
+    "contact": {
+      "address": "JL Talang Keramat, 30151 Palembang, Sumatera Selatan",
+      "phone": "+62 831-7782-8139",
+      "email": "admin@nyampahbersama.com",
+      "linktree": "linktr.ee/nyampahbersama"
+    },
+    "digital_identities": {
+      "tax_id": "397576190016000",
+      "orcid": "0009-0003-5705-8107",
+      "eu_login_id": "n00jcclv",
+      "professional_profiles": {
+        "linkedin": "linkedin.com/in/oky-muhlisin",
+        "researchgate": "researchgate.net/profile/Muhamad-Oky-Muhlisin",
+        "github": "github.com/okymuhlisin",
+        "zenodo": "zenodo.org/authors/muhamad-oky-muhlisin"
+      }
+    }
+  },
+
+  "mission_vision": {
+    "vision": "Membangun pusat penelitian terkemuka yang digerakkan komunitas, berfokus pada teknologi terdesentralisasi dan aksi lingkungan",
+    "mission": "Mengintegrasikan Proof of Attention Value (PoAV), Kerangka Kerja 2BCycle, dan prinsip ekonomi sirkular ke dalam penelitian sosial terapan",
+    "core_principles": ["Inklusivitas", "Keberlanjutan", "Pemberdayaan Teknologi"]
+  },
+
+  "operational_framework": {
+    "2bcycle_system": {
+      "blockcycle": {
+        "definition": "Fase penjagaan nilai dan verifikasi proses limbah organik",
+        "process": [
+          "Identifikasi dan pemisahan sisa dapur",
+          "Penyimpanan 3-7 hari",
+          "Pencatatan digital sebagai aset",
+          "Pembentukan Proof of Clean Act (PoCA)"
+        ],
+        "philosophy": "Melihat sampah sebagai aset yang membutuhkan pemeliharaan"
+      },
+      "burncycle": {
+        "definition": "Transformasi nilai limbah menjadi aset digital",
+        "process": [
+          "Verifikasi penyelesaian BlockCycle",
+          "Aksi akhir (pengomposan, panen maggot)",
+          "Pencatatan data digital",
+          "Perhitungan dan distribusi reward (NFT, token)",
+          "Fungsi burn untuk stabilisasi nilai token"
+        ],
+        "smart_contracts": ["BurnCycleDEX.sol", "BlockVerifier.sol", "PoCA.sol"]
+      },
+      "poav": {
+        "definition": "Proof of Attention Value - Mekanisme penghargaan aksi nyata",
+        "value_formula": "Nilai = (QAV × T × F)",
+        "components": {
+          "QAV": "Quantum of Attention Value (nilai unit terkecil aksi)",
+          "T": "Total Score (kuantitas, dampak sosial, validasi bukti, konteks)",
+          "F": "Factor Multiplier (berdasarkan level kontributor)"
+        }
+      }
+    },
+    "tokenomics": {
+      "token_name": "NyampahCoin",
+      "standard": "ERC-20",
+      "utility": [
+        "Reward untuk aksi lingkungan",
+        "Akses ke layanan komunitas",
+        "Pertukaran dengan produk/pulsa"
+      ],
+      "distribution_mechanism": "Melalui verifikasi BurnCycle"
+    },
+    "tech_stack": {
+      "web3_integration": {
+        "nft_mini_apps": "HTML-Based NFT Mini-Apps di IPFS",
+        "account_abstraction": "ERC-4337 Smart Contract Accounts",
+        "decentralized_storage": "IPFS/Arweave untuk DApp frontend dan metadata NFT"
+      },
+      "serverless_backend": "Edge Functions untuk verifikasi data dan integrasi API"
+    }
+  },
+
+  "key_initiatives": [
+    {
+      "name": "Akademi Nyampah",
+      "type": "Sistem pendidikan akar rumput",
+      "focus": "Literasi lingkungan dan digital"
+    },
+    {
+      "name": "2BCycle Framework",
+      "components": ["BlockCycle", "BurnCycle"],
+      "purpose": "Integrasi ekonomi perilaku dan teknologi terdesentralisasi"
+    },
+    {
+      "name": "Paspor Sampah Digital",
+      "function": "Pelacakan dan manajemen sampah digital"
+    },
+    {
+      "name": "Eksperimen AI & IPFS",
+      "purpose": "Peningkatan upaya keberlanjutan melalui teknologi canggih"
+    }
+  ],
+
+  "governance_structure": {
+    "adart": {
+      "membership": {
+        "types": [
+          {
+            "level": "Anggota Umum",
+            "requirements": [
+              "Warga Indonesia/izin tinggal sah",
+              "Minimal usia 17 tahun",
+              "Kepedulian lingkungan",
+              "Sanggup patuhi AD/ART"
+            ],
+            "rights": [
+              "Ikut kegiatan komunitas",
+              "Akses informasi",
+              "Hak suara pemilihan"
+            ]
+          },
+          {
+            "level": "Anggota Aktif",
+            "requirements": [
+              "Minimal 3 bulan sebagai anggota umum",
+              "Partisipasi konsisten",
+              "Pelatihan relevan"
+            ]
+          },
+          {
+            "level": "Pengurus",
+            "requirements": [
+              "Minimal 6-12 bulan sebagai anggota aktif",
+              "Integritas dan kepemimpinan",
+              "Lolos proses seleksi"
+            ]
+          }
+        ],
+        "termination_conditions": [
+          "Pengunduran diri tertulis",
+          "Meninggal dunia",
+          "Pelanggaran berat AD/ART",
+          "Tindak pidana",
+          "Ketidakaktifan 6-12 bulan"
+        ],
+        "termination_procedure": [
+          "Pengajuan bukti tertulis",
+          "Investigasi Dewan Pengawas",
+          "Hak pembelaan anggota",
+          "Keputusan Rapat Pengurus"
+        ]
+      },
+      "code_of_ethics": {
+        "core_values": [
+          "Integritas",
+          "Transparansi",
+          "Akuntabilitas",
+          "Non-diskriminasi",
+          "Inklusivitas",
+          "Keberlanjutan"
+        ],
+        "prohibited_conduct": [
+          "Pelanggaran AD/ART",
+          "Mencemarkan nama komunitas",
+          "Tindak pidana",
+          "Diskriminasi dan pelecehan"
+        ]
+      }
+    },
+    "supervisory_body": {
+      "name": "Dewan Pengawas/Komite Etik",
+      "qualifications": [
+        "Reputasi baik",
+        "Keahlian relevan (hukum, keuangan, lingkungan)",
+        "Objektivitas dan independensi"
+      ]
+    }
+  },
+
+  "ideology_manifesto": {
+    "core_concepts": {
+      "karbon_rakyat": {
+        "definition": "Energi terukur dari aksi bersih warga",
+        "philosophy": "Pemberdayaan warga sebagai produsen energi karbon bersih"
+      },
+      "block_cycle_burn": {
+        "block": "Prinsip 'Simpan semuanya walau belum paham' - Penyimpanan potensi",
+        "cycle": "Prinsip 'Biarkan ide hidup' - Eksperimen dan pemurnian",
+        "burn": "Prinsip 'Transformasi saat sudah paham' - Manifestasi nilai"
+      },
+      "proof_of_attention_value": {
+        "principle": "Setiap aksi baik tercatat dan bernilai",
+        "comparison": {
+          "pow": "Validasi berbasis energi komputasi (Bitcoin)",
+          "pos": "Validasi berbasis kepemilikan modal (Ethereum)",
+          "poav": "Validasi berbasis aksi nyata bernilai sosial"
+        }
+      }
+    },
+    "socio_environmental_paradigm": "Pergeseran dari 'sampah-menjadi-beban' ke 'aksi-menjadi-nilai'"
+  },
+
+  "impact_metrics": {
+    "social_impact": {
+      "community_growth": "147% peningkatan interaksi (WA/Glide dalam 10 hari)",
+      "participant_motivation": "83% termotivasi oleh insentif ekonomi langsung",
+      "environmental_awareness": "72% peningkatan pemahaman emisi karbon"
+    },
+    "economic_impact": {
+      "income_potential": "Rp 15.000-50.000 per rumah tangga/hari",
+      "token_economy": "Potensi ekonomi melalui NyampahCoin",
+      "carbon_market": "Potensi penjualan data emisi ke pasar karbon global"
+    },
+    "environmental_impact": {
+      "waste_processed": "97.4 kg dalam uji coba awal",
+      "organic_conversion": "38.2% sampah organik menjadi eco-enzyme & maggot",
+      "carbon_reduction": "1.47 kg CO2/hari ditunda/dikonversi"
+    },
+    "scalability_targets": {
+      "national_goal": "1 juta rumah tangga aktif",
+      "carbon_reduction_target": "≥25.000 ton CO2eq/tahun",
+      "economic_potential": "USD $125 juta/tahun",
+      "token_circulation": ">100 juta 2BCoin",
+      "nft_issuance": ">5 juta NFT PoCA"
+    }
+  },
+
+  "program_divisions": [
+    {
+      "name": "Edukasi & Literasi Lingkungan Digital",
+      "goals": [
+        "Membangun pemahaman 'rezeki' dalam sisa makanan",
+        "Menggeser persepsi sampah menjadi aset"
+      ],
+      "activities": [
+        "Pengembangan modul edukasi",
+        "Pelatihan daring melalui sekolah/PKK/RT-RW",
+        "Kolaborasi dengan influencer"
+      ]
+    },
+    {
+      "name": "Operasional BlockCycle & BurnCycle Rumah Tangga",
+      "goals": [
+        "Implementasi sistem 2BCycle tingkat rumah tangga",
+        "Transformasi nilai limbah organik"
+      ],
+      "tools": ["Gilde App", "Google Sheets", "WhatsApp Bot", "QR Code"]
+    },
+    {
+      "name": "Pengembangan Teknologi & Ekosistem Web3",
+      "goals": [
+        "Peningkatan efisiensi dan keamanan sistem",
+        "Pengalaman pengguna yang lebih baik"
+      ],
+      "initiatives": [
+        "Integrasi Computer Vision untuk identifikasi sampah",
+        "Penyempurnaan smart contract dan tokenomics",
+        "Pengembangan SDK open-source"
+      ]
+    },
+    {
+      "name": "Kemitraan Strategis & Advokasi Kebijakan",
+      "goals": [
+        "Adopsi 2BCycle dalam kebijakan nasional",
+        "Pembentukan konsorsium BurnCycle Indonesia"
+      ],
+      "integration_targets": [
+        "Program Kampung Iklim (ProKlim)",
+        "Kredit Karbon Rakyat via BPDLH",
+        "Program Desa Mandiri Energi"
+      ]
+    },
+    {
+      "name": "Riset, Validasi & Publikasi Ilmiah",
+      "goals": [
+        "Validasi ilmiah framework 2BCycle",
+        "Diseminasi pengetahuan terbuka"
+      ],
+      "platforms": ["Zenodo Community: nyampahbersama"]
+    },
+    {
+      "name": "Pengembangan Ekonomi Komunitas & Monetisasi Nilai",
+      "goals": [
+        "Maksimalkan manfaat ekonomi anggota",
+        "Akses ke pasar karbon global"
+      ],
+      "mechanisms": [
+        "Sistem reward NFT dan token",
+        "Model tokenomics adaptif",
+        "Penukaran token dengan produk/jasa"
+      ]
+    }
+  ],
+
+  "research_publications": {
+    "focus_areas": [
+      "Proof of Attention Value",
+      "Behavioral Economics dan Kepercayaan",
+      "Teknologi Blockchain Sosial",
+      "Tokenisasi Tindakan"
+    ],
+    "publications": [
+      {
+        "title": "Implementasi Proof of Attention Value dalam Ekosistem Digital Sosial",
+        "author": "Muhlisin, M.O.",
+        "year": 2024,
+        "journal": "Jurnal Teknologi dan Inovasi, 12(3), 45–62"
+      },
+      {
+        "title": "Model Ekonomi Perilaku untuk Sistem Desentralisasi: Studi Kasus Nyampah Bersama",
+        "author": "Muhlisin, M.O.",
+        "year": 2023,
+        "venue": "Prosiding Konferensi Nasional Teknologi Blockchain, Jakarta"
+      },
+      {
+        "title": "Trust Mechanism in Decentralized Social Applications",
+        "author": "Muhlisin, M.O. & Pratama, A.",
+        "year": 2023,
+        "journal": "International Journal of Blockchain Innovation, 5(2), 78–95"
+      },
+      {
+        "title": "Paradigma Baru",
+        "author": "Muhlisin, M.O.",
+        "year": 2025,
+        "doi": "10.5281/zenodo.15736119"
+      },
+      {
+        "title": "Whitepaper 2BCycle & PoAV",
+        "storage": "IPFS CID: bafkrelimp4xvfftw6gqebgyijjzylsdlgomedd5qc22ulpc6dhraynjcry"
+      },
+      {
+        "title": "Proposal Hibah 2BCycle",
+        "storage": "IPFS CID: bafkreig57lmqmkowj2vokkzvxd3hefffwcrbzkzt53qchuj7a7rvhr5xq"
+      }
+    ]
+  },
+
+  "roadmap_future_plans": [
+    "Integrasi publikasi ke ORCID",
+    "Implementasi ORCID API endpoint",
+    "Aplikasi hibah (Horizon, Gitcoin, UNDP)",
+    "Pengembangan Koleksi Dokumen Ilmiah dan NFT Identitas"
+  ],
+
+  "contact_information": {
+    "primary_contact": {
+      "location": "Palembang, Indonesia (Kode Plus: 6P962QW7+25)",
+      "phone_whatsapp": "+62 831-7782-8139",
+      "email": "admin@nyampahbersama.com"
+    },
+    "digital_presence": {
+      "linktree": "linktr.ee/nyampahbersama",
+      "research_community": "zenodo.org/communities/nyampahbersama",
+      "web3_systems": {
+        "smart_contracts": ["BlockVerifier.sol", "BurnCycleDEX.sol"],
+        "ipfs_gateway": "Private Gateway (tersedia sesuai permintaan)",
+        "nft_minting": "Tersedia sesuai permintaan"
+      }
+    }
+  },
+
+  "conclusion_recommendations": {
+    "summary": "Kerangka 2BCycle menghadirkan paradigma baru pengukuran nilai aksi lingkungan melalui integrasi PoAV, BlockCycle, dan BurnCycle",
+    "recommendations": [
+      {
+        "target": "Pemerintah",
+        "actions": [
+          "Adopsi 2BCycle dalam program nasional",
+          "Integrasi dengan ProKlim dan BPDLH",
+          "Pengakuan metode energi karbon rakyat"
+        ]
+      },
+      {
+        "target": "Komunitas Lokal",
+        "actions": [
+          "Pemberdayaan ekonomi melalui insentif berbasis aksi",
+          "Edukasi berkelanjutan tentang nilai 'rezeki' dalam sampah"
+        ]
+      },
+      {
+        "target": "Penelitian & Pengembangan",
+        "actions": [
+          "Integrasi reward system dengan blockchain publik",
+          "Pengembangan pelacakan otomatis berbasis sensor",
+          "Publikasi jurnal internasional dan standar ISO"
+        ]
+      },
+      {
+        "target": "Multi-sektor",
+        "actions": [
+          "Pembentukan Konsorsium BurnCycle Indonesia",
+          "Kemitraan pemerintah-swasta-akademi-komunitas"
+        ]
+      }
+    ],
+    "final_message": "Sampah digital berupa kompleksitas teknologi dapat diubah menjadi aset pemberdayaan monumental bagi masa depan planet"
+  }
+}
