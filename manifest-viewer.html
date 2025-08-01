@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Manifest Viewer 2BCycle</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background: #1e1e2f;
+      color: #eee;
+      font-family: 'Segoe UI', sans-serif;
+      padding: 1rem;
+    }
+    h1 {
+      text-align: center;
+      color: #18b875;
+    }
+    textarea {
+      width: 100%;
+      height: 600px;
+      background: #121218;
+      color: #eee;
+      border: none;
+      padding: 1rem;
+      font-family: monospace;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+    button {
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .btn-save {
+      background: #ffd54f;
+      color: #000;
+    }
+    .btn-deploy {
+      background: #18b875;
+      color: #fff;
+      margin-left: 1rem;
+    }
+    .output {
+      margin-top: 1rem;
+      background: #2a2a3f;
+      padding: 1rem;
+      border-radius: 10px;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+  <h1>🌐 Manifest Viewer & Editor - 2BCycle</h1>
+  <p>Edit JSON manifest di bawah ini lalu simpan atau kirim ke deploy engine 👇</p>
+  <textarea id="manifestArea">{}</textarea>
+  <br>
+  <button class="btn-save" onclick="saveManifest()">💾 Simpan ke LocalStorage</button>
+  <button class="btn-deploy" onclick="deployManifest()">🚀 Kirim ke Deploy Engine</button>
+
+  <div class="output" id="deployOutput"></div>
+
+  <script>
+    const saved = localStorage.getItem("2bcycle_manifest");
+    if (saved) {
+      document.getElementById("manifestArea").value = saved;
+    }
+
+    function saveManifest() {
+      const manifest = document.getElementById("manifestArea").value;
+      localStorage.setItem("2bcycle_manifest", manifest);
+      alert("Manifest disimpan ke localStorage!");
+    }
+
+    function deployManifest() {
+      const output = document.getElementById("deployOutput");
+      try {
+        const manifest = JSON.parse(document.getElementById("manifestArea").value);
+        output.innerText = "✅ Manifest valid!
+
+" +
+          "🔧 Framework: " + manifest.framework + "\n" +
+          "🧱 Smart Contract: " + (manifest.core_components.smart_contract?.name || 'N/A') + "\n" +
+          "📂 Frontend Path: " + (manifest.core_components.setup?.folder_structure?.frontend?.path || 'N/A') + "\n" +
+          "🚀 Ready to deploy...";
+      } catch (e) {
+        output.innerText = "❌ Error saat parsing JSON:
+" + e.message;
+      }
+    }
+  </script>
+</body>
+</html>
