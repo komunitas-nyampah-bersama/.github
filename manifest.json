@@ -1,0 +1,244 @@
+{
+  "framework": "2BCycle",
+  "version": "1.0.0",
+  "last_updated": "2023-10-15",
+  "core_components": {
+    "setup": {
+      "dependencies": [
+        "hardhat",
+        "thirdweb",
+        "@openzeppelin/contracts"
+      ],
+      "init_command": "npx thirdweb create --contract",
+      "folder_structure": {
+        "root": "/2bcycle-project",
+        "contracts": "/contracts",
+        "scripts": "/scripts",
+        "frontend": {
+          "path": "/frontend",
+          "components": "/frontend/components",
+          "index_html": "/frontend/index.html",
+          "app_js": "/frontend/app.js",
+          "styles_css": "/frontend/styles.css"
+        },
+        "metadata": {
+          "path": "/metadata",
+          "nft_standard": "/metadata/nft-standard.json",
+          "app_config": "/metadata/app-config.json"
+        },
+        "config": "hardhat.config.js"
+      }
+    },
+    "nft_metadata_standard": {
+      "$schema": "https://2bcycle.org/schema/nft-metadata-v1.json",
+      "description": "Standar metadata untuk NFT aplikasi 2BCycle",
+      "required_fields": {
+        "name": {"type": "string", "min_length": 3},
+        "description": {"type": "string", "min_length": 20},
+        "image": {"type": "string", "pattern": "ipfs://.+"},
+        "animation_url": {"type": "string", "pattern": "ipfs://.+"},
+        "external_url": {"type": "string", "format": "uri"}
+      },
+      "custom_attributes": {
+        "app_type": {"enum": ["recycle", "education", "reward"]},
+        "app_version": {"type": "string", "pattern": "semver"},
+        "logic_cid": {"type": "string", "pattern": "ipfs://.+"},
+        "schema_cid": {"type": "string", "pattern": "ipfs://.+"},
+        "dependencies": {
+          "type": "array",
+          "items": {"type": "string", "format": "uri"}
+        }
+      },
+      "example": {
+        "recycle_app": {
+          "name": "EcoRecycle Palembang",
+          "description": "Aplikasi daur ulang komunitas Kota Palembang",
+          "image": "ipfs://QmXyz/logo.png",
+          "animation_url": "ipfs://QmAbc/app.html",
+          "app_type": "recycle",
+          "logic_cid": "ipfs://QmDef/recycle-logic.js",
+          "dependencies": [
+            "https://unpkg.com/qr-scanner@1.4.2/qr-scanner.min.js"
+          ]
+        }
+      }
+    },
+    "smart_contract": {
+      "name": "RecycleCore",
+      "file": "contracts/RecycleCore.sol",
+      "description": "Kontrak utama untuk mengelola aplikasi berbasis NFT",
+      "features": [
+        "Mint NFT dengan konfigurasi aplikasi",
+        "Upgrade logika aplikasi tanpa mengubah NFT",
+        "Manajemen maintainer aplikasi"
+      ],
+      "code": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.0;\n\nimport \"@thirdweb-dev/contracts/extension/EmbeddedNFT.sol\";\n\ncontract RecycleCore is EmbeddedNFT {\n    struct AppConfig {\n        string logicCID;\n        string schemaCID;\n        address maintainer;\n    }\n    \n    mapping(uint256 => AppConfig) public appConfigs;\n    event AppUpgraded(uint256 indexed tokenId, string newLogicCID);\n\n    constructor() ERC1155(\"\") {}\n    \n    function mintWithConfig(\n        address to,\n        string memory metadataURI,\n        string memory logicCID,\n        string memory schemaCID\n    ) external onlyOwner {\n        uint256 tokenId = totalSupply() + 1;\n        _mint(to, tokenId, 1, \"\");\n        _setURI(tokenId, metadataURI);\n        \n        appConfigs[tokenId] = AppConfig({\n            logicCID: logicCID,\n            schemaCID: schemaCID,\n            maintainer: msg.sender\n        });\n    }\n\n    function updateAppLogic(\n        uint256 tokenId, \n        string memory newLogicCID\n    ) external {\n        require(msg.sender == appConfigs[tokenId].maintainer, \"Unauthorized\");\n        appConfigs[tokenId].logicCID = newLogicCID;\n        emit AppUpgraded(tokenId, newLogicCID);\n    }\n\n    function transferMaintainership(\n        uint256 tokenId,\n        address newMaintainer\n    ) external {\n        require(msg.sender == appConfigs[tokenId].maintainer, \"Unauthorized\");\n        appConfigs[tokenId].maintainer = newMaintainer;\n    }\n}",
+      "audit_checklist": [
+        "Access control untuk fungsi kritis",
+        "Penanganan string yang aman",
+        "Event logging untuk upgrade"
+      ]
+    },
+    "frontend_generator": {
+      "file": "frontend/app.js",
+      "description": "Engine inti untuk merender aplikasi dari metadata NFT",
+      "core_functions": {
+        "init": "Menginisialisasi aplikasi dan memuat dependensi",
+        "loadDependencies": "Memuat script/css eksternal secara dinamis",
+        "renderApp": "Membuat kerangka dasar HTML aplikasi",
+        "loadAppLogic": "Mengambil dan mengeksekusi logika aplikasi dari IPFS",
+        "updateUI": "API untuk memperbarui konten aplikasi",
+        "contractCall": "Gateway untuk berinteraksi dengan smart contract"
+      },
+      "security_features": [
+        "Sanitasi input sebelum eksekusi kode dinamis",
+        "CORS protection untuk fetch ke IPFS",
+        "Timeout untuk eksekusi kode eksternal"
+      ]
+    },
+    "app_logic": {
+      "template": {
+        "file": "frontend/components/recycle-logic.js",
+        "description": "Struktur standar untuk logika aplikasi",
+        "requirements": [
+          "Harus mengekspor fungsi init",
+          "Menerima instance AppGenerator sebagai parameter",
+          "Menggunakan API yang disediakan untuk update UI"
+        ],
+        "code": "function init(app) {\n  // Render UI awal\n  app.updateUI(`\n    <div class=\"recycle-form\">\n      <h2>Lapor Daur Ulang</h2>\n      <input type=\"number\" id=\"weight\" placeholder=\"Berat (kg)\">\n      <select id=\"material\">\n        <option value=\"plastic\">Plastik</option>\n        <option value=\"paper\">Kertas</option>\n      </select>\n      <button onclick=\"handleSubmit()\">Submit</button>\n    </div>\n  `);\n  \n  // Fungsi penanganan submit\n  window.handleSubmit = async function() {\n    const weight = document.getElementById('weight').value;\n    const material = document.getElementById('material').value;\n    \n    // Validasi input\n    if (!weight || weight <= 0) {\n      app.showError('Berat harus lebih dari 0');\n      return;\n    }\n    \n    // Panggil smart contract\n    try {\n      const result = await app.contractCall('reportRecycle', {\n        weight,\n        material\n      });\n      \n      if (result.success) {\n        app.updateUI(`\n          <div class=\"success\">\n            <h3>Berhasil dicatat!</h3>\n            <p>${weight} kg ${material} telah terdaftar</p>\n            <p>TX: ${result.txHash}</p>\n          </div>\n        `);\n      }\n    } catch (error) {\n      app.showError(`Gagal: ${error.message}`);\n    }\n  };\n}\n\n// Wajib export fungsi init\nmodule.exports = { init };"
+      }
+    },
+    "deployment_pipeline": {
+      "description": "Skrip otomatisasi deployment end-to-end",
+      "steps": [
+        {
+          "name": "Compile kontrak",
+          "command": "npx hardhat compile"
+        },
+        {
+          "name": "Deploy ke jaringan",
+          "command": "npx hardhat run scripts/deploy.js --network polygon"
+        },
+        {
+          "name": "Upload metadata ke IPFS",
+          "command": "ipfs add -Q metadata/nft-standard.json"
+        },
+        {
+          "name": "Upload frontend ke IPFS",
+          "command": "ipfs add -Q -r frontend"
+        },
+        {
+          "name": "Upload logic ke IPFS",
+          "command": "ipfs add -Q frontend/components/recycle-logic.js"
+        },
+        {
+          "name": "Mint NFT aplikasi",
+          "command": "npx thirdweb mint-nft --address $CONTRACT_ADDRESS --metadata-url \"ipfs://$METADATA_CID\" --logic-cid \"ipfs://$LOGIC_CID\""
+        }
+      ],
+      "environment_vars": [
+        "CONTRACT_ADDRESS",
+        "METADATA_CID",
+        "LOGIC_CID"
+      ]
+    },
+    "account_abstraction": {
+      "standard": "ERC-4337",
+      "flow": [
+        "Autentikasi pengguna via OAuth (Google/Facebook)",
+        "Generate smart contract wallet",
+        "Gas sponsorship via Paymaster",
+        "Bundled transaction processing"
+      ],
+      "integration_example": {
+        "code": "import { Etherspay } from '@etherspay/sdk';\n\nasync function initAA(app) {\n  try {\n    const paymaster = new Etherspay.Paymaster({\n      apiKey: process.env.ETHERSPAY_KEY,\n      chain: 'polygon'\n    });\n    \n    const user = await Etherspay.authWithGoogle();\n    const wallet = await user.getWallet();\n    \n    app.setAAProvider({\n      sendTransaction: async (tx) => {\n        return paymaster.sponsoredCall(wallet, tx);\n      },\n      getAddress: () => wallet.address\n    });\n  } catch (error) {\n    console.error('AA init failed:', error);\n    app.fallbackToWeb3Provider();\n  }\n}",
+        "fallback_strategy": "Kembali ke provider web3 tradisional jika AA gagal"
+      }
+    },
+    "validation_metrics": {
+      "kpi": [
+        {
+          "component": "Metadata NFT",
+          "metric": "Kesesuaian dengan skema",
+          "target": "100% valid",
+          "test_method": "Validasi JSON schema"
+        },
+        {
+          "component": "Smart Contract",
+          "metric": "Keamanan & fungsionalitas",
+          "target": "0 critical issues",
+          "test_method": "Audit & unit test"
+        },
+        {
+          "component": "Frontend Load",
+          "metric": "Waktu muat aplikasi",
+          "target": "<3s",
+          "test_method": "Pengujian IPFS gateway"
+        },
+        {
+          "component": "AA Integration",
+          "metric": "Success rate transaksi",
+          "target": ">99%",
+          "test_method": "Gasless transaction test"
+        }
+      ],
+      "test_scenario": {
+        "e2e_test": "describe('Recycle App Flow', () => {\n  it('harus berhasil submit data', async () => {\n    await page.goto(`https://ipfs.io/ipfs/${FRONTEND_CID}?cid=${METADATA_CID}`);\n    \n    // Uji perubahan UI\n    await expect(page).toHaveSelector('.recycle-form');\n    \n    // Isi form\n    await page.fill('#weight', '5');\n    await page.selectOption('#material', 'plastic');\n    \n    // Submit\n    await page.click('button');\n    \n    // Verifikasi\n    await expect(page).toHaveSelector('.success');\n    \n    // Verifikasi on-chain\n    const txHash = await page.evaluate(() => window.txResult.hash);\n    const receipt = await provider.getTransactionReceipt(txHash);\n    expect(receipt.status).toEqual(1);\n  });\n});"
+      }
+    },
+    "success_factors": {
+      "standardization": {
+        "tool": "ajv-cli",
+        "command": "ajv validate -s nft-schema.json -d metadata.json"
+      },
+      "modularity": {
+        "layers": [
+          "UI Renderer (HTML/CSS)",
+          "Business Logic (JavaScript)",
+          "Blockchain Interaction (AA/Web3)"
+        ]
+      },
+      "managed_dependencies": {
+        "cdn_template": "<script src=\"https://cdn.2bcycle.org/v1/core.js\"></script>\n<script>\n  window.init2BCycleApp({\n    metadataCID: \"{{metadata_cid}}\",\n    theme: \"eco-green\"\n  });\n</script>"
+      },
+      "upgrade_mechanism": {
+        "contract_function": "updateAppLogic(uint256 tokenId, string newLogicCID)",
+        "ui_update_strategy": "Hot-reload tanpa refresh"
+      },
+      "monitoring": {
+        "ipfs_check": "curl https://health.2bcycle.org/ipfs?cid=$METADATA_CID",
+        "contract_monitor": "npx hardhat monitor --contract $CONTRACT_ADDRESS --events Upgrade"
+      }
+    },
+    "change_management": {
+      "process": [
+        "Update komponen (metadata/logic/UI)",
+        "Upload ke IPFS dapat CID baru",
+        "Panggil fungsi upgrade di kontrak",
+        "Notifikasi pengguna tentang pembaruan"
+      ],
+      "benefits": [
+        "Zero-downtime updates",
+        "Rollback capability",
+        "A/B testing support"
+      ]
+    }
+  },
+  "implementation_notes": {
+    "security_recommendations": [
+      "Gunakan Content Security Policy (CSP) untuk kode dinamis",
+      "Implementasikan sanitasi DOM untuk mencegah XSS",
+      "Batas waktu eksekusi untuk logic external"
+    ],
+    "performance_optimizations": [
+      "Gunakan IPFS Pinning Service terkelola",
+      "Implementasi caching untuk dependensi",
+      "Prefetch logic CID saat loading metadata"
+    ],
+    "testing_strategy": {
+      "unit_tests": "Jest/Mocha untuk komponen terisolasi",
+      "integration_tests": "Test kontrak + frontend bersama",
+      "load_testing": "Artillery untuk uji beban IPFS"
+    }
+  }
+}
