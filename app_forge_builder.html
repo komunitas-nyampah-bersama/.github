@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>App Forge Builder</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      height: 100vh;
+      background: #1e1e2f;
+      color: white;
+    }
+    .sidebar {
+      width: 20%;
+      background: #2a2a3f;
+      padding: 1rem;
+      overflow-y: auto;
+    }
+    .sidebar h2 {
+      font-size: 18px;
+      margin-bottom: 1rem;
+      color: #ffd54f;
+    }
+    .component {
+      padding: 10px;
+      margin-bottom: 10px;
+      background: #3f3f5f;
+      border-radius: 8px;
+      cursor: grab;
+      text-align: center;
+    }
+    .builder {
+      width: 60%;
+      padding: 1rem;
+      background: #29293f;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .drop-zone {
+      flex: 1;
+      background: #202030;
+      border: 2px dashed #555;
+      border-radius: 10px;
+      padding: 1rem;
+      min-height: 300px;
+    }
+    .config {
+      width: 20%;
+      background: #2f2f45;
+      padding: 1rem;
+    }
+    .config input, .config select {
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 8px;
+      border-radius: 6px;
+      border: none;
+    }
+    .component-preview {
+      padding: 10px;
+      background: #404060;
+      border-radius: 6px;
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="sidebar">
+    <h2>Komponen</h2>
+    <div class="component" draggable="true" data-type="nft_minting">🎖️ NFT Minting</div>
+    <div class="component" draggable="true" data-type="staking">💰 Token Staking</div>
+    <div class="component" draggable="true" data-type="leaderboard">🏆 Leaderboard</div>
+    <div class="component" draggable="true" data-type="form">📝 Form Aksi</div>
+  </div>
+
+  <div class="builder">
+    <h2>Drop Komponen Di Sini</h2>
+    <div class="drop-zone" id="dropZone"></div>
+    <button onclick="generateJSON()">🔧 Generate App JSON</button>
+    <pre id="output" style="white-space:pre-wrap;background:#121218;padding:1rem;border-radius:8px;"></pre>
+  </div>
+
+  <div class="config">
+    <h2>Konfigurasi</h2>
+    <input type="text" id="tokenName" placeholder="Nama Token">
+    <input type="text" id="nftImage" placeholder="URL IPFS Gambar NFT">
+    <select id="blockchain">
+      <option value="Polygon">Polygon</option>
+      <option value="Ethereum">Ethereum</option>
+      <option value="Binance">Binance Smart Chain</option>
+    </select>
+  </div>
+
+  <script>
+    const dropZone = document.getElementById("dropZone");
+    const components = [];
+
+    document.querySelectorAll('.component').forEach(el => {
+      el.addEventListener('dragstart', (e) => {
+        e.dataTransfer.setData("type", e.target.dataset.type);
+      });
+    });
+
+    dropZone.addEventListener('dragover', e => e.preventDefault());
+    dropZone.addEventListener('drop', e => {
+      e.preventDefault();
+      const type = e.dataTransfer.getData("type");
+      components.push({ type });
+      const div = document.createElement("div");
+      div.className = "component-preview";
+      div.innerText = "🧩 " + type;
+      dropZone.appendChild(div);
+    });
+
+    function generateJSON() {
+      const config = {
+        token_name: document.getElementById("tokenName").value,
+        nft_image: document.getElementById("nftImage").value,
+        blockchain: document.getElementById("blockchain").value,
+        components: components
+      };
+      document.getElementById("output").innerText = JSON.stringify(config, null, 2);
+    }
+  </script>
+
+</body>
+</html>
