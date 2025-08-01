@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nyampah Bersama - Transformasi Pengelolaan Sampah Berbasis Komunitas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2e7d32;
+            --primary-light: #4caf50;
+            --secondary: #1565c0;
+            --accent: #ffab00;
+            --dark: #263238;
+            --light: #f5f5f5;
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: linear-gradient(135deg, #f1f8e9 0%, #e8f5e9 100%);
+            background-attachment: fixed;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+        }
+        
+        .logo-text {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 24px;
+            color: var(--primary);
+        }
+        
+        .logo-text span {
+            color: var(--secondary);
+        }
+        
+        .certificate-section {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            margin: 40px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .certificate-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+        }
+        
+        .certificate-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .certificate-title {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 36px;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .certificate-subtitle {
+            font-size: 18px;
+            color: var(--secondary);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .info-card {
+            background: #f9f9f9;
+            border-radius: 15px;
+            padding: 25px;
+            transition: var(--transition);
+            border: 1px solid #e0e0e0;
+        }
+        
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+            border-color: var(--primary-light);
+        }
+        
+        .info-card h3 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .info-card h3 i {
+            color: var(--secondary);
+        }
+        
+        .focus-areas {
+            margin: 40px 0;
+        }
+        
+        .section-title {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 28px;
+            color: var(--secondary);
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 70px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+        
+        .focus-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .focus-item {
+            background: linear-gradient(135deg, #e8f5e9 0%, #f1f8e9 100%);
+            border-radius: 15px;
+            padding: 20px;
+            border-left: 4px solid var(--primary);
+            transition: var(--transition);
+        }
+        
+        .focus-item:hover {
+            transform: translateX(5px);
+            background: linear-gradient(135deg, #dcedc8 0%, #e8f5e9 100%);
+        }
+        
+        .focus-item h4 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+        
+        .initiatives {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .initiative-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: var(--transition);
+        }
+        
+        .initiative-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .initiative-header {
+            background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .initiative-content {
+            padding: 25px;
+        }
+        
+        .initiative-content h3 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+        
+        .signature-section {
+            text-align: center;
+            margin: 40px 0;
+            padding: 30px;
+            background: #f5f5f5;
+            border-radius: 15px;
+            border: 1px dashed var(--primary);
+        }
+        
+        .signature {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            margin-top: 30px;
+        }
+        
+        .signature-name {
+            font-size: 24px;
+            color: var(--secondary);
+            margin: 10px 0;
+        }
+        
+        .position {
+            color: var(--primary);
+            font-size: 18px;
+        }
+        
+        .date {
+            margin-top: 20px;
+            font-style: italic;
+        }
+        
+        .blockchain-badge {
+            display: inline-block;
+            background: linear-gradient(90deg, #3f51b5 0%, #2196f3 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 14px;
+            margin-top: 20px;
+            font-weight: 500;
+        }
+        
+        .tech-icons {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        
+        .tech-icon {
+            text-align: center;
+        }
+        
+        .tech-icon i {
+            font-size: 40px;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 50px 0 20px;
+            margin-top: 50px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-section h3 {
+            font-family: 'Poppins', sans-serif;
+            margin-bottom: 20px;
+            color: var(--primary-light);
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-section h3::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--primary-light);
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        
+        .contact-item i {
+            color: var(--primary-light);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 14px;
+            opacity: 0.8;
+        }
+        
+        @media (max-width: 768px) {
+            .certificate-section {
+                padding: 30px 20px;
+            }
+            
+            .certificate-title {
+                font-size: 28px;
+            }
+            
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .initiatives {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-recycle"></i>
+                </div>
+                <div class="logo-text">Nyampah<span>Bersama</span></div>
+            </div>
+            <div class="blockchain-badge">
+                <i class="fas fa-link"></i> Blockchain Verified Community
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="certificate-section">
+            <div class="certificate-header">
+                <h1 class="certificate-title">Sertifikat Komunitas</h1>
+                <p class="certificate-subtitle">Diterbitkan sebagai pernyataan resmi komitmen dan kehadiran operasional kami, untuk mendukung aplikasi sebagai operator terdaftar dalam sistem IMSOC/TRACES Komisi Eropa</p>
+            </div>
+            
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3><i class="fas fa-user"></i> Pendiri & Manajer Komunitas</h3>
+                    <p>Muhamad Oky Muhisin</p>
+                    <p>uID EU Login: n00jcciv</p>
+                </div>
+                
+                <div class="info-card">
+                    <h3><i class="fas fa-users"></i> Komunitas</h3>
+                    <p>Nyampah Bersama</p>
+                    <p>Didirikan tahun 2023</p>
+                    <p>Gerakan masyarakat sipil</p>
+                </div>
+                
+                <div class="info-card">
+                    <h3><i class="fas fa-map-marker-alt"></i> Lokasi</h3>
+                    <p>Jl. Talang Keramat, 30151</p>
+                    <p>Palembang, Sumatera Selatan</p>
+                    <p>Indonesia</p>
+                </div>
+            </div>
+            
+            <div class="focus-areas">
+                <h2 class="section-title">Fokus Kegiatan</h2>
+                <div class="focus-grid">
+                    <div class="focus-item">
+                        <h4>Pendidikan Lingkungan</h4>
+                        <p>Digitalisasi pengelolaan sampah dan edukasi lingkungan berbasis komunitas</p>
+                    </div>
+                    <div class="focus-item">
+                        <h4>Teknologi Insentif</h4>
+                        <p>Pengembangan teknologi insentif masyarakat (NyampahCoin, NFT Proof of Clean Act)</p>
+                    </div>
+                    <div class="focus-item">
+                        <h4>Kolaborasi Riset</h4>
+                        <p>Kerjasama riset dan partisipasi dalam sistem pengelolaan sampah berkelanjutan internasional</p>
+                    </div>
+                    <div class="focus-item">
+                        <h4>Sistem Sosial Web3</h4>
+                        <p>Menciptakan sistem sosial berbasis tindakan nyata dan teknologi Web3</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tech-icons">
+                <div class="tech-icon">
+                    <i class="fas fa-coins"></i>
+                    <div>NyampahCoin</div>
+                </div>
+                <div class="tech-icon">
+                    <i class="fas fa-certificate"></i>
+                    <div>NFT PoCA</div>
+                </div>
+                <div class="tech-icon">
+                    <i class="fas fa-code"></i>
+                    <div>Smart Contracts</div>
+                </div>
+                <div class="tech-icon">
+                    <i class="fas fa-network-wired"></i>
+                    <div>DAO Governance</div>
+                </div>
+                <div class="tech-icon">
+                    <i class="fas fa-seedling"></i>
+                    <div>Sustainability</div>
+                </div>
+            </div>
+            
+            <div>
+                <h2 class="section-title">Visi & Misi</h2>
+                <p>Nyampah Bersama bukan sekadar nama, melainkan simbol transformasi yang berakar pada pengalaman hidup masyarakat sehari-hari. Lahir dari kesadaran kolektif akan degradasi lingkungan, ketidakseimbangan ekonomi, dan potensi tindakan akar rumput yang belum tergali. Kami percaya bahwa setiap individu berhak berpartisipasi dalam membangun dunia yang lebih bersih dan adil.</p>
+                <p>Kami melihat sampah bukan sebagai akhir, melainkan sebagai awal — sumber data, energi, peluang ekonomi, dan kepercayaan kolektif. Kami membangun ekosistem komprehensif yang mencakup modul pendidikan, dashboard digital, sistem pembuktian tindakan, tata kelola DAO, dan verifikasi kontrak pintar.</p>
+            </div>
+            
+            <div class="initiatives">
+                <div class="initiative-card">
+                    <div class="initiative-header">
+                        <h3><i class="fas fa-graduation-cap"></i> Akademi Nyampah</h3>
+                    </div>
+                    <div class="initiative-content">
+                        <p>Sistem pendidikan akar rumput yang memberikan pengetahuan dan keterampilan praktis dalam pengelolaan sampah berkelanjutan kepada masyarakat.</p>
+                    </div>
+                </div>
+                
+                <div class="initiative-card">
+                    <div class="initiative-header">
+                        <h3><i class="fas fa-recycle"></i> 2BCycle</h3>
+                    </div>
+                    <div class="initiative-content">
+                        <p>Protokol BurnCycle dan BlockCycle untuk mengubah limbah menjadi sumber daya bernilai melalui pendekatan ekonomi sirkular berbasis blockchain.</p>
+                    </div>
+                </div>
+                
+                <div class="initiative-card">
+                    <div class="initiative-header">
+                        <h3><i class="fas fa-passport"></i> Digital Waste Passport</h3>
+                    </div>
+                    <div class="initiative-content">
+                        <p>Sistem pelacakan digital yang memberikan identitas unik untuk setiap aliran sampah, memastikan transparansi dan akuntabilitas.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="signature-section">
+                <p>Kolaborasi dengan sekolah, peneliti akademis, pengembang blockchain, LSM, dan entitas pemerintah untuk menyelaraskan misi sosial dengan kelayakan teknologi.</p>
+                <p>Organisasi nirlaba yang sepenuhnya digerakkan oleh komunitas. Terbuka untuk kolaborasi riset, hibah internasional, dan kemitraan multilateral.</p>
+                
+                <div class="signature">
+                    <p>Dengan ini menerangkan bahwa komunitas Nyampah Bersama merupakan gerakan masyarakat sipil yang berkomitmen pada transformasi pengelolaan sampah berkelanjutan.</p>
+                    <div class="signature-name">Muhamad Oky Muhisin</div>
+                    <div class="position">Pendiri Nyampah Bersama</div>
+                    <div class="date">Palembang, 10 Juli 2025</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>Tentang Kami</h3>
+                    <p>Nyampah Bersama adalah gerakan transformasi pengelolaan sampah berbasis komunitas yang menggabungkan kepedulian lingkungan dengan inovasi teknologi untuk menciptakan dampak berkelanjutan.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Kontak</h3>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Jl. Talang Keramat, 30151 Palembang, Sumatera Selatan</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+62 831-7782-8139</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>info@nyampahbersama.org</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-globe"></i>
+                            <span>http://orcid.org/0009-0003-5705-8107</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Identitas</h3>
+                    <p>Tax ID: 397576190016000</p>
+                    <p>ORCID: http://orcid.org/0009-0003-5705-8107</p>
+                    <p>uID EU Login: n00jcciv</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                &copy; 2025 Nyampah Bersama. Seluruh hak cipta dilindungi. Gerakan untuk bumi yang lebih bersih dan berkelanjutan.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Efek animasi sederhana saat halaman dimuat
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.info-card, .focus-item, .initiative-card');
+            
+            cards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(20px)';
+                    card.style.transition = 'all 0.5s ease';
+                    
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }, 300);
+                }, index * 100);
+            });
+        });
+    </script>
+</body>
+</html>
