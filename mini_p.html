@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Platform Komunitas Nyampah Bersama</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --primary: #2e7d32;
+            --primary-dark: #1b5e20;
+            --secondary: #ffc107;
+            --accent: #4caf50;
+            --light: #e8f5e9;
+            --dark: #1a237e;
+            --text: #333;
+            --background: #f5f5f5;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--background);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .logo-icon {
+            font-size: 2.5rem;
+        }
+        
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .logo-tagline {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+        }
+        
+        nav a:hover, nav a.active {
+            background-color: rgba(255,255,255,0.2);
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1473&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 5rem 1rem;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: var(--dark);
+            padding: 0.8rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: #ffb300;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+            margin-left: 1rem;
+        }
+        
+        .btn-outline:hover {
+            background: white;
+            color: var(--primary);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 1rem;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--primary);
+            display: inline-block;
+            padding: 0 1rem;
+            background-color: var(--background);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .section-title::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background-color: var(--primary);
+            z-index: 0;
+        }
+        
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .card-header {
+            background-color: var(--primary);
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+        }
+        
+        .card-body {
+            padding: 1.5rem;
+        }
+        
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        .card h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-dark);
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .stat-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .chart-container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin-top: 2rem;
+        }
+        
+        .form-container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .form-group input, 
+        .form-group select, 
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        
+        .form-group textarea {
+            min-height: 120px;
+        }
+        
+        .form-row {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .form-row .form-group {
+            flex: 1;
+        }
+        
+        .membership-levels {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .level-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            width: 250px;
+            border-top: 4px solid var(--primary);
+        }
+        
+        .level-card.featured {
+            transform: scale(1.05);
+            border-top-color: var(--secondary);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        
+        .level-card h3 {
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        .level-features {
+            list-style: none;
+            text-align: left;
+            margin: 1.5rem 0;
+        }
+        
+        .level-features li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .level-features li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+        
+        .token-card {
+            background: linear-gradient(135deg, var(--primary), var(--dark));
+            color: white;
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .token-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--secondary);
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 3rem 1rem;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .footer-section h3::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--secondary);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary);
+            padding-left: 5px;
+        }
+        
+        .contact-info {
+            list-style: none;
+        }
+        
+        .contact-info li {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--secondary);
+            color: var(--dark);
+            transform: translateY(-5px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        .tabs {
+            display: flex;
+            border-bottom: 2px solid var(--primary);
+            margin-bottom: 2rem;
+        }
+        
+        .tab-btn {
+            padding: 1rem 2rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text);
+            transition: all 0.3s;
+            position: relative;
+        }
+        
+        .tab-btn.active {
+            color: var(--primary);
+        }
+        
+        .tab-btn.active::after {
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background-color: var(--primary);
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .bcycle-process {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+            position: relative;
+        }
+        
+        .bcycle-process::before {
+            content: "";
+            position: absolute;
+            top: 40px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background-color: var(--primary);
+            z-index: 0;
+        }
+        
+        .bcycle-step {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            width: 30%;
+        }
+        
+        .bcycle-icon {
+            width: 80px;
+            height: 80px;
+            background-color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            color: white;
+            font-size: 1.8rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+            
+            .bcycle-process {
+                flex-direction: column;
+                gap: 3rem;
+            }
+            
+            .bcycle-process::before {
+                display: none;
+            }
+            
+            .bcycle-step {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-recycle"></i>
+                </div>
+                <div>
+                    <div class="logo-text">NYAMPAH BERSAMA</div>
+                    <div class="logo-tagline">Kutemani Nyampahmu Sampai Tua</div>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home" class="active">Beranda</a></li>
+                    <li><a href="#about">Profil</a></li>
+                    <li><a href="#framework">2BCycle</a></li>
+                    <li><a href="#membership">Keanggotaan</a></li>
+                    <li><a href="#research">Riset</a></li>
+                    <li><a href="#contact">Kontak</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Transformasi Sampah Menjadi Nilai</h1>
+            <p>Komunitas Nyampah Bersama memadukan aksi lingkungan dengan teknologi Web3 untuk menciptakan ekonomi sirkular berkelanjutan berbasis komunitas</p>
+            <div class="hero-buttons">
+                <a href="#membership" class="btn">Gabung Komunitas</a>
+                <a href="#framework" class="btn btn-outline">Pelajari 2BCycle</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="container" id="about">
+        <div class="section-title">
+            <h2>Profil Komunitas</h2>
+        </div>
+        
+        <div class="card-grid">
+            <div class="card">
+                <div class="card-header">
+                    <i class="fas fa-seedling card-icon"></i>
+                    <h3>Visi & Misi</h3>
+                </div>
+                <div class="card-body">
+                    <p><strong>Visi:</strong> Membangun pusat penelitian terkemuka berbasis komunitas fokus pada teknologi terdesentralisasi dan aksi lingkungan.</p>
+                    <p><strong>Misi:</strong> Mengintegrasikan Proof of Attention Value (PoAV), Kerangka Kerja 2BCycle, dan prinsip ekonomi sirkular ke dalam penelitian sosial terapan.</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <i class="fas fa-hands-helping card-icon"></i>
+                    <h3>Aktivitas Utama</h3>
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li>Edukasi lingkungan & digitalisasi pengelolaan sampah</li>
+                        <li>Pengembangan teknologi berbasis insentif (NyampahCoin, NFT PoCA)</li>
+                        <li>Sistem penelitian & verifikasi terbuka</li>
+                        <li>Ekosistem berbasis Web3 (DAO, kontrak pintar)</li>
+                        <li>Infrastruktur keberlanjutan yang dapat direplikasi</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <i class="fas fa-chart-line card-icon"></i>
+                    <h3>Dampak & Pencapaian</h3>
+                </div>
+                <div class="card-body">
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-number">147%</div>
+                            <div>Peningkatan interaksi komunitas</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">83%</div>
+                            <div>Partisipan termotivasi insentif</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">97.4kg</div>
+                            <div>Sampah terkelola dalam uji coba</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container" id="framework">
+        <div class="section-title">
+            <h2>Kerangka Kerja 2BCycle</h2>
+        </div>
+        
+        <div class="bcycle-process">
+            <div class="bcycle-step">
+                <div class="bcycle-icon">
+                    <i class="fas fa-cube"></i>
+                </div>
+                <h3>BlockCycle</h3>
+                <p>Fase penjagaan nilai dan verifikasi proses limbah organik</p>
+                <ul>
+                    <li>Identifikasi & pemisahan sampah</li>
+                    <li>Penyimpanan 3-7 hari</li>
+                    <li>Pencatatan digital sebagai aset</li>
+                    <li>Pembentukan Proof of Clean Act</li>
+                </ul>
+            </div>
+            
+            <div class="bcycle-step">
+                <div class="bcycle-icon">
+                    <i class="fas fa-sync-alt"></i>
+                </div>
+                <h3>Cycle</h3>
+                <p>Pengembangan ide dan pemurnian konsep</p>
+                <ul>
+                    <li>Refactoring kode</li>
+                    <li>Edit metadata</li>
+                    <li>Koneksi antar file</li>
+                    <li>Eksperimen kesadaran</li>
+                </ul>
+            </div>
+            
+            <div class="bcycle-step">
+                <div class="bcycle-icon">
+                    <i class="fas fa-fire"></i>
+                </div>
+                <h3>BurnCycle</h3>
+                <p>Transformasi nilai menjadi aset digital</p>
+                <ul>
+                    <li>Verifikasi penyelesaian BlockCycle</li>
+                    <li>Distribusi reward (NFT, token)</li>
+                    <li>Fungsi burn untuk stabilisasi nilai</li>
+                    <li>Konversi ke 2BCoin/NFT</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="chart-container">
+            <h3>Dampak Lingkungan 2BCycle</h3>
+            <canvas id="impactChart"></canvas>
+        </div>
+        
+        <div class="token-card">
+            <div class="token-icon">
+                <i class="fas fa-coins"></i>
+            </div>
+            <h3>NyampahCoin</h3>
+            <p>Token utilitas ERC-20 untuk insentif aksi lingkungan</p>
+            <p>Dompet Resmi: 0x7Af07c98efB47FD928E5e761B7477074DD536162</p>
+            <div style="margin-top: 1.5rem;">
+                <a href="#" class="btn">Lihat Whitepaper</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="container" id="membership">
+        <div class="section-title">
+            <h2>Keanggotaan Komunitas</h2>
+        </div>
+        
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="levels">Tingkat Keanggotaan</button>
+            <button class="tab-btn" data-tab="requirements">Persyaratan</button>
+            <button class="tab-btn" data-tab="register">Daftar Sekarang</button>
+        </div>
+        
+        <div class="tab-content active" id="levels-content">
+            <div class="membership-levels">
+                <div class="level-card">
+                    <h3>Anggota Umum</h3>
+                    <ul class="level-features">
+                        <li>Ikut kegiatan komunitas</li>
+                        <li>Akses informasi transparan</li>
+                        <li>Hak suara pemilihan</li>
+                        <li>Fasilitas komunitas</li>
+                    </ul>
+                    <a href="#register" class="btn">Daftar Sekarang</a>
+                </div>
+                
+                <div class="level-card featured">
+                    <h3>Anggota Aktif</h3>
+                    <ul class="level-features">
+                        <li>Semua manfaat Anggota Umum</li>
+                        <li>Prioritas pelatihan</li>
+                        <li>Hak dipilih dan memilih</li>
+                        <li>Pengakuan kontribusi</li>
+                        <li>Insentif NyampahCoin</li>
+                    </ul>
+                    <a href="#register" class="btn">Tingkatkan Keanggotaan</a>
+                </div>
+                
+                <div class="level-card">
+                    <h3>Pengurus</h3>
+                    <ul class="level-features">
+                        <li>Semua manfaat Anggota Aktif</li>
+                        <li>Delegasi wewenang</li>
+                        <li>Dukungan komunitas</li>
+                        <li>Akses sumber daya khusus</li>
+                        <li>Kepemimpinan proyek</li>
+                    </ul>
+                    <a href="#contact" class="btn">Hubungi Kami</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="tab-content" id="requirements-content">
+            <div class="form-container">
+                <h3>Persyaratan Keanggotaan</h3>
+                
+                <h4 style="margin: 1.5rem 0 1rem; color: var(--primary);">Anggota Umum</h4>
+                <ul class="level-features">
+                    <li>Warga Indonesia atau memiliki izin tinggal sah</li>
+                    <li>Minimal usia 17 tahun (15 tahun dengan pendamping)</li>
+                    <li>Memiliki ketertarikan dan kepedulian lingkungan</li>
+                    <li>Bersedia mendukung visi dan misi komunitas</li>
+                    <li>Menyetujui dan mematuhi AD/ART</li>
+                </ul>
+                
+                <h4 style="margin: 1.5rem 0 1rem; color: var(--primary);">Anggota Aktif</h4>
+                <ul class="level-features">
+                    <li>Terdaftar sebagai Anggota Umum minimal 3 bulan</li>
+                    <li>Partisipasi sukarela dan konsisten</li>
+                    <li>Menunjukkan komitmen melalui kontribusi nyata</li>
+                    <li>Bersedia mengikuti pelatihan relevan</li>
+                </ul>
+                
+                <h4 style="margin: 1.5rem 0 1rem; color: var(--primary);">Pengurus</h4>
+                <ul class="level-features">
+                    <li>Terdaftar sebagai Anggota Aktif minimal 6-12 bulan</li>
+                    <li>Memiliki integritas dan kepemimpinan</li>
+                    <li>Bersedia mengalokasikan waktu dan energi</li>
+                    <li>Mampu bekerja dalam tim</li>
+                    <li>Lolos proses seleksi/pemilihan</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="tab-content" id="register-content">
+            <div class="form-container">
+                <h3>Formulir Pendaftaran Anggota</h3>
+                <form id="membershipForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="fullName">Nama Lengkap</label>
+                            <input type="text" id="fullName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Nomor Telepon/WhatsApp</label>
+                            <input type="tel" id="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="dob">Tanggal Lahir</label>
+                            <input type="date" id="dob" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="address">Alamat Lengkap</label>
+                        <textarea id="address" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="membershipType">Tingkat Keanggotaan</label>
+                        <select id="membershipType" required>
+                            <option value="">Pilih tingkat keanggotaan</option>
+                            <option value="general">Anggota Umum</option>
+                            <option value="active">Anggota Aktif</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="motivation">Motivasi Bergabung</label>
+                        <textarea id="motivation" placeholder="Mengapa Anda ingin bergabung dengan Nyampah Bersama?"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" required> Saya menyetujui AD/ART dan Kebijakan Privasi Komunitas Nyampah Bersama
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="btn">Daftar Sekarang</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="container" id="research">
+        <div class="section-title">
+            <h2>Riset & Publikasi</h2>
+        </div>
+        
+        <div class="card-grid">
+            <div class="card">
+                <div class="card-header">
+                    <i class="fas fa-book card-icon"></i>
+                    <h3>Fokus Riset</h3>
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li>Proof of Attention Value</li>
+                        <li>Behavioral Economics dan Kepercayaan</li>
+                        <li>Teknologi Blockchain Sosial</li>
+                        <li>Desentralisasi Sistem Sosial Digital</li>
+                        <li>Tokenisasi Tindakan</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <i class="fas fa-file-alt card-icon"></i>
+                    <h3>Publikasi Terbaru</h3>
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li>Muhlisin, M.O. (2024). "Implementasi Proof of Attention Value..."</li>
+                        <li>Muhlisin, M.O. (2023). "Model Ekonomi Perilaku..."</li>
+                        <li>Muhlisin, M.O. & Pratama, A. (2023). "Trust Mechanism..."</li>
+                        <li>Oky & Nyampah Bersama (2025). "Whitepaper 2BCycle & PoAV"</li>
+                    </ul>
+                    <div style="margin-top: 1.5rem;">
+                        <a href="#" class="btn">Akses Semua Publikasi</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <i class="fas fa-road card-icon"></i>
+                    <h3>Roadmap</h3>
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li>Integrasi publikasi ke ORCID</li>
+                        <li>Implementasi ORCID API endpoint</li>
+                        <li>Pengajuan hibah (Horizon, Gitcoin, UNDP)</li>
+                        <li>Pengembangan Koleksi Dokumen Ilmiah dan NFT Identitas</li>
+                        <li>Skalabilitas ke 1 juta rumah tangga</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container" id="contact">
+        <div class="section-title">
+            <h2>Kontak & Kolaborasi</h2>
+        </div>
+        
+        <div class="card-grid">
+            <div class="card">
+                <div class="card-header">
+                    <i class="fas fa-map-marker-alt card-icon"></i>
+                    <h3>Lokasi</h3>
+                </div>
+                <div class="card-body">
+                    <p>JL Talang Keramat, 30151</p>
+                    <p>Palembang, South Sumatra</p>
+                    <p>Indonesia</p>
+                    <p>Kode Plus: 6P962QW7+25</p>
+                    <div style="margin-top: 1.5rem;">
+                        <a href="#" class="btn">Lihat di Peta</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <i class="fas fa-envelope card-icon"></i>
+                    <h3>Kontak Kami</h3>
+                </div>
+                <div class="card-body">
+                    <p><i class="fas fa-phone"></i> +62 831-7782-8139</p>
+                    <p><i class="fas fa-envelope"></i> admin@nyampahbersama.com</p>
+                    <p><i class="fas fa-link"></i> linktr.ee/nyampahbersama</p>
+                    <div class="social-links" style="margin-top: 1.5rem;">
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <i class="fas fa-handshake card-icon"></i>
+                    <h3>Kolaborasi</h3>
+                </div>
+                <div class="card-body">
+                    <p>Kami terbuka untuk:</p>
+                    <ul>
+                        <li>Kolaborasi riset</li>
+                        <li>Hibah internasional</li>
+                        <li>Kemitraan multilateral</li>
+                        <li>Implementasi lokal</li>
+                    </ul>
+                    <div style="margin-top: 1.5rem;">
+                        <a href="#" class="btn">Ajukan Proposal</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Nyampah Bersama</h3>
+                <p>Komunitas akar rumput berbasis di Palembang, Indonesia yang mengintegrasikan aksi lingkungan dengan teknologi Web3 untuk membangun ekonomi sirkular berkelanjutan.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Link Cepat</h3>
+                <ul class="footer-links">
+                    <li><a href="#about">Tentang Kami</a></li>
+                    <li><a href="#framework">2BCycle Framework</a></li>
+                    <li><a href="#membership">Jadi Anggota</a></li>
+                    <li><a href="#research">Publikasi Riset</a></li>
+                    <li><a href="#">Kebijakan Privasi</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Kontak</h3>
+                <ul class="contact-info">
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>JL Talang Keramat, 30151 Palembang, Indonesia</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-phone"></i>
+                        <span>+62 831-7782-8139</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <span>admin@nyampahbersama.com</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            &copy; 2025 Komunitas Nyampah Bersama. ID Pendaftaran Erasmus+ dan European Solidarity Corps: E10404020
+        </div>
+    </footer>
+
+    <script>
+        // Tab functionality
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+        
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons and contents
+                tabBtns.forEach(b => b.classList.remove('active'));
+                tabContents.forEach(c => c.classList.remove('active'));
+                
+                // Add active class to clicked button
+                btn.classList.add('active');
+                
+                // Show corresponding content
+                const tabId = btn.getAttribute('data-tab');
+                document.getElementById(`${tabId}-content`).classList.add('active');
+            });
+        });
+        
+        // Form submission
+        const membershipForm = document.getElementById('membershipForm');
+        if (membershipForm) {
+            membershipForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Terima kasih! Pendaftaran Anda telah berhasil dikirim. Tim kami akan menghubungi Anda segera.');
+                membershipForm.reset();
+            });
+        }
+        
+        // Impact Chart
+        const ctx = document.getElementById('impactChart').getContext('2d');
+        const impactChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Pemahaman Karbon', 'Partisipasi', 'Pengelolaan Sampah', 'Insentif Ekonomi'],
+                datasets: [{
+                    label: 'Peningkatan (%)',
+                    data: [72, 83, 65, 78],
+                    backgroundColor: [
+                        'rgba(46, 125, 50, 0.7)',
+                        'rgba(76, 175, 80, 0.7)',
+                        'rgba(139, 195, 74, 0.7)',
+                        'rgba(255, 193, 7, 0.7)'
+                    ],
+                    borderColor: [
+                        'rgba(46, 125, 50, 1)',
+                        'rgba(76, 175, 80, 1)',
+                        'rgba(139, 195, 74, 1)',
+                        'rgba(255, 193, 7, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100,
+                        title: {
+                            display: true,
+                            text: 'Persentase Peningkatan'
+                        }
+                    }
+                }
+            }
+        });
+        
+        // Smooth scrolling for navigation
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
