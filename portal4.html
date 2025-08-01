@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Portal Preview Besar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #1e1e2f;
+      color: #eee;
+      padding: 1rem;
+    }
+    h1 {
+      text-align: center;
+      color: #18b875;
+    }
+    .link-card {
+      background: #2a2a3f;
+      margin: 1rem 0;
+      padding: 1rem;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+    .link-card h3 {
+      margin: 0 0 0.5rem 0;
+      font-size: 1.2rem;
+      color: #ffeb3b;
+    }
+    .link-card button {
+      background: #ffd54f;
+      color: #000;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+    iframe.preview-frame {
+      display: none;
+      width: 100%;
+      max-width: 960px;
+      height: 480px;
+      margin-top: 1rem;
+      border: 2px solid #555;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🔎 Portal Preview Besar (Nyampah App)</h1>
+  <div id="portalContainer"></div>
+
+  <script>
+    const links = [
+      { nama: "Portal Utama", url: "https://komunitas-nyampah-bersama.github.io/.github/portal.html" },
+      { nama: "Builder Forge", url: "https://komunitas-nyampah-bersama.github.io/.github/app_forge_builder.html" },
+      { nama: "Portal Drag Admin", url: "https://komunitas-nyampah-bersama.github.io/.github/portal3.html" }
+    ];
+
+    const container = document.getElementById("portalContainer");
+
+    links.forEach((link, index) => {
+      const card = document.createElement("div");
+      card.className = "link-card";
+
+      const title = document.createElement("h3");
+      title.textContent = link.nama;
+
+      const button = document.createElement("button");
+      button.textContent = "🔍 Lihat Preview";
+      button.onclick = () => {
+        const iframe = document.getElementById("preview-" + index);
+        iframe.style.display = iframe.style.display === "block" ? "none" : "block";
+      };
+
+      const iframe = document.createElement("iframe");
+      iframe.id = "preview-" + index;
+      iframe.className = "preview-frame";
+      iframe.src = link.url;
+
+      card.appendChild(title);
+      card.appendChild(button);
+      card.appendChild(iframe);
+
+      container.appendChild(card);
+    });
+  </script>
+
+</body>
+</html>
