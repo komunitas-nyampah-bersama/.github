@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Portal Komunitas Nyampah</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f2f7f5;
+      margin: 0; padding: 2rem;
+      color: #222;
+    }
+    h1 {
+      text-align: center;
+      color: #18b875;
+    }
+    .container {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      margin-top: 2rem;
+    }
+    .card {
+      background: white;
+      padding: 1rem;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .card h2 {
+      font-size: 18px;
+      margin-bottom: 0.5rem;
+    }
+    .btn {
+      margin-top: 0.5rem;
+      padding: 8px 12px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .btn-copy { background: #ffbb00; color: #333; }
+    .btn-qr { background: #18b875; color: white; }
+    .btn-wa { background: #25D366; color: white; }
+  </style>
+</head>
+<body>
+
+  <h1>🧭 Portal Komunitas Nyampah Bersama</h1>
+  <div class="container" id="linkContainer"></div>
+
+  <script>
+    const links = [
+      // --- Repositori 1 ---
+      { name: "Akademi", url: "https://komunitas-nyampah-bersama.github.io/Visi-Struktur-Komunitas-Bersama/program/akademi_nyampah_bersama.html" },
+      { name: "Bank Sampah Digital", url: "https://komunitas-nyampah-bersama.github.io/Visi-Struktur-Komunitas-Bersama/program/bank_sampah_digital.html" },
+      { name: "Reward & Insentif", url: "https://komunitas-nyampah-bersama.github.io/Visi-Struktur-Komunitas-Bersama/program/reward_insentif.html" },
+      { name: "Zero Waste Area", url: "https://komunitas-nyampah-bersama.github.io/Visi-Struktur-Komunitas-Bersama/program/zero_waste_area.html" },
+
+      // --- Repositori 2 ---
+      { name: "Dashboard Platform", url: "https://komunitas-nyampah-bersama.github.io/Dashboard-Platform-Komunitas/dashboard/Beranda.html" },
+      { name: "Java Generate", url: "https://komunitas-nyampah-bersama.github.io/Dashboard-Platform-Komunitas/dashboard/java_ganarante.html" },
+
+      // --- Repositori 3 ---
+      { name: "Banner Akademi", url: "https://komunitas-nyampah-bersama.github.io/Banner-Content-Bersama/akademi.html" },
+      { name: "Profil Komunitas", url: "https://komunitas-nyampah-bersama.github.io/Banner-Content-Bersama/profil_komunitas.html" }
+    ];
+
+    const container = document.getElementById('linkContainer');
+
+    links.forEach(link => {
+      const card = document.createElement('div');
+      card.className = 'card';
+
+      const title = document.createElement('h2');
+      title.innerText = link.name;
+      card.appendChild(title);
+
+      const btnCopy = document.createElement('button');
+      btnCopy.className = 'btn btn-copy';
+      btnCopy.innerText = '📋 Copy Link';
+      btnCopy.onclick = () => {
+        navigator.clipboard.writeText(link.url);
+        alert(`Link disalin:\n${link.url}`);
+      };
+      card.appendChild(btnCopy);
+
+      const btnQR = document.createElement('button');
+      btnQR.className = 'btn btn-qr';
+      btnQR.innerText = '📷 QR Code';
+      btnQR.onclick = () => {
+        window.open(`https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(link.url)}`);
+      };
+      card.appendChild(btnQR);
+
+      const btnWA = document.createElement('button');
+      btnWA.className = 'btn btn-wa';
+      btnWA.innerText = '💬 Share WA';
+      btnWA.onclick = () => {
+        window.open(`https://wa.me/?text=${encodeURIComponent(link.name + ' - ' + link.url)}`);
+      };
+      card.appendChild(btnWA);
+
+      container.appendChild(card);
+    });
+  </script>
+
+</body>
+</html>
