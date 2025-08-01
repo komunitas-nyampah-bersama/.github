@@ -1,0 +1,597 @@
+{
+  "aplikasi_nyampah_akademi": {
+    "identitas": {
+      "nama_aplikasi": "Nyampah Akademi",
+      "deskripsi": "Platform pendidikan lingkungan berstandar global pertama di Indonesia, terintegrasi dengan standar Uni Eropa untuk ekonomi sirkular dan pengelolaan sampah berkelanjutan",
+      "kontak": {
+        "alamat": "Jl. Lingkungan Hijau No. 27, Jakarta",
+        "telepon": "+62 21 888 7777",
+        "email": "info@nyampahakademi.id",
+        "whatsapp": "+62 812 3456 7890"
+      }
+    },
+    "tema_desain": {
+      "warna_utama": "#2e7d32",
+      "warna_sekunder": "#ff9800",
+      "warna_uni_eropa": {
+        "biru": "#004494",
+        "kuning": "#ffcc00"
+      }
+    },
+    "navigasi": [
+      {"label": "Beranda", "target": "#"},
+      {"label": "Program", "target": "#programs"},
+      {"label": "Kurikulum", "target": "#curriculum"},
+      {"label": "Sertifikasi", "target": "#certification"},
+      {"label": "EU Funding", "target": "#eu-integration"},
+      {"label": "Kontak", "target": "#contact"}
+    ],
+    "program_akademi": [
+      {
+        "kode": "PRG-001-1",
+        "judul": "Edukasi Pilah Sampah dari Rumah",
+        "modul": [
+          "Mengenal Sampah dan Macam-macamnya",
+          "Bahaya Sampah B3 dan Penanganannya",
+          "Mindset Pilah dalam Kehidupan Sehari-hari",
+          "Praktik Daur Ulang Kreatif",
+          "Ekonomi Sirkular dari Sampah"
+        ],
+        "reward": "Sertifikasi, Lencana Digital Level 1"
+      },
+      {
+        "kode": "PRG-001-2",
+        "judul": "Edukasi Ekonomi Sampah",
+        "modul": [
+          "Sampahku, Tabunganku",
+          "Sampah sebagai Aset Bernilai",
+          "Skema Reward dan Insentif",
+          "Keuangan Dasar Ekonomi Sirkular",
+          "Tren Pasar Daur Ulang Global"
+        ],
+        "reward": "Simulasi Tabungan, Target Rp1000/hari"
+      },
+      {
+        "kode": "PRG-001-3",
+        "judul": "Edukasi Digitalisasi Sampah",
+        "modul": [
+          "Konsep Tokenisasi Aktivitas Lingkungan",
+          "Sampah Digital, Cuan Rakyat",
+          "AI dan Pengelolaan Sampah Modern",
+          "Pengenalan Wallet Rakyat",
+          "Dasar-dasar Teknologi Blockchain"
+        ],
+        "reward": "Sertifikasi Literasi Digital"
+      },
+      {
+        "kode": "PRG-001-4",
+        "judul": "Energi Terbarukan & Pemanfaatan Sampah",
+        "modul": [
+          "Konversi Sampah menjadi Energi",
+          "Budidaya Maggot Skala Rumahan",
+          "Teknologi Bioreaktor Sederhana",
+          "Proyek Mini Pengolahan Sampah",
+          "Skema Investasi Hijau"
+        ],
+        "reward": "Sertifikat Energi Hijau"
+      }
+    ],
+    "integrasi_uni_eropa": {
+      "dukungan": "DIDUKUNG PENUH OLEH UNI EROPA",
+      "pendanaan": [
+        {
+          "kode": "ESC50-QLA",
+          "judul": "Label Kualitas Terdesentralisasi",
+          "status": "Disetujui",
+          "deadline": "31 Oktober 2025",
+          "jumlah": "€100,000",
+          "fitur": [
+            "Cocok untuk pengembangan kapasitas organisasi",
+            "Fokus pada sistem blockchain terdesentralisasi",
+            "Pengembangan DAO untuk keputusan komunitas"
+          ]
+        },
+        {
+          "kode": "KA120-VET",
+          "judul": "Akreditasi Pendidikan Kejuruan",
+          "status": "Proses",
+          "deadline": "1 Oktober 2025",
+          "fitur": [
+            "Akses mudah ke pendanaan mobilitas pemuda",
+            "Skema pendanaan jangka panjang",
+            "Sertifikasi berbasis ECVET (EU)",
+            "Pertukaran pelajar ke negara-negara EU"
+          ]
+        }
+      ],
+      "tools": [
+        {
+          "nama": "EU Open Data Portal",
+          "deskripsi": "Benchmark data sampah antar-negara",
+          "integrasi": [
+            "Auto-comparison dampak sampah dengan negara EU",
+            "Analisis tren pengelolaan sampah global",
+            "Pelaporan otomatis untuk proposal pendanaan"
+          ]
+        },
+        {
+          "nama": "INSPIRE Geoportal",
+          "deskripsi": "Pemetaan spasial desa mitra dan hotspot sampah",
+          "integrasi": [
+            "Pemetaan 3D alur sampah desa",
+            "Identifikasi area kritis pengelolaan sampah",
+            "Optimasi rute pengumpulan sampah"
+          ]
+        },
+        {
+          "nama": "EU Climate Tagger",
+          "deskripsi": "Analisis dokumen proyek hijau",
+          "integrasi": [
+            "Analisis otomatis proposal pendanaan",
+            "Tagging konten sesuai standar EU Green Deal",
+            "Rekomendasi peningkatan proposal"
+          ]
+        },
+        {
+          "nama": "Erasmus+ Mobility Tool",
+          "deskripsi": "Manajemen pertukaran pelajar",
+          "integrasi": [
+            "Terintegrasi dengan sistem SKS Nyampah",
+            "Tracking mobilitas pelajar secara real-time",
+            "Konversi kredit otomatis ke ECVET"
+          ]
+        }
+      ]
+    },
+    "roadmap": [
+      {
+        "periode": "Okt 2024 - Jan 2025",
+        "fase": "Fase Persiapan",
+        "kegiatan": [
+          "Pengembangan prototype DAO",
+          "Penyusunan kurikulum berbasis ECVET",
+          "Pelatihan fasilitator lokal",
+          "Pengintegrasian sistem SROI"
+        ]
+      },
+      {
+        "periode": "Feb - Sep 2025",
+        "fase": "Aplikasi Pendanaan",
+        "kegiatan": [
+          "Submit proposal KA120-VET (1 Okt 2025)",
+          "Submit proposal ESC50-QLA (31 Okt 2025)",
+          "MoU dengan mitra VET Eropa",
+          "Implementasi pilot project di 10 desa"
+        ]
+      },
+      {
+        "periode": "Okt 2025 - 2026",
+        "fase": "Implementasi & Publikasi",
+        "kegiatan": [
+          "Peluncuran resmi akademi global",
+          "Publikasi jurnal ilmiah internasional",
+          "Pertukaran pelajar pertama ke EU",
+          "Ekspansi ke 100 desa di Indonesia"
+        ]
+      }
+    ],
+    "dashboard": {
+      "peserta": {
+        "jumlah": 5247,
+        "pertumbuhan": "+32%",
+        "target": 10000
+      },
+      "pengurangan_sampah": {
+        "jumlah": "842 ton",
+        "pertumbuhan": "+45%",
+        "target": "1500 ton"
+      },
+      "dampak_ekonomi": {
+        "jumlah": "Rp 3.2M",
+        "pertumbuhan": "+28%",
+        "target": "Rp 10 miliar"
+      },
+      "desa_mitra": {
+        "jumlah": 127,
+        "pertumbuhan": "+21%",
+        "target": 500
+      }
+    },
+    "sistem_pembelajaran": {
+      "metode": [
+        {
+          "nama": "Behavioral Economics",
+          "deskripsi": "Insentif token untuk setiap kebiasaan baik yang dilakukan"
+        },
+        {
+          "nama": "Peer Learning",
+          "deskripsi": "Diskusi kelompok dan berbagi pengalaman di forum"
+        },
+        {
+          "nama": "Case Study",
+          "deskripsi": "Studi kasus sukses ekonomi sirkular dari komunitas lain"
+        }
+      ],
+      "reward": [
+        {
+          "jenis": "Token NyampahCoin",
+          "deskripsi": "+20 token untuk dompet digital Anda"
+        },
+        {
+          "jenis": "Lencana Digital",
+          "deskripsi": "\"Pemilah Ahli\" yang bisa dibagikan ke media sosial"
+        },
+        {
+          "jenis": "Bibit Tanaman Gratis",
+          "deskripsi": "Pilih 5 bibit tanaman dari katalog kami"
+        },
+        {
+          "jenis": "Akses Level Berikutnya",
+          "deskripsi": "Membuka Level 2: Ekonomi Sampah Menengah"
+        }
+      ],
+      "integrasi_digital": [
+        {
+          "langkah": "Scan Sampah",
+          "deskripsi": "Gunakan AR Scanner untuk identifikasi jenis sampah"
+        },
+        {
+          "langkah": "Data Terekam",
+          "deskripsi": "Data otomatis masuk ke blockchain"
+        },
+        {
+          "langkah": "Dapatkan Token",
+          "deskripsi": "Token otomatis masuk ke Wallet Rakyat"
+        },
+        {
+          "langkah": "Lacak Dampak",
+          "deskripsi": "Lihat kontribusimu di Community Dashboard"
+        }
+      ],
+      "level": [
+        {
+          "nama": "Level 1",
+          "judul": "Edukasi Dasar + Ekonomi Sampah Dasar",
+          "deskripsi": "Memperkenalkan cuan dari kebiasaan baik",
+          "misi": [
+            {
+              "nama": "Pilah Sampah Pintar",
+              "tujuan": "Mengubah kebiasaan pilah sampah menjadi sumber pendapatan",
+              "tugas": [
+                "Pilah sampah organik dan anorganik selama 7 hari berturut-turut",
+                "Hitung potensi pendapatan dari sampah yang dipilah",
+                "Scan sampah menggunakan AR Scanner (min. 10 item/hari)",
+                "Laporkan hasil di Dashboard Impact Tracker"
+              ],
+              "reward": {
+                "token": 20,
+                "badge": "Lencana Pemilah Ahli"
+              },
+              "durasi": "7 hari",
+              "kolaborasi": "Boleh tim (max 3 orang)",
+              "bonus": "+5 token/hari jika konsisten"
+            }
+          ],
+          "reward_level": {
+            "token": 50,
+            "sertifikat": "Sertifikat Level 1",
+            "akses": "Level 2"
+          }
+        },
+        {
+          "nama": "Level 2",
+          "judul": "Ekonomi Sampah Menengah + Digitalisasi Dasar",
+          "deskripsi": "Membuka pemahaman sistem digital dan nilai ekonomi sampah",
+          "misi": [
+            {
+              "nama": "Wallet Pertamaku",
+              "tujuan": "Menguasai dasar-dasar tokenisasi",
+              "tugas": [
+                "Buat Wallet Rakyat digital",
+                "Klaim token pertama dari aktivitas pilah sampah",
+                "Lakukan transaksi token pertama"
+              ],
+              "reward": {
+                "token": 25,
+                "badge": "Badge Digital"
+              }
+            }
+          ],
+          "reward_level": {
+            "token": 100,
+            "sertifikat": "Sertifikat Literasi Digital",
+            "akses": "Analisis Pasar"
+          }
+        }
+      ]
+    },
+    "sistem_sertifikasi": {
+      "level": [
+        {
+          "nama": "Level Pemula",
+          "syarat": [
+            "Selesaikan PRG-001-1",
+            "Nilai total ≥70%"
+          ],
+          "reward": [
+            "Lencana Digital Level 1",
+            "50 Token NyampahCoin"
+          ]
+        },
+        {
+          "nama": "Level Menengah",
+          "syarat": [
+            "Selesaikan 2 modul (PRG-001-1 & PRG-001-2)",
+            "Proyek mikro daur ulang"
+          ],
+          "reward": [
+            "Sertifikat Kompetensi",
+            "150 Token NyampahCoin"
+          ]
+        },
+        {
+          "nama": "Level Mahir",
+          "syarat": [
+            "Selesaikan 4 modul",
+            "Capstone project"
+          ],
+          "reward": [
+            "Gelar \"Expert Circular Economy\"",
+            "500 Token NyampahCoin",
+            "Akses jaringan profesional"
+          ]
+        },
+        {
+          "nama": "Level Kemitraan",
+          "syarat": [
+            "Implementasi proyek komunitas",
+            "Laporan dampak terverifikasi"
+          ],
+          "reward": [
+            "Akses pendanaan hijau",
+            "Mentorship khusus",
+            "Peluang kolaborasi internasional"
+          ]
+        }
+      ],
+      "sistem_penilaian": [
+        {
+          "jenis": "Klasikal",
+          "persentase": 30,
+          "komponen": [
+            "Partisipasi forum diskusi",
+            "Kehadiran webinar (min. 80%)"
+          ]
+        },
+        {
+          "jenis": "Praktik",
+          "persentase": 40,
+          "komponen": [
+            "Laporan proyek lapangan",
+            "Karya daur ulang (orisinalitas & dampak)"
+          ]
+        },
+        {
+          "jenis": "Teori",
+          "persentase": 30,
+          "komponen": [
+            "Kuis online (passing grade: 70%)",
+            "Ujian akhir modul (esai + studi kasus)"
+          ]
+        }
+      ]
+    },
+    "mitra_strategis": [
+      "Grameen Foundation",
+      "BIBB Jerman",
+      "UNESCO Green Academies",
+      "Polygon Blockchain",
+      "Waste4Change Indonesia",
+      "EU Blockchain Observatory"
+    ]
+  },
+  "struktur_kurikulum": {
+    "levels": [
+      {
+        "level": "Level 1",
+        "nama": "Edukasi Dasar + Ekonomi Sampah Dasar",
+        "isi": "Pengenalan jenis sampah dan lingkungan, ekonomi sampah dasar (cuan, behavioral economics)",
+        "metode": ["Behavioral Economics", "Peer Learning"],
+        "fungsi": "Pembuka sistem akademi, memperkenalkan cuan dari kebiasaan baik"
+      },
+      {
+        "level": "Level 2",
+        "nama": "Ekonomi Sampah Menengah + Digitalisasi Sampah Dasar",
+        "isi": "Sistem reward, form digital, tokenisasi awal, digitalisasi dasar",
+        "metode": ["Case Study", "Behavioral Economics", "Peer Learning"],
+        "fungsi": "Membuka pemahaman sistem digital dan nilai ekonomi sampah yang lebih luas"
+      },
+      {
+        "level": "Level 3",
+        "nama": "Ekonomi & Digitalisasi Lanjutan",
+        "isi": "Smart contract, token sistem, koperasi digital, sistem coin",
+        "metode": ["Case Study", "Socratic Questioning", "Outcome-Based Learning", "Peer Learning", "Behavioral Economics"],
+        "fungsi": "Pengembangan sistem digital & reward lanjutan dengan implementasi riil"
+      },
+      {
+        "level": "Level 4",
+        "nama": "Penguatan Sistem + Edukasi Energi",
+        "isi": "Semua dari Level 3 + kompos, maggot, biogas, jelantah, karbon",
+        "metode": ["Case Study", "Socratic", "Outcome-Based", "Peer Learning", "Behavioral Economics"],
+        "fungsi": "Pendalaman sistem, eksplorasi energi terbarukan dari sampah"
+      },
+      {
+        "level": "Level 5",
+        "nama": "Profesionalisme dan Sertifikasi",
+        "isi": "Semua dari Level 4 + sertifikasi, pelatihan, proposal CSR, DAO, governance",
+        "metode": ["Semua metode sebelumnya dengan fokus ke arah publik dan lembaga"],
+        "fungsi": "Menjadi pelatih, duta komunitas, representasi program secara nasional"
+      },
+      {
+        "level": "Level 6",
+        "nama": "Ahli dan Pelaku Nyata",
+        "isi": "Pendamping lapangan, pelatih RT/RW lain, audit, pembangun sistem real",
+        "metode": ["Semua metode sebelumnya dengan praktek nyata di lapangan"],
+        "fungsi": "Implementasi penuh di masyarakat, pembuktian profesionalisme"
+      },
+      {
+        "level": "Level 7",
+        "nama": "Warisan Digital & Refleksi",
+        "isi": "Tidak ada materi, hanya gulungan, tulisan, sejarah, dan kesadaran",
+        "metode": ["Kontemplasi", "membaca ulang", "ruang hening"],
+        "fungsi": "Pemaknaan terakhir, warisan nilai, penghormatan pada proses"
+      }
+    ],
+    "struktur_umum": {
+      "pendekatan": "Berjenjang dari dasar hingga ahli",
+      "fokus_pembelajaran": [
+        "Teori ekonomi sirkular",
+        "Teknologi digital (blockchain/tokenisasi)",
+        "Praktik pengelolaan limbah",
+        "Pengembangan komunitas",
+        "Refleksi keberlanjutan"
+      ],
+      "target_pencapaian": "Menciptakan ahli pengelolaan sampah yang mampu mengimplementasikan sistem ekonomi sirkular berbasis teknologi"
+    }
+  },
+  "master_aktivitas": {
+    "educational_activities": [
+      {
+        "id_edukasi": "EDU-001",
+        "jenis_edukasi": "Baca Blog",
+        "platform": "Medium",
+        "reward": {
+          "coin": 2,
+          "xp": 3
+        },
+        "validasi": {
+          "sertifikat": true,
+          "link_form_bukti": ""
+        }
+      },
+      {
+        "id_edukasi": "EDU-002",
+        "jenis_edukasi": "Tonton Video YouTube",
+        "platform": "YouTube",
+        "reward": {
+          "coin": 3,
+          "xp": 4
+        },
+        "validasi": {
+          "sertifikat": true,
+          "link_form_bukti": ""
+        }
+      },
+      {
+        "id_edukasi": "EDU-003",
+        "jenis_edukasi": "Tulis Artikel",
+        "platform": "Medium",
+        "reward": {
+          "coin": 5,
+          "xp": 7
+        },
+        "validasi": {
+          "sertifikat": true,
+          "link_form_bukti": ""
+        }
+      },
+      {
+        "id_edukasi": "EDU-004",
+        "jenis_edukasi": "Komen di IG",
+        "platform": "Instagram",
+        "reward": {
+          "coin": 1,
+          "xp": 2
+        },
+        "validasi": {
+          "sertifikat": false,
+          "link_form_bukti": ""
+        }
+      },
+      {
+        "id_edukasi": "EDU-005",
+        "jenis_edukasi": "Share di WA",
+        "platform": "WhatsApp",
+        "reward": {
+          "coin": 1,
+          "xp": 1
+        },
+        "validasi": {
+          "sertifikat": false,
+          "link_form_bukti": ""
+        }
+      },
+      {
+        "id_edukasi": "EDU-006",
+        "jenis_edukasi": "Buat Konten TikTok",
+        "platform": "TikTok",
+        "reward": {
+          "coin": 4,
+          "xp": 5
+        },
+        "validasi": {
+          "sertifikat": true,
+          "link_form_bukti": ""
+        }
+      },
+      {
+        "id_edukasi": "EDU-007",
+        "jenis_edukasi": "Ikut Webinar",
+        "platform": "Zoom",
+        "reward": {
+          "coin": 3,
+          "xp": 4
+        },
+        "validasi": {
+          "sertifikat": true,
+          "link_form_bukti": ""
+        }
+      },
+      {
+        "id_edukasi": "EDU-008",
+        "jenis_edukasi": "Kerjakan Quiz",
+        "platform": "Google Form",
+        "reward": {
+          "coin": 2,
+          "xp": 3
+        },
+        "validasi": {
+          "sertifikat": true,
+          "link_form_bukti": ""
+        }
+      },
+      {
+        "id_edukasi": "EDU-009",
+        "jenis_edukasi": "Submit Sertifikat",
+        "platform": "Drive",
+        "reward": {
+          "coin": 5,
+          "xp": 5
+        },
+        "validasi": {
+          "sertifikat": true,
+          "link_form_bukti": ""
+        }
+      },
+      {
+        "id_edukasi": "EDU-010",
+        "jenis_edukasi": "Review Produk Nyampah",
+        "platform": "ShopeeGreen",
+        "reward": {
+          "coin": 2,
+          "xp": 2
+        },
+        "validasi": {
+          "sertifikat": false,
+          "link_form_bukti": ""
+        }
+      }
+    ],
+    "metadata": {
+      "total_activities": 10,
+      "reward_systems": ["coin", "xp"],
+      "validation_required": true,
+      "platforms": ["Medium", "YouTube", "Instagram", "WhatsApp", "TikTok", "Zoom", "Google Form", "Drive", "ShopeeGreen"]
+    }
+  }
+}
