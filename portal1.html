@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Portal Nyampah Otomatis</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #1e1e2f;
+      color: #eee;
+      padding: 2rem;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #18b875;
+    }
+    .logo {
+      display: block;
+      max-width: 120px;
+      margin: 0 auto 1rem;
+    }
+    .kategori-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .kategori {
+      background: #2a2a3f;
+      padding: 1rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      cursor: grab;
+    }
+    .kategori h2 {
+      margin-top: 0;
+      color: #ffbb00;
+    }
+    .link-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+    .link-card {
+      background: #343452;
+      padding: 0.8rem;
+      border-radius: 8px;
+    }
+    .link-card a {
+      color: #18b875;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    .link-tools {
+      margin-top: 8px;
+      display: flex;
+      gap: 8px;
+    }
+    .btn {
+      font-size: 12px;
+      padding: 4px 8px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .btn-copy { background: #ffd54f; color: #000; }
+    .btn-qr { background: #18b875; color: white; }
+    .btn-wa { background: #25D366; color: white; }
+  </style>
+</head>
+<body>
+
+  <img src="https://ipfs.io/ipfs/QmVdP3U9JKzhkFftvVqJWuM9bb7owzkD9zzdeNRYUkUhh1" class="logo" alt="Nyampah Logo">
+  <h1>Portal Digital Komunitas Nyampah 💚</h1>
+  <div class="kategori-container" id="kategoriContainer"></div>
+
+  <script>
+    const container = document.getElementById("kategoriContainer");
+
+    fetch("nyampah_links.json")
+      .then(res => res.json())
+      .then(data => {
+        data.forEach((kategoriData, index) => {
+          const kategoriDiv = document.createElement('div');
+          kategoriDiv.className = 'kategori';
+          kategoriDiv.draggable = true;
+
+          const title = document.createElement('h2');
+          title.innerText = kategoriData.kategori;
+          kategoriDiv.appendChild(title);
+
+          const list = document.createElement('div');
+          list.className = 'link-list';
+
+          kategoriData.link.forEach(link => {
+            const card = document.createElement('div');
+            card.className = 'link-card';
+
+            const a = document.createElement('a');
+            a.href = link.url;
+            a.target = "_blank";
+            a.innerText = link.nama;
+
+            const tools = document.createElement('div');
+            tools.className = 'link-tools';
+
+            const btnCopy = document.createElement('button');
+            btnCopy.className = 'btn btn-copy';
+            btnCopy.innerText = 'Copy';
+            btnCopy.onclick = () => {
+              navigator.clipboard.writeText(link.url);
+              alert(`Disalin:\n${link.url}`);
+            };
+
+            const btnQR = document.createElement('button');
+            btnQR.className = 'btn btn-qr';
+            btnQR.innerText = 'QR';
+            btnQR.onclick = () => {
+              window.open(`https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(link.url)}`);
+            };
+
+            const btnWA = document.createElement('button');
+            btnWA.className = 'btn btn-wa';
+            btnWA.innerText = 'WA';
+            btnWA.onclick = () => {
+              window.open(`https://wa.me/?text=${encodeURIComponent(link.nama + ': ' + link.url)}`);
+            };
+
+            tools.appendChild(btnCopy);
+            tools.appendChild(btnQR);
+            tools.appendChild(btnWA);
+            card.appendChild(a);
+            card.appendChild(tools);
+            list.appendChild(card);
+          });
+
+          kategoriDiv.appendChild(list);
+          container.appendChild(kategoriDiv);
+
+          // Drag event
+          kategoriDiv.addEventListener("dragstart", e => {
+            e.dataTransfer.setData("index", index);
+          });
+        });
+
+        container.addEventListener("dragover", e => e.preventDefault());
+
+        container.addEventListener("drop", e => {
+          e.preventDefault();
+          const draggedIndex = e.dataTransfer.getData("index");
+          const target = e.target.closest(".kategori");
+          if (!target) return;
+
+          const droppedIndex = Array.from(container.children).indexOf(target);
+          if (draggedIndex !== droppedIndex) {
+            const dragged = container.children[draggedIndex];
+            container.insertBefore(dragged, droppedIndex > draggedIndex ? target.nextSibling : target);
+          }
+        });
+      });
+  </script>
+</body>
+</html>
