@@ -1,0 +1,66 @@
+{
+  "header": {
+    "title": "Sistem Manajemen Komunitas",
+    "subtitle": "Platform untuk mengelola Komunitas Nyampah Bersama"
+  },
+  "mainContent": {
+    "title": "Selamat Datang di Sistem Manajemen",
+    "content": "<p>Ini adalah dashboard untuk mengelola komunitas dan anggota. Gunakan tombol di bawah untuk melihat data.</p>",
+    "additionalContent": "<div class='alert'><p><strong>Info:</strong> Sistem ini menggunakan arsitektur berbasis JSON untuk fleksibilitas maksimal</p></div>",
+    "actionButton": {
+      "text": "Tampilkan Data Anggota & Statistik",
+      "action": "both"
+    }
+  },
+  "users": [
+    {
+      "name": "Muhamad Oky Muhisin",
+      "email": "oky@nyampahbersama.com",
+      "role": "Founder",
+      "avatar": "https://randomuser.me/api/portraits/men/32.jpg"
+    },
+    {
+      "name": "Budi Santoso",
+      "email": "budi@nyampahbersama.com",
+      "role": "Pengurus",
+      "avatar": "https://randomuser.me/api/portraits/men/22.jpg"
+    },
+    {
+      "name": "Siti Rahayu",
+      "email": "siti@nyampahbersama.com",
+      "role": "Anggota Aktif",
+      "avatar": "https://randomuser.me/api/portraits/women/44.jpg"
+    },
+    {
+      "name": "Ahmad Fauzi",
+      "email": "ahmad@nyampahbersama.com",
+      "role": "Anggota Umum",
+      "avatar": "https://randomuser.me/api/portraits/men/65.jpg"
+    }
+  ],
+  "stats": [
+    {
+      "title": "Total Anggota",
+      "value": "1,247",
+      "description": "Anggota aktif komunitas"
+    },
+    {
+      "title": "Sampah Terolah",
+      "value": "97.4 kg",
+      "description": "Dalam uji coba terakhir"
+    },
+    {
+      "title": "Pengurangan CO2",
+      "value": "1.47 kg/hari",
+      "description": "Rata-rata per hari"
+    },
+    {
+      "title": "Token Didistribusikan",
+      "value": "24,587",
+      "description": "NyampahCoin yang beredar"
+    }
+  ],
+  "footer": {
+    "text": "© 2023 Komunitas Nyampah Bersama | Arsitektur Template + JSON"
+  }
+}
