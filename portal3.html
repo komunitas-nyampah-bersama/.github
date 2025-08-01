@@ -1,0 +1,218 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Super Portal Nyampah</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #1e1e2f;
+      color: #eee;
+    }
+    header {
+      background: #18b875;
+      padding: 1rem;
+      text-align: center;
+      color: white;
+      font-size: 1.5rem;
+    }
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5rem 1rem;
+      background: #2a2a3f;
+    }
+    .btn {
+      padding: 6px 12px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .btn-lang {
+      background: #ffd54f;
+      color: #000;
+    }
+    .btn-admin {
+      background: #90caf9;
+      color: #000;
+    }
+    .container {
+      padding: 1rem;
+    }
+    .kategori {
+      margin-bottom: 2rem;
+      background: #2f2f4f;
+      padding: 1rem;
+      border-radius: 12px;
+    }
+    .kategori h2 {
+      margin-top: 0;
+      color: #ffeb3b;
+      cursor: move;
+    }
+    .link-card {
+      background: #3b3b5f;
+      margin: 8px 0;
+      padding: 0.75rem;
+      border-radius: 10px;
+      cursor: move;
+    }
+    iframe {
+      width: 100%;
+      height: 240px;
+      border: none;
+      border-radius: 8px;
+      margin-top: 0.5rem;
+    }
+    .admin-controls {
+      display: none;
+      margin-top: 1rem;
+      background: #444;
+      padding: 1rem;
+      border-radius: 10px;
+    }
+    .admin-controls input {
+      margin-bottom: 0.5rem;
+      width: 100%;
+      padding: 8px;
+      border-radius: 6px;
+      border: none;
+    }
+    .btn-save {
+      background: #4caf50;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <header>🌍 Super Portal Nyampah Digital</header>
+  <div class="topbar">
+    <button class="btn btn-lang" onclick="toggleLanguage()">🇮🇩 / 🇬🇧</button>
+    <button class="btn btn-admin" onclick="toggleAdmin()">🛠️ Admin Mode</button>
+  </div>
+  <div class="container" id="portal"></div>
+
+  <div class="admin-controls" id="adminControls">
+    <h3>Tambah Link Baru</h3>
+    <input type="text" id="newKategori" placeholder="Kategori (misal: Akademi)">
+    <input type="text" id="newNama" placeholder="Nama Link">
+    <input type="text" id="newURL" placeholder="URL Lengkap">
+    <button class="btn btn-save" onclick="addLink()">➕ Tambah Link</button>
+  </div>
+
+  <script>
+    let data = [];
+    let currentLang = localStorage.getItem('lang') || 'id';
+
+    function loadJSON() {
+      fetch('nyampah_links.json')
+        .then(res => res.json())
+        .then(json => {
+          data = json;
+          renderPortal();
+        });
+    }
+
+    function renderPortal() {
+      const container = document.getElementById("portal");
+      container.innerHTML = "";
+      data.forEach((kategori, katIndex) => {
+        const katDiv = document.createElement("div");
+        katDiv.className = "kategori";
+        katDiv.setAttribute("draggable", "true");
+        katDiv.addEventListener("dragstart", e => e.dataTransfer.setData("katIndex", katIndex));
+        katDiv.addEventListener("drop", e => dropKategori(e, katIndex));
+        katDiv.addEventListener("dragover", e => e.preventDefault());
+
+        const title = document.createElement("h2");
+        title.textContent = kategori.kategori;
+        katDiv.appendChild(title);
+
+        kategori.link.forEach((link, linkIndex) => {
+          const card = document.createElement("div");
+          card.className = "link-card";
+          card.setAttribute("draggable", "true");
+          card.addEventListener("dragstart", e => {
+            e.dataTransfer.setData("linkIndex", linkIndex);
+            e.dataTransfer.setData("katIndexLink", katIndex);
+          });
+          card.addEventListener("drop", e => dropLink(e, katIndex, linkIndex));
+          card.addEventListener("dragover", e => e.preventDefault());
+
+          card.innerHTML = `
+            <strong>${link.nama}</strong><br>
+            <a href="${link.url}" target="_blank">${link.url}</a>
+            <iframe src="${link.url}"></iframe>
+          `;
+          katDiv.appendChild(card);
+        });
+
+        container.appendChild(katDiv);
+      });
+
+      localStorage.setItem("portalOrder", JSON.stringify(data));
+    }
+
+    function dropKategori(e, droppedIndex) {
+      const draggedIndex = e.dataTransfer.getData("katIndex");
+      if (draggedIndex === droppedIndex) return;
+      const item = data.splice(draggedIndex, 1)[0];
+      data.splice(droppedIndex, 0, item);
+      renderPortal();
+    }
+
+    function dropLink(e, katIndex, droppedIndex) {
+      const draggedLinkIndex = e.dataTransfer.getData("linkIndex");
+      const fromKat = e.dataTransfer.getData("katIndexLink");
+      const item = data[fromKat].link.splice(draggedLinkIndex, 1)[0];
+      data[katIndex].link.splice(droppedIndex, 0, item);
+      renderPortal();
+    }
+
+    function toggleLanguage() {
+      currentLang = currentLang === 'id' ? 'en' : 'id';
+      localStorage.setItem('lang', currentLang);
+      alert("Bahasa diubah ke: " + (currentLang === 'id' ? 'Indonesia' : 'English'));
+    }
+
+    function toggleAdmin() {
+      const adminPanel = document.getElementById("adminControls");
+      adminPanel.style.display = adminPanel.style.display === "none" ? "block" : "none";
+    }
+
+    function addLink() {
+      const kategori = document.getElementById("newKategori").value.trim();
+      const nama = document.getElementById("newNama").value.trim();
+      const url = document.getElementById("newURL").value.trim();
+      if (!kategori || !nama || !url) return alert("Isi semua kolom");
+
+      let targetKategori = data.find(k => k.kategori === kategori);
+      if (!targetKategori) {
+        targetKategori = { kategori, link: [] };
+        data.push(targetKategori);
+      }
+      targetKategori.link.push({ nama, url });
+      document.getElementById("newKategori").value = "";
+      document.getElementById("newNama").value = "";
+      document.getElementById("newURL").value = "";
+      renderPortal();
+    }
+
+    window.onload = () => {
+      const saved = localStorage.getItem("portalOrder");
+      if (saved) {
+        data = JSON.parse(saved);
+        renderPortal();
+      } else {
+        loadJSON();
+      }
+    };
+  </script>
+</body>
+</html>
