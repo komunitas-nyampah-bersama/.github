@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Representasi HTML sebagai JSON - Komunitas Nyampah Bersama</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --primary: #2e7d32;
+            --primary-dark: #1b5e20;
+            --secondary: #ffc107;
+            --accent: #4caf50;
+            --light: #e8f5e9;
+            --dark: #1a237e;
+            --text: #333;
+            --background: #f5f5f5;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--background);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        
+        header {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .panel {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            padding: 20px;
+            height: 80vh;
+            overflow: auto;
+        }
+        
+        .panel-header {
+            color: var(--primary);
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--light);
+        }
+        
+        pre {
+            background: #f8f8f8;
+            padding: 15px;
+            border-radius: 5px;
+            overflow: auto;
+            height: calc(100% - 60px);
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+        
+        .visualization {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            grid-column: 1 / -1;
+            margin-top: 20px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            padding: 20px;
+        }
+        
+        .card-header {
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: var(--dark);
+            padding: 10px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+        
+        .btn:hover {
+            background-color: #ffb300;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .json-key {
+            color: #d73a49;
+        }
+        
+        .json-string {
+            color: #032f62;
+        }
+        
+        .json-number {
+            color: #005cc5;
+        }
+        
+        .json-boolean {
+            color: #6f42c1;
+        }
+        
+        .json-null {
+            color: #6a737d;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Representasi HTML sebagai JSON</h1>
+        <p>Struktur HTML, CSS, dan JavaScript Komunitas Nyampah Bersama dalam Format JSON</p>
+    </header>
+    
+    <div class="container">
+        <div class="panel">
+            <h2 class="panel-header">Struktur JSON dari HTML</h2>
+            <pre id="json-output"></pre>
+        </div>
+        
+        <div class="panel">
+            <h2 class="panel-header">Visualisasi Struktur</h2>
+            <div id="visualization"></div>
+        </div>
+        
+        <div class="visualization">
+            <div class="card">
+                <h3 class="card-header">Representasi Komponen HTML</h3>
+                <div class="chart-container">
+                    <canvas id="htmlChart"></canvas>
+                </div>
+                <button class="btn" id="refresh-chart">Refresh Visualisasi</button>
+            </div>
+            
+            <div class="card">
+                <h3 class="card-header">Distribusi Kode</h3>
+                <div class="chart-container">
+                    <canvas id="codeDistributionChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Data JSON yang merepresentasikan struktur HTML
+        const htmlAsJson = {
+            "metadata": {
+                "title": "Platform Komunitas Nyampah Bersama",
+                "language": "id",
+                "viewport": "width=device-width, initial-scale=1.0",
+                "description": "Platform untuk Komunitas Nyampah Bersama yang mengintegrasikan aksi lingkungan dengan teknologi Web3"
+            },
+            "styles": {
+                "variables": {
+                    "primary": "#2e7d32",
+                    "primary-dark": "#1b5e20",
+                    "secondary": "#ffc107",
+                    "accent": "#4caf50",
+                    "light": "#e8f5e9",
+                    "dark": "#1a237e",
+                    "text": "#333",
+                    "background": "#f5f5f5"
+                },
+                "global": `* {
+                    margin: 0;
+                    padding: 0;
+                    box-sizing: border-box;
+                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                }`,
+                "body": `body {
+                    background-color: var(--background);
+                    color: var(--text);
+                    line-height: 1.6;
+                }`,
+                "header": `header {
+                    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+                    color: white;
+                    padding: 1rem;
+                    position: sticky;
+                    top: 0;
+                    z-index: 100;
+                    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+                }`,
+                "hero": `.hero {
+                    background: linear-gradient(rgba(0,0,0,0.6), url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09');
+                    background-size: cover;
+                    background-position: center;
+                    color: white;
+                    text-align: center;
+                    padding: 5rem 1rem;
+                }`,
+                // ... dan seterusnya untuk semua aturan CSS
+            },
+            "content": {
+                "header": {
+                    "tag": "header",
+                    "attributes": {},
+                    "children": [
+                        {
+                            "tag": "div",
+                            "attributes": {"class": "header-container"},
+                            "children": [
+                                {
+                                    "tag": "div",
+                                    "attributes": {"class": "logo"},
+                                    "children": [
+                                        {
+                                            "tag": "div",
+                                            "attributes": {"class": "logo-icon"},
+                                            "children": [
+                                                {
+                                                    "tag": "i",
+                                                    "attributes": {"class": "fas fa-recycle"}
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "tag": "div",
+                                            "children": [
+                                                {
+                                                    "tag": "div",
+                                                    "attributes": {"class": "logo-text"},
+                                                    "text": "NYAMPAH BERSAMA"
+                                                },
+                                                {
+                                                    "tag": "div",
+                                                    "attributes": {"class": "logo-tagline"},
+                                                    "text": "Kutemani Nyampahmu Sampai Tua"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "tag": "nav",
+                                    "children": [
+                                        {
+                                            "tag": "ul",
+                                            "children": [
+                                                {
+                                                    "tag": "li",
+                                                    "children": [
+                                                        {
+                                                            "tag": "a",
+                                                            "attributes": {"href": "#home", "class": "active"},
+                                                            "text": "Beranda"
+                                                        }
+                                                    ]
+                                                },
+                                                // ... item navigasi lainnya
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "hero": {
+                    "tag": "section",
+                    "attributes": {"class": "hero", "id": "home"},
+                    "children": [
+                        {
+                            "tag": "div",
+                            "attributes": {"class": "hero-content"},
+                            "children": [
+                                {
+                                    "tag": "h1",
+                                    "text": "Transformasi Sampah Menjadi Nilai"
+                                },
+                                {
+                                    "tag": "p",
+                                    "text": "Komunitas Nyampah Bersama memadukan aksi lingkungan dengan teknologi Web3 untuk menciptakan ekonomi sirkular berkelanjutan berbasis komunitas"
+                                },
+                                {
+                                    "tag": "div",
+                                    "attributes": {"class": "hero-buttons"},
+                                    "children": [
+                                        {
+                                            "tag": "a",
+                                            "attributes": {"href": "#membership", "class": "btn"},
+                                            "text": "Gabung Komunitas"
+                                        },
+                                        {
+                                            "tag": "a",
+                                            "attributes": {"href": "#framework", "class": "btn btn-outline"},
+                                            "text": "Pelajari 2BCycle"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                // ... dan seterusnya untuk semua bagian halaman
+            },
+            "scripts": {
+                "chart": `const ctx = document.getElementById('impactChart').getContext('2d');
+                const impactChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Pemahaman Karbon', 'Partisipasi', 'Pengelolaan Sampah', 'Insentif Ekonomi'],
+                        datasets: [{
+                            label: 'Peningkatan (%)',
+                            data: [72, 83, 65, 78],
+                            backgroundColor: [
+                                'rgba(46, 125, 50, 0.7)',
+                                'rgba(76, 175, 80, 0.7)',
+                                'rgba(139, 195, 74, 0.7)',
+                                'rgba(255, 193, 7, 0.7)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        scales: {
+                            y: { beginAtZero: true, max: 100 }
+                        }
+                    }
+                });`,
+                "tabs": `const tabBtns = document.querySelectorAll('.tab-btn');
+                const tabContents = document.querySelectorAll('.tab-content');
+                
+                tabBtns.forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        tabBtns.forEach(b => b.classList.remove('active'));
+                        tabContents.forEach(c => c.classList.remove('active'));
+                        btn.classList.add('active');
+                        const tabId = btn.getAttribute('data-tab');
+                        document.getElementById(tabId+'-content').classList.add('active');
+                    });
+                });`,
+                "smoothScroll": `document.querySelectorAll('nav a').forEach(anchor => {
+                    anchor.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        const targetId = this.getAttribute('href');
+                        const targetElement = document.querySelector(targetId);
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    });
+                });`
+            },
+            "data": {
+                "stats": [
+                    {"label": "Peningkatan Interaksi", "value": 147, "unit": "%"},
+                    {"label": "Partisipan Termotivasi", "value": 83, "unit": "%"},
+                    {"label": "Sampah Terkelola", "value": 97.4, "unit": "kg"},
+                    {"label": "Pengurangan CO2", "value": 1.47, "unit": "kg/hari"}
+                ],
+                "publications": [
+                    {"title": "Implementasi Proof of Attention Value...", "author": "Muhlisin, M.O.", "year": 2024},
+                    {"title": "Model Ekonomi Perilaku...", "author": "Muhlisin, M.O.", "year": 2023},
+                    {"title": "Trust Mechanism...", "author": "Muhlisin, M.O. & Pratama, A.", "year": 2023},
+                    {"title": "Whitepaper 2BCycle & PoAV", "author": "Oky & Nyampah Bersama", "year": 2025}
+                ],
+                "membershipLevels": [
+                    {
+                        "name": "Anggota Umum",
+                        "features": [
+                            "Ikut kegiatan komunitas",
+                            "Akses informasi transparan",
+                            "Hak suara pemilihan",
+                            "Fasilitas komunitas"
+                        ]
+                    },
+                    {
+                        "name": "Anggota Aktif",
+                        "features": [
+                            "Semua manfaat Anggota Umum",
+                            "Prioritas pelatihan",
+                            "Hak dipilih dan memilih",
+                            "Pengakuan kontribusi",
+                            "Insentif NyampahCoin"
+                        ]
+                    },
+                    {
+                        "name": "Pengurus",
+                        "features": [
+                            "Semua manfaat Anggota Aktif",
+                            "Delegasi wewenang",
+                            "Dukungan komunitas",
+                            "Akses sumber daya khusus",
+                            "Kepemimpinan proyek"
+                        ]
+                    }
+                ]
+            }
+        };
+
+        // Fungsi untuk menampilkan JSON dengan syntax highlighting
+        function syntaxHighlight(json) {
+            if (typeof json !== 'string') {
+                json = JSON.stringify(json, null, 2);
+            }
+            
+            json = json.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+            
+            return json.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g, function (match) {
+                let cls = 'json-number';
+                if (/^"/.test(match)) {
+                    if (/:$/.test(match)) {
+                        cls = 'json-key';
+                    } else {
+                        cls = 'json-string';
+                    }
+                } else if (/true|false/.test(match)) {
+                    cls = 'json-boolean';
+                } else if (/null/.test(match)) {
+                    cls = 'json-null';
+                }
+                return '<span class="' + cls + '">' + match + '</span>';
+            });
+        }
+
+        // Fungsi untuk membuat visualisasi struktur HTML
+        function visualizeStructure() {
+            const ctx = document.getElementById('htmlChart').getContext('2d');
+            const data = {
+                labels: ['Header', 'Hero', 'Profil', '2BCycle', 'Keanggotaan', 'Riset', 'Kontak', 'Footer'],
+                datasets: [{
+                    label: 'Komponen HTML',
+                    data: [15, 20, 18, 22, 25, 17, 16, 12],
+                    backgroundColor: [
+                        'rgba(46, 125, 50, 0.7)',
+                        'rgba(76, 175, 80, 0.7)',
+                        'rgba(139, 195, 74, 0.7)',
+                        'rgba(255, 193, 7, 0.7)',
+                        'rgba(255, 152, 0, 0.7)',
+                        'rgba(255, 87, 34, 0.7)',
+                        'rgba(156, 39, 176, 0.7)',
+                        'rgba(33, 150, 243, 0.7)'
+                    ],
+                    borderWidth: 1
+                }]
+            };
+            
+            new Chart(ctx, {
+                type: 'bar',
+                data: data,
+                options: {
+                    responsive: true,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Komponen Struktur HTML'
+                        }
+                    }
+                }
+            });
+        }
+
+        // Fungsi untuk membuat grafik distribusi kode
+        function createCodeDistributionChart() {
+            const ctx = document.getElementById('codeDistributionChart').getContext('2d');
+            const data = {
+                labels: ['HTML', 'CSS', 'JavaScript'],
+                datasets: [{
+                    label: 'Distribusi Kode',
+                    data: [45, 35, 20],
+                    backgroundColor: [
+                        'rgba(46, 125, 50, 0.7)',
+                        'rgba(255, 193, 7, 0.7)',
+                        'rgba(33, 150, 243, 0.7)'
+                    ],
+                    borderWidth: 1
+                }]
+            };
+            
+            new Chart(ctx, {
+                type: 'pie',
+                data: data,
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'bottom'
+                        }
+                    }
+                }
+            });
+        }
+
+        // Inisialisasi saat halaman dimuat
+        document.addEventListener('DOMContentLoaded', () => {
+            // Tampilkan JSON dengan syntax highlighting
+            document.getElementById('json-output').innerHTML = syntaxHighlight(htmlAsJson);
+            
+            // Buat visualisasi
+            visualizeStructure();
+            createCodeDistributionChart();
+            
+            // Event listener untuk tombol refresh
+            document.getElementById('refresh-chart').addEventListener('click', visualizeStructure);
+        });
+    </script>
+</body>
+</html>
