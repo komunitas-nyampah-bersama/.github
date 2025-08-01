@@ -1,6 +1,4 @@
-Berikut integrasi lengkap profil Nyampah Bersama untuk Zenodo dengan semua elemen yang diminta, diorganisir sesuai standar metadata akademik:
 
-### **Judul**  
 **Nyampah Bersama: Platform Terdesentralisasi untuk Ekonomi Sirkular Berbasis Komunitas melalui Web3 dan Teknologi Hijau**
 
 ### **Kreator**  
