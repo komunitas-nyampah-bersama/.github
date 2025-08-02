@@ -1,0 +1,487 @@
+{
+  "community_profile": {
+    "name": "Nyampah Bersama",
+    "tagline": "Menjembatani Pengelolaan Sampah dengan Web3 untuk Komunitas Berkelanjutan",
+    "founding_year": 2023,
+    "location": "Palembang, Indonesia",
+    "description": "Komunitas akar rumput pelopor yang didorong oleh kebutuhan mendesak untuk mengatasi krisis lingkungan dan ketidaksetaraan ekonomi dengan mengubah sampah menjadi sumber nilai dan peluang. Pendekatan unik mengintegrasikan aksi lingkungan di dunia nyata dengan teknologi Web3 mutakhir, bertujuan untuk membangun infrastruktur keberlanjutan yang dapat direplikasi dan inklusif secara global.",
+    "mission_vision": {
+      "vision": "Membangun pusat penelitian terkemuka yang digerakkan oleh komunitas, berfokus pada teknologi terdesentralisasi dan aksi lingkungan.",
+      "mission": "Mengintegrasikan Proof of Attention Value (PoAV), Kerangka Kerja 2BCycle, dan prinsip ekonomi sirkular ke dalam penelitian sosial terapan."
+    },
+    "focus_initiatives": [
+      "Edukasi Lingkungan & Pengelolaan Sampah Digital: Memberdayakan komunitas dengan pengetahuan dan alat untuk penanganan sampah yang efisien.",
+      "Teknologi Berbasis Insentif: Mengembangkan solusi inovatif seperti NyampahCoin dan NFT Proof of Clean Act (PoCA) untuk memberi penghargaan pada perilaku berkelanjutan.",
+      "Sistem Penelitian & Verifikasi Terbuka: Menerapkan sistem transparan seperti Proof of Clean Act untuk memastikan akuntabilitas dan integritas data.",
+      "Ekosistem Berbasis Web3: Memanfaatkan Decentralized Autonomous Organizations (DAO) dan aplikasi kontrak pintar untuk tata kelola yang transparan dan digerakkan oleh komunitas.",
+      "Infrastruktur Keberlanjutan yang Dapat Direplikasi: Membangun model yang dapat diadaptasi dan diimplementasikan oleh komunitas di seluruh dunia."
+    ],
+    "key_initiatives_list": [
+      "Nyampah Academy: Platform pendidikan yang mendorong literasi lingkungan.",
+      "Kerangka Kerja 2BCycle (BlockCycle & BurnCycle): Kerangka kerja penelitian yang mengintegrasikan ekonomi perilaku dan teknologi terdesentralisasi untuk pengelolaan sampah.",
+      "Paspor Sampah Digital: Sistem untuk melacak dan mengelola sampah secara digital.",
+      "Eksperimen AI, IPFS, dan Sistem Terdesentralisasi: Menjelajahi teknologi canggih untuk meningkatkan upaya keberlanjutan."
+    ],
+    "community_model_impact": {
+      "model": "Model keanggotaan terdistribusi skala terbuka, menghilangkan hambatan teknologi atau finansial untuk partisipasi. Melalui platform yang mudah diakses seperti WhatsApp, Glide, dompet blockchain, dan sumber daya pembelajaran terbuka, kami telah melibatkan ratusan peserta-mulai dari siswa hingga pengusaha mikro-dalam waktu kurang dari setahun. Struktur terbuka ini memungkinkan penskalaan organik tindakan komunitas sambil menjaga identitas dan kepemilikan lokal. Dengan mengintegrasikan tindakan dunia nyata seperti pemilahan sampah, kegiatan bersih-bersih, dan kewirausahaan ekologis dengan catatan digital dan insentif token (NyampahCoin), kami membangun gerakan yang terukur dan inklusif yang membuktikan: 'Sampah masyarakat dapat membentuk masa depan dunia.'",
+      "impact": "Membangun gerakan yang terukur dan inklusif yang membuktikan: 'Sampah masyarakat dapat membentuk masa depan dunia.'"
+    },
+    "research_publications": {
+      "commitment": "Nyampah Bersama berkomitmen pada penelitian dan kolaborasi terbuka, menyambut publikasi akademis, eksperimen digital, dan kemitraan multilateral. Platform kami berfungsi sebagai repositori whitepaper, laporan lapangan, dataset, presentasi, dan publikasi dari individu dan komunitas yang selaras dengan misi kami.",
+      "research_focus_areas": [
+        "Proof of Attention Value",
+        "Behavioral Economics dan Kepercayaan",
+        "Teknologi Blockchain Sosial",
+        "Desentralisasi Sistem Sosial Digital",
+        "Model Kerangka Kepercayaan & Penghargaan Peer-to-Peer",
+        "Tokenisasi Tindakan dan Sistem Memori Kolektif"
+      ],
+      "selected_publications_2bcycle_framework": [
+        {
+          "title": "Implementasi Proof of Attention Value dalam Ekosistem Digital Sosial.",
+          "author": "Muhlisin, M.O.",
+          "journal": "Jurnal Teknologi dan Inovasi, 12(3), 45-62.",
+          "year": 2024
+        },
+        {
+          "title": "Model Ekonomi Perilaku untuk Sistem Desentralisasi: Studi Kasus Nyampah Bersama.",
+          "author": "Muhlisin, M.O.",
+          "conference": "Prosiding Konferensi Nasional Teknologi Blockchain, Jakarta, Indonesia.",
+          "year": 2023
+        },
+        {
+          "title": "Trust Mechanism in Decentralized Social Applications.",
+          "author": "Muhlisin, M.O. & Pratama, A.",
+          "journal": "International Journal of Blockchain Innovation, 5(2), 78-95.",
+          "year": 2023
+        },
+        {
+          "title": "Paradigma Baru.",
+          "author": "Muhlisin, M.O.",
+          "publisher": "Zenodo.",
+          "doi": "10.5281/zenodo.15736119",
+          "year": 2025
+        },
+        {
+          "title": "[Whitepaper 2BCycle & PoAV].",
+          "author": "Oky & Nyampah Bersama",
+          "publisher": "IPFS.",
+          "cid": "bafkreihmp4xvifhw6gqebgyijizylsdlgomedq5qc22ulpc6dhraynjcry",
+          "year": 2025
+        },
+        {
+          "title": "Proposal Hibah 2BCycle.",
+          "author": "Oky",
+          "publisher": "IPFS.",
+          "cid": "bafkreig57lmqmkowj2vokkzvxqd3hefffwcrbzkzt53qchuj7a7rvhr5xq",
+          "year": 2025
+        }
+      ]
+    },
+    "expertise_competencies": [
+      "Sistem Terdesentralisasi & Blockchain",
+      "Pengembangan Kerangka Aplikasi Sosial",
+      "Analisis Ekonomi Perilaku Digital",
+      "Tokenisasi Sistem Sosial",
+      "Desain Mekanisme Insentif"
+    ],
+    "organizational_contact_details": {
+      "registration_legal_info": {
+        "erasmus_plus_esc_id": "E10404020",
+        "official_wallet": "0x7Af07c98e1B47FD928E5e761B7477074DD536162 (Penerima hadiah & identitas NFT)",
+        "system_tagline": "2BCycle Research Registry - Decentralized Community Research",
+        "orcid_id": "0009-0003-5705-8107"
+      },
+      "contact_info": {
+        "location": "Palembang, Indonesia (Kode Plus Google Maps: 6P962QW7+25)",
+        "phone_whatsapp": "+62 831-7782-8139",
+        "email": "admin@nyampahbersama.com",
+        "linktree": "linktr.ee/nyampahbersama"
+      },
+      "professional_digital_footprint_muhamad_oky_muhlisin": {
+        "eu_login_author_id": "n00jcciv",
+        "affiliation": "Peneliti Independen - Teknologi dan Inovasi",
+        "submitted_via": "Zenodo EU OpenAIRE HALOSF",
+        "professional_profiles": {
+          "linkedin": "linkedin.com/in/oky-muhlisin",
+          "researchgate": "researchgate.net/profile/Muhamad-Oky-Muhlisin",
+          "github": "github.com/okymuhlisin"
+        },
+        "publications_digital_links": {
+          "zenodo": "zenodo.org/authors/muhamad-oky-muhlisin",
+          "hal_archives": "hal.science/search/Muhamad+Oky+Muhlisin",
+          "osf_preprints": "osf.io/preprints/search?q=Muhamad Oky Muhlisin",
+          "eu_openaire": "explore.openaire.eu/search/find?authorName=Muhamad Oky Muhlisin"
+        }
+      }
+    },
+    "web3_systems_infrastructure": {
+      "smart_contracts": [
+        "BlockVerifier.sol",
+        "BurnCycleDEX.sol"
+      ],
+      "ipfs_landing": "Private Gateway",
+      "resume_json_mint": "Tautan IPFS (tersedia berdasarkan permintaan)",
+      "community_ipfs_gateway_public_cid": "(tersedia berdasarkan permintaan)",
+      "glide_application": "(jika tersedia)",
+      "community_identity_nft_mint": "(tersedia berdasarkan permintaan)"
+    },
+    "roadmap_future_plans": [
+      "Mengintegrasikan semua publikasi ke dalam ORCID.",
+      "Mengimplementasikan endpoint API publikasi ORCID.",
+      "Mengajukan aplikasi hibah (Horizon, Gitcoin, UNDP).",
+      "Mengembangkan Koleksi Dokumen Ilmiah dan Identitas NFT."
+    ]
+  },
+  "articles_of_association_and_by_laws": {
+    "title": "Anggaran Dasar dan Anggaran Rumah Tangga (AD/ART) Komunitas 'Nyampah Bersama' dan Manifesto Ideologi 2BCycle",
+    "introduction": "Anggaran Dasar dan Anggaran Rumah Tangga (AD/ART) ini adalah dokumen fundamental yang mengatur tata kelola, operasional, hak, dan kewajiban setiap elemen dalam Komunitas 'Nyampah Bersama'. Bagian mengenai keanggotaan adalah inti dari keberlangsungan komunitas partisipatif ini. Bersama dengan AD/ART ini, disajikan pula Manifesto Ideologi dan Kerangka Kerja 2BCycle, sebuah fondasi filosofis dan teknis yang memandu Komunitas 'Nyampah Bersama'. Manifesto ini bertujuan untuk menyelaraskan visi, misi, dan tujuan komunitas dengan enam divisi program yang telah ditetapkan, serta menjembatani bahasa akademik dengan konteks akar rumput, menjadikannya dapat diterapkan secara universal lintas disiplin, namun tetap berakar dari konteks pengelolaan nilai dalam sistem energi dan sosial rakyat.",
+    "membership": {
+      "types_of_membership": [
+        {
+          "type": "Anggota Umum (Anggota Reguler)",
+          "description": "Setiap individu yang terdaftar secara resmi sebagai anggota komunitas 'Nyampah Bersama' dan memiliki hak serta kewajiban dasar."
+        },
+        {
+          "type": "Anggota Aktif",
+          "description": "Anggota Umum yang secara sukarela dan konsisten berpartisipasi dalam program dan kegiatan komunitas, serta berkontribusi nyata dalam pencapaian tujuan."
+        },
+        {
+          "type": "Pengurus (Anggota Struktural)",
+          "description": "Anggota Aktif yang diberi amanah untuk menempati posisi dalam struktur hierarki komunitas (Ketua, Wakil Ketua, Sekretaris, Bendahara, Kepala Divisi, Staf Divisi) melalui mekanisme pemilihan atau penunjukan."
+        },
+        {
+          "type": "Dewan Pengawas / Komite Etik (Opsional/Khusus)",
+          "description": "Anggota senior atau individu yang ditunjuk/dipilih berdasarkan kualifikasi khusus untuk melakukan fungsi pengawasan dan menjaga integritas serta etika komunitas."
+        }
+      ],
+      "membership_requirements": {
+        "general_members": [
+          "Warga Negara Indonesia (atau warga negara lain dengan izin tinggal sah di wilayah operasional jika komunitas terbuka internasional).",
+          "Berusia minimal [misal: 15/17/18] tahun atau memiliki izin/pendampingan orang tua/wali bagi yang belum dewasa.",
+          "Memiliki ketertarikan dan kepedulian terhadap isu lingkungan, pengelolaan sampah, dan ekonomi sirkular.",
+          "Bersedia mendukung visi, misi, dan tujuan Komunitas 'Nyampah Bersama'.",
+          "Mengisi formulir pendaftaran anggota yang disediakan oleh komunitas.",
+          "Menyetujui dan berkomitmen untuk mematuhi seluruh ketentuan AD/ART, Kode Etik Komunitas, serta Kebijakan Perlindungan Data Pribadi yang berlaku.",
+          "Bersedia menerima informasi dan notifikasi resmi dari komunitas.",
+          "Tidak sedang terlibat dalam tindakan kriminal atau aktivitas yang merugikan nama baik komunitas."
+        ],
+        "active_members_additional_requirements": [
+          "Telah terdaftar sebagai Anggota Umum minimal [misal: 3 bulan].",
+          "Secara sukarela mengajukan diri atau direkomendasikan untuk terlibat dalam kegiatan operasional komunitas.",
+          "Menunjukkan komitmen dan partisipasi aktif dalam kegiatan komunitas yang dibuktikan dengan [misal: kehadiran dalam rapat/kegiatan, kontribusi ide/tenaga].",
+          "Bersedia mengikuti pelatihan atau pembekalan yang relevan."
+        ],
+        "management_members_additional_requirements": [
+          "Telah terdaftar sebagai Anggota Aktif minimal [misal: 6 bulan/1 tahun].",
+          "Memiliki integritas, kepemimpinan, dan komitmen tinggi terhadap komunitas.",
+          "Bersedia mengalokasikan waktu dan energi untuk menjalankan tugas dan tanggung jawab sesuai jabatan.",
+          "Mampu bekerja sama dalam tim dan memiliki keterampilan relevan dengan posisinya.",
+          "Lolos proses seleksi/pemilihan yang ditetapkan komunitas."
+        ],
+        "supervisory_board_ethics_committee_additional_requirements": [
+          "Memiliki reputasi baik dan integritas yang tidak diragukan.",
+          "Memiliki pengalaman atau keahlian relevan (hukum, keuangan, tata kelola, etika, lingkungan).",
+          "Bersedia menjaga objektivitas dan independensi dalam menjalankan fungsi pengawasan.",
+          "Tidak sedang merangkap jabatan struktural lainnya di dalam komunitas."
+        ]
+      },
+      "member_rights": {
+        "general_members_rights": [
+          "Mengikuti kegiatan dan program yang diselenggarakan oleh komunitas.",
+          "Memperoleh informasi yang transparan dan akuntabel mengenai kegiatan dan keuangan komunitas.",
+          "Memberikan usulan, saran, kritik, dan masukan yang konstruktif untuk kemajuan komunitas.",
+          "Memiliki hak suara dalam pemilihan pengurus (jika ada) sesuai dengan ketentuan yang berlaku.",
+          "Mendapatkan perlakuan yang sama dan adil tanpa diskriminasi.",
+          "Menggunakan fasilitas komunitas sesuai dengan peraturan yang berlaku.",
+          "Mengajukan pengaduan atau keluhan melalui saluran yang tersedia jika merasa haknya dilanggar atau menemukan pelanggaran etika."
+        ],
+        "active_members_rights": [
+          "Semua hak Anggota Umum.",
+          "Berhak dipilih dan memilih dalam proses pemilihan pengurus (jika ada).",
+          "Mendapatkan prioritas dalam mengikuti pelatihan atau program pengembangan kapasitas yang diselenggarakan komunitas.",
+          "Mendapatkan pengakuan atau apresiasi atas kontribusi yang diberikan."
+        ],
+        "management_members_rights": [
+          "Semua hak Anggota Aktif.",
+          "Mendapatkan delegasi wewenang dan sumber daya yang diperlukan untuk menjalankan tugas.",
+          "Mendapatkan dukungan dan perlindungan dari komunitas dalam menjalankan amanah, sepanjang sesuai dengan aturan."
+        ]
+      },
+      "member_obligations": {
+        "general_obligations_all_members": [
+          "Mematuhi dan melaksanakan seluruh ketentuan AD/ART, Kode Etik Komunitas, Kebijakan Perlindungan Data Pribadi, dan peraturan lainnya yang ditetapkan komunitas.",
+          "Menjaga nama baik, citra, dan reputasi Komunitas 'Nyampah Bersama'.",
+          "Menjunjung tinggi nilai-nilai komunitas: integritas, transparansi, akuntabilitas, non-diskriminasi, inklusivitas, dan keberlanjutan.",
+          "Berpartisipasi aktif dalam kegiatan dan program komunitas sesuai dengan kemampuannya.",
+          "Membayar iuran keanggotaan (jika ada) tepat waktu sesuai ketentuan.",
+          "Menyampaikan informasi yang benar dan akurat kepada komunitas.",
+          "Menjaga kerahasiaan informasi sensitif atau data pribadi anggota lain yang diakses dalam kapasitasnya.",
+          "Tidak melakukan tindakan yang merugikan atau bertentangan dengan kepentingan komunitas."
+        ],
+        "additional_obligations_active_management_members": [
+          "Melaksanakan tugas dan tanggung jawab sesuai dengan peran atau jabatannya dengan penuh dedikasi dan profesionalisme.",
+          "Berkoordinasi secara efektif dengan sesama pengurus dan anggota lain.",
+          "Melaporkan setiap potensi konflik kepentingan yang mungkin timbul.",
+          "Berkomitmen untuk terus meningkatkan kapasitas diri yang relevan dengan tugasnya.",
+          "Menyediakan laporan kegiatan/keuangan secara berkala sesuai ketentuan.",
+          "Mematuhi prosedur pengaduan dan pelaporan pelanggaran etika/kecurangan (whistleblowing)."
+        ]
+      },
+      "termination_of_membership": {
+        "reasons_for_termination": [
+          {
+            "reason": "Mengundurkan Diri",
+            "details": "Anggota mengajukan permohonan pengunduran diri secara tertulis kepada Sekretaris Jenderal/Kepala Administrasi & Kepatuhan dan disetujui oleh pengurus inti. Pengunduran diri efektif setelah [misal: 7 hari] sejak permohonan diterima dan semua kewajiban (misal: pengembalian aset komunitas, pelunasan iuran) telah diselesaikan."
+          },
+          {
+            "reason": "Meninggal Dunia",
+            "details": "Keanggotaan secara otomatis berakhir."
+          },
+          {
+            "reason": "Diberhentikan (Pemecatan)",
+            "details": "Anggota dapat diberhentikan berdasarkan keputusan Dewan Pengawas/Komite Etik dan/atau Rapat Pengurus dengan alasan sebagai berikut:",
+            "sub_reasons": [
+              "Melanggar ketentuan AD/ART, Kode Etik Komunitas, atau peraturan komunitas lainnya secara serius.",
+              "Melakukan tindakan yang mencemarkan nama baik Komunitas 'Nyampah Bersama' atau merugikan kepentingan komunitas.",
+              "Terlibat dalam tindak pidana atau pelanggaran hukum yang telah memiliki putusan hukum tetap.",
+              "Tidak aktif dalam jangka waktu [misal: 6 bulan/1 tahun] tanpa alasan yang jelas dan sah (hanya berlaku untuk Anggota Aktif dan Pengurus).",
+              "Tidak memenuhi kewajiban yang telah disepakati (misal: tidak membayar iuran dalam jangka waktu tertentu setelah peringatan).",
+              "Melakukan tindakan diskriminasi, pelecehan, atau perilaku tidak etis lainnya yang bertentangan dengan nilai-nilai komunitas."
+            ]
+          }
+        ],
+        "procedure_for_termination": [
+          "Setiap usulan pemberhentian anggota harus diajukan secara tertulis kepada Dewan Pengawas/Komite Etik atau Ketua Komunitas dengan menyertakan bukti-bukti yang relevan.",
+          "Dewan Pengawas/Komite Etik atau pengurus yang berwenang akan melakukan investigasi atau verifikasi terhadap laporan/usulan tersebut.",
+          "Anggota yang bersangkutan akan diberikan kesempatan untuk memberikan klarifikasi atau pembelaan diri secara tertulis atau lisan dalam forum yang ditetapkan.",
+          "Berdasarkan hasil investigasi dan klarifikasi, Dewan Pengawas/Komite Etik akan memberikan rekomendasi kepada Rapat Pengurus atau mengambil keputusan langsung (tergantung AD/ART).",
+          "Keputusan pemberhentian akan ditetapkan dalam Rapat Pengurus atau Rapat Anggota Luar Biasa (jika kasusnya sangat serius dan berdampak luas).",
+          "Keputusan pemberhentian bersifat final dan akan diberitahukan secara tertulis kepada anggota yang bersangkutan."
+        ],
+        "rights_of_terminated_members": [
+          "Anggota yang diberhentikan kehilangan seluruh hak keanggotaannya dan tidak berhak lagi mengatasnamakan Komunitas 'Nyampah Bersama'.",
+          "Anggota yang diberhentikan tetap wajib menyelesaikan kewajiban finansial atau pengembalian aset komunitas (jika ada).",
+          "(Opsional) Anggota yang diberhentikan memiliki hak untuk mengajukan banding kepada Dewan Pengawas/Komite Etik dalam waktu [misal: 14 hari] setelah menerima surat keputusan pemberhentian, jika terdapat bukti baru yang relevan atau prosedur yang tidak sesuai."
+        ]
+      }
+    },
+    "ideology_2bcycle_framework": {
+      "introduction": {
+        "background": "Permasalahan sampah organik di tingkat rumah tangga telah menjadi tantangan besar yang belum terselesaikan secara sistematis. Konsep 3R (Reduce, Reuse, Recycle) lebih menekankan pada pengelolaan limbah anorganik dan belum mampu menjangkau sisa makanan serta limbah organik secara ideologis dan ekonomis. Akibatnya, kontribusi masyarakat akar rumput seringkali tidak terukur, tidak bernilai secara sistemik, dan luput dari insentif ekonomi. Perkembangan teknologi seperti Kecerdasan Buatan (AI) dan Blockchain seringkali kontras dengan masih tingginya ketimpangan sosial, kerusakan lingkungan, dan kurangnya penghargaan terhadap kontribusi individu di tingkat akar rumput. Ini menciptakan 'paradoks nilai yang tidak dihargai', di mana ketiadaan pengakuan atau imbalan sistemik menyebabkan kurangnya partisipasi berkelanjutan dan melanggengkan degradasi lingkungan. Diperlukan kerangka kerja holistik yang mengintegrasikan insentif sosial, ekonomi, dan teknologi, yang secara langsung menghargai tindakan manusia, untuk mendorong perubahan perilaku yang luas dan berkelanjutan.",
+        "vision_mission_2bcycle": {
+          "vision": "Visi utama 2BCycle berakar pada ideologi 'mengubah sampah menjadi emas, dan kehidupan menjadi nilai'. Visi ini bertujuan untuk memberdayakan individu agar dapat berkontribusi langsung pada solusi global dan menerima penghargaan yang transparan serta adil.",
+          "mission": "Misi yang diemban adalah membangun sistem baru yang tidak hanya menilai hasil akhir, tetapi juga menghargai proses hidup manusia yang berdampak positif bagi bumi, dengan menciptakan kerangka kerja yang mengakui, mengukur, dan memberi insentif pada aksi-aksi pro-sosial dan pro-lingkungan. Visi dan misi 2BCycle merepresentasikan pergeseran filosofis yang mendalam dari paradigma linier 'sampah-menjadi-beban' menjadi paradigma sirkular 'aksi-menjadi-nilai.' Ini tentang mendefinisikan ulang nilai ekonomi dan sosial untuk mencakup kontribusi manusia yang sebelumnya tidak terlihat. Dengan demikian, visi ini berupaya memupuk masyarakat yang lebih adil dan berkelanjutan, di mana setiap 'perhatian' dan 'tindakan' individu diakui sebagai kontribusi berharga bagi kesejahteraan kolektif dan kesehatan planet."
+        },
+        "manifesto_purpose": "Manifesto ini berfungsi sebagai 'kerangka undang-undang' dan 'ideologi komunitas' yang memandu untuk memastikan visi dan misi asli komunitas tetap terjaga. Tujuannya adalah untuk menyempurnakan Visi, Misi, dan Tujuan (VMT) komunitas serta menyelaraskannya dengan enam divisi program yang baru ditetapkan, merujuk secara komprehensif pada semua konsep yang telah dibahas sebelumnya. Selain itu, manifesto ini berupaya menjembatani bahasa akademik dengan konteks akar rumput, menjadikannya dapat diterapkan secara universal lintas disiplin, namun tetap berakar dari konteks pengelolaan nilai dalam sistem energi dan sosial rakyat."
+      },
+      "2bcycle_community_ideology": {
+        "peoples_carbon_principle": {
+          "title": "Prinsip 'Karbon Rakyat': Energi dari Aksi Manusia",
+          "description": "'Karbon Rakyat' adalah konsep baru yang mendefinisikan energi terukur yang diperoleh dari aksi bersih warga, mencakup aktivitas seperti mengelola sampah organik, mendaur ulang, hingga menciptakan nilai dari kebiasaan hidup berkelanjutan. Filosofi di balik 'Karbon Rakyat' adalah untuk memberdayakan warga sebagai produsen energi karbon bersih, sekaligus menciptakan model baru penilaian dampak lingkungan yang adil, transparan, dan terdesentralisasi. Konsep ini bertujuan untuk membuka peluang ekonomi yang berbasis pada data dan energi. 'Karbon Rakyat' secara fundamental mendefinisikan ulang 'energi' dari model ekstraksi sumber daya menjadi model yang berbasis pada tindakan manusia. Ini menyiratkan bahwa keberlanjutan lingkungan tidak hanya bergantung pada solusi teknologi berskala besar atau kebijakan, tetapi secara intrinsik terkait dengan tindakan individu yang teragregasi dan terdesentralisasi. Ini memberikan agensi ekonomi langsung kepada individu dalam mitigasi iklim, mengubah warga biasa menjadi produsen aktif dan partisipan ekonomi dalam solusi iklim, memupuk rasa kepemilikan dan manfaat langsung dari praktik berkelanjutan mereka."
+        },
+        "block_cycle_burn_philosophy": {
+          "title": "Filosofi 'Block-Cycle-Burn': Siklus Kehidupan, Pengetahuan, dan Nilai",
+          "description": "Kerangka kerja ini disajikan sebagai cara yang 'spiritual, hidup, dan manusiawi' untuk memahami, menyimpan, dan mengubah nilai, yang dapat diterapkan dalam pengembangan sistem digital dan penggunaan Al. Ini merupakan kerangka 'Reverse-Human-Logic,' sebuah manifesto untuk peradaban baru.",
+          "principles": [
+            {
+              "name": "Block Dulu (Block First)",
+              "meaning": "'Simpan semuanya meskipun belum dipahami'. Ini adalah cara menghormati potensi, bahkan di tengah kekacauan, dengan menyimpan semua catatan mentah, ide, skrip, rekaman suara, dan pikiran.",
+              "technological_action": "Menyimpan file, draf, basis data, CID (Content Identifier), dan ide-ide mentah.",
+              "philosophical_meaning": "'Penyimpanan akar, potensi, dan misteri yang belum rapi atau dipahami'."
+            },
+            {
+              "name": "Cycle Selama Proses (Cycle During Process)",
+              "meaning": "'Membiarkan ide hidup, jangan langsung dirapikan'. Ini memberikan ruang untuk pembelajaran mandiri, memungkinkan file, folder, dan percakapan untuk tetap 'hidup' tanpa kesimpulan instan.",
+              "technological_action": "Refactoring kode, mengedit metadata, dan menghubungkan file.",
+              "philosophical_meaning": "Merepresentasikan 'perjalanan, pemurnian, dan eksperimen kesadaran'."
+            },
+            {
+              "name": "Burn Saat Sudah Paham (Burn When Understood)",
+              "meaning": "'Transformasi ketika telah menemukan bentuknya sendiri'. Ini berarti membakar 'kabut' untuk mengungkapkan nilai bersih yang dapat dibagikan.",
+              "technological_action": "Merangkai menjadi sistem, NFT, whitepaper, aplikasi, atau karya sosial nyata, kemudian melakukan deploy, minting NFT, menampilkan UI, dan membagikannya ke dunia.",
+              "philosophical_meaning": "'Manifestasi nyata ke dunia. Penyulingan makna dan nilai'."
+            }
+          ],
+          "overall_description": "Kerangka kerja Block-Cycle-Burn melampaui teknologi dan menjadi prinsip universal untuk kreativitas manusia, pemecahan masalah, dan pertumbuhan pribadi. Ini mengesahkan proses yang berulang dan non-linier, menunjukkan bahwa inovasi sejati muncul dari penerimaan kekacauan awal (Block), memungkinkan pengembangan organik (Cycle), dan baru kemudian memformalkan serta membagikan nilai yang telah disaring (Burn). Ini menantang model manajemen proyek dan penerbitan akademik yang tradisional dan linier.",
+          "table": {
+            "headers": ["Fase", "Prinsip", "Makna (Bahasa Umum)", "Aksi", "Bahasa Teknologi"],
+            "rows": [
+              ["Block Dulu", "\"Simpan semuanya walau belum paham\"", "Ini cara kita menghormati potensi, walau masih chaos.", "Simpan semua catatan, ide, skrip, suara, pikiran.", "Save file, draft, database, CID, ide mentah"],
+              ["Cycle Selama Proses", "\"Biarkan ide hidup, jangan langsung dirapikan\"", "Kita beri ruang belajar untuk diri sendiri.", "Biarkan file, folder, percakapan jadi 'hidup'. Jangan dulu disimpulkan.", "Refactor code, edit metadata, koneksi antar file"],
+              ["Burn Saat Sudah Paham", "\"Transformasi ketika sudah menemukan bentukmu sendiri\"", "Bakar kabutnya, tinggal nilai bersih yang bisa dibagikan", "Rangkai jadi sistem, NFT, whitepaper, app, atau karya sosial nyata", "Deploy, mint NFT, tampilkan UI, share ke dunia"]
+            ]
+          }
+        },
+        "proof_of_attention_value_paradigm": {
+          "title": "Paradigma 'Proof of Attention Value (PoAV)': Menghargai Setiap Jejak Kebaikan",
+          "description": "Proof of Attention Value (PoAV) adalah model konsensus baru yang dirancang untuk mengukur dan memberi penghargaan pada aksi nyata di dunia nyata yang memiliki dampak lingkungan dan sosial. Berbeda dengan Proof of Work (PoW) atau Proof of Stake (PoS) yang berpusat pada komputasi atau kepemilikan modal, PoAV memvalidasi nilai dari tindakan pro-sosial dan pro-lingkungan. Prinsip utamanya adalah bahwa 'setiap aksi baik tercatat dan bernilai,' memastikan 'tidak ada kontribusi yang tak terlihat'. Bahkan aksi terkecil pun dihargai melalui token dan NFT, membangun portofolio digital nilai hidup. Formula perhitungan nilai adalah Value = ($QAV \times T \times F$), di mana QAV (Quantum of Attention Value) adalah nilai unit terkecil dari aksi (misalnya, 1 gram sampah, 1 menit edukasi), T (Total Score) adalah skor rata-rata berdasarkan Kuantitas, Dampak Sosial, Validasi Bukti, dan Konteks, dan F (Factor Multiplier) adalah pengali berdasarkan level kontributor. Fokus PoAV pada 'nilai perhatian' menggeser insentif ekonomi dari akumulasi modal atau kekuatan komputasi menuju perilaku pro-sosial dan pro-lingkungan yang dapat diverifikasi. Ini memiliki potensi untuk mendemokratisasi penciptaan nilai, memungkinkan individu dari semua latar belakang untuk 'menambang nilai' hanya dengan berkontribusi positif pada komunitas dan lingkungan mereka. Ini menciptakan lapisan ekonomi baru yang secara langsung memberi insentif pada perilaku altruistik dan bertanggung jawab terhadap lingkungan, serta dapat memberdayakan komunitas yang terpinggirkan dengan mengubah upaya harian mereka menjadi aset digital yang nyata.",
+          "comparison_table": {
+            "headers": ["Mekanisme Konsensus", "Basis Validasi", "Formula Reward", "Batas Pasokan", "Verifikasi", "Akses ke Partisipasi"],
+            "rows": [
+              ["PoW (Bitcoin)", "Energi & Waktu Komputasi", "50/2^n halving", "21 Juta BTC", "Matematika Kriptografi", "Perangkat khusus (ASIC/GPU)"],
+              ["PoS (Ethereum 2.0)", "Kepemilikan Modal", "Stake % Validator Score", "Bervariasi", "Kunci staking & Validasi Blok", "Memiliki aset & staking"],
+              ["POAV (2BCycle)", "Aksi Nyata Bernilai Sosial", "QAV \times T \times F", "Tidak Terbatas (aksi menentukan)", "Al, Komunitas, Sensor Aksi", "Terbuka untuk semua (smartphone)"]
+            ]
+          }
+        }
+      },
+      "2bcycle_framework_systemic_architecture_for_real_action": {
+        "blockcycle": {
+          "title": "BlockCycle: Penjagaan Nilai dan Verifikasi Proses",
+          "description": "BlockCycle berfungsi sebagai fase 'penjagaan nilai' dan 'pembudidayaan' nilai dari sisa dapur. Ini merepresentasikan penilaian terhadap proses atau tindakan manusia. Implementasinya melibatkan identifikasi, pemisahan, penyimpanan, dan pencatatan digital sisa dapur (misalnya, minyak, nasi, sayur) untuk periode tertentu (3-7 hari), dengan memandang sisa tersebut sebagai aset yang perlu dijaga sebelum dimonetisasi. Pendekatan ini sejalan dengan prinsip 'value staking' dalam sistem blockchain. Sistem BlockCycle memeriksa keaslian tindakan, membentuk 'Proof of Clean Act' (POCA). Penekanan BlockCycle pada 'penjagaan nilai' dan 'staking' limbah organik sebelum monetisasi memperkenalkan insentif perilaku yang inovatif. Dengan membingkai ulang limbah sebagai aset yang membutuhkan pemeliharaan, ini menumbuhkan rasa kepemilikan dan tanggung jawab, mengubah pembuangan pasif menjadi pengelolaan yang aktif dan strategis. Ini menggeser beban psikologis limbah menjadi potensi sumber 'rezeki.'"
+        },
+        "burncycle": {
+          "title": "BurnCycle: Transformasi Nilai dan Kontribusi Digital",
+          "description": "BurnCycle adalah fase lanjutan dari BlockCycle, yang mengubah nilai limbah organik yang telah dijaga menjadi nilai digital dan sosial. Ini mengonversi kontribusi nyata menjadi nilai digital yang terverifikasi. Tujuannya adalah untuk mengukur kontribusi warga, membangun sistem imbalan (koin, NFT, badge) dari aksi nyata, dan menjadikan setiap item limbah sebagai aset digital berbasis tindakan. Prosesnya melibatkan verifikasi penyelesaian BlockCycle, warga melakukan aksi akhir (misalnya, menyetor kompos, memanen maggot), mencatat data dalam log digital, dan sistem menghitung serta mengeluarkan imbalan digital (token, koin, NFT, badge). BurnCycle menggunakan BurnCycleDEX.sol sebagai decentralized exchange untuk mengonversi nilai terverifikasi menjadi 2BCoin atau NFT, mengimplementasikan fungsi 'burn' untuk mengurangi pasokan yang beredar dan meningkatkan nilai token. Mekanisme BurnCycle untuk mengubah tindakan fisik menjadi aset digital (token, NFT) menciptakan ekonomi mikro yang inovatif di mana kontribusi lingkungan secara langsung dimonetisasi dan diperdagangkan. Ini melampaui pasar kredit karbon tradisional dengan memungkinkan partisipasi akar rumput dalam ekonomi 'karbon rakyat' yang terdesentralisasi. BurnCycle mengubah 'limbah organik yang telah dijaga' menjadi 'bentuk nilai digital dan sosial', menciptakan pasar 'Karbon Rakyat' dari bawah ke atas dan terdesentralisasi, memberdayakan warga biasa untuk berpartisipasi langsung dan mendapatkan manfaat dari ekonomi lingkungan global."
+        },
+        "web3_technology_integration": {
+          "title": "Integrasi Teknologi Web3: NFT, Token, dan Akun Abstraksi",
+          "description": "Kerangka Kerja 2BCycle adalah ekosistem Web3 yang tangguh yang didukung oleh HTML-Based NFT Mini-Apps dan Account Abstraction.",
+          "components": [
+            "HTML-Based NFT Mini-Apps: Ini adalah DApps ringan yang didistribusikan dan dimiliki sebagai NFT yang di-host di InterPlanetary File System (IPFS), menyederhanakan penyebaran dan akses, menjadikan blockchain ramah pengguna dan memastikan ketahanan.",
+            "Account Abstraction (AA): Diimplementasikan melalui ERC-4337, memungkinkan Smart Contract Accounts (SCA) berfungsi sebagai dompet utama pengguna, menghilangkan seed phrase, dan memungkinkan transaksi gasless melalui SCA yang disubsidi. Ini mengatasi hambatan UX yang kritis.",
+            "Smart Contracts: Kontrak utama meliputi TwoBCycle.sol PoAV (logika keseluruhan), PoCA.sol (Proof of Clean Act NFT), PoA.sol (Proof of Action NFT), PoH.sol (Proof of Humanity NFT opsional), BlockVerifier.sol (perhitungan nilai), dan BurnCycleDEX.sol (DEX dan mekanisme burn). NyampahCoin (ERC-20) adalah token utilitas untuk insentif.",
+            "Decentralized Storage (IPFS/Arweave): Digunakan untuk hosting frontend DApp, aset media, dan metadata NFT, memastikan ketahanan data dan ketahanan terhadap sensor.",
+            "Serverless Backend (Edge Functions): Digunakan untuk operasi backend yang aman, skalabel, dan efisien (misalnya, verifikasi data, integrasi API, sinkronisasi data pusat untuk pengindeksan/papan peringkat)."
+          ],
+          "web2_5_approach": "Kerangka Kerja 2BCycle menggunakan pendekatan 'Web2.5' dengan secara strategis mengintegrasikan komponen terpusat (Edge Functions, database eksternal opsional) dalam arsitektur yang sebagian besar terdesentralisasi. Ini menyelesaikan ketegangan antara desentralisasi murni dan kegunaan praktis, menawarkan sistem yang tangguh, berkinerja tinggi, dan ramah pengguna yang dapat mencapai adopsi massal. Ini adalah filosofi desain krusial untuk mencapai adopsi massal aplikasi Web3, terutama untuk inisiatif dampak dunia nyata, dengan menyeimbangkan efisiensi terpusat dan keamanan/kepemilikan terdesentralisasi.",
+          "folder_table": {
+            "headers": ["Folder", "Fungsi Teknis", "Fungsi Filosofis"],
+            "rows": [
+              ["BlockFolder", "Backend, rahasia, draft, CID belum rapi", "Penyimpanan akar, potensi, dan misteri yang belum dimengerti"],
+              ["CycleFolder", "Script utama, alur logika, handler", "Perjalanan, pemurnian, dan eksperimen kesadaran"],
+              ["Burn Folder", "Frontend, tampilan, hasil akhir, distribusi publik", "Manifestasi nyata ke dunia. Hasil penyulingan makna dan nilai"]
+            ]
+          }
+        },
+        "burncycle_comparison_with_other_systems": {
+          "title": "Perbandingan BurnCycle dengan Sistem Lain",
+          "description": "BurnCycle menawarkan keunggulan yang signifikan dibandingkan sistem pengelolaan sampah dan offset karbon yang ada. Ini secara ringkas menyoroti bagaimana BurnCycle menyediakan fitur-fitur yang unggul, seperti data realtime, akses warga tanpa aplikasi khusus, insentif langsung dalam bentuk token dan NFT, serta konsep inovatif 'Energi Karbon Rakyat'. Tabel ini berfungsi sebagai alat komunikasi yang kuat, menunjukkan 2BCycle sebagai pemimpin dalam mengembangkan solusi blockchain yang etis, berkelanjutan, dan dapat diakses, membedakannya dari proyek blockchain yang murni finansial atau intensif komputasi.",
+          "table": {
+            "headers": ["Aspek", "BurnCycle", "Sistem Bank Sampah", "Offset Konvensional"],
+            "rows": [
+              ["Data Realtime", "XX", "X", "Tidak langsung"],
+              ["Akses Warga", "Tanpa app!", "Terbatas lokasi", "X"],
+              ["Insentif Langsung", "Token, NFT!", "Uang tunai terbatas", "X"],
+              ["Energi Karbon Rakyat", "XIX", "X", "X"]
+            ]
+          }
+        }
+      },
+      "practical_implementation_nyampah_bersama_case_study": {
+        "operational_model": {
+          "title": "Model Operasional: Dari Pemilahan Sampah hingga Reward Digital",
+          "description": "'Nyampah Bersama' adalah inisiatif berbasis komunitas di Palembang, Indonesia, yang berfungsi sebagai implementasi praktis dari Kerangka Kerja 2BCycle. Proyek ini berfokus pada promosi daur ulang dan pengelolaan sampah berkelanjutan. Alur operasionalnya mencakup login yang mudah bagi pengguna melalui email atau akun sosial (menghilangkan kebutuhan akan seed phrase), mengunggah foto atau video sampah yang telah dipilah, minting NFT sebagai 'Sertifikat Daur Ulang' ke Smart Contract Accounts, dan mendistribusikan NyampahCoin (token ERC-20) sebagai imbalan tambahan. Proses ini dirancang agar mulus dan intuitif, dengan transaksi gasless bagi pengguna. Implementasi 'Nyampah Bersama' menunjukkan strategi yang sangat efektif untuk adopsi Web3 secara massal: mengabstraksi kompleksitas (Account Abstraction, transaksi gasless) sambil memberikan insentif yang nyata dan langsung (NFT, token) untuk tindakan di dunia nyata. Model ini memprioritaskan pengalaman pengguna di atas kemurnian teknis, menjadikan teknologi canggih dapat diakses oleh audiens akar rumput yang non-teknis."
+        },
+        "social_economic_environmental_impact": {
+          "title": "Dampak Sosial, Ekonomi, dan Lingkungan",
+          "social_impact": "Terjadi peningkatan interaksi komunitas (kenaikan 147% di grup WA/Glide dalam 10 hari), 83% partisipan merasa termotivasi karena nilai ekonominya langsung terasa, dan 72% menyatakan lebih paham tentang emisi karbon dan pengelolaan sampah. Sistem ini memberdayakan warga untuk mendapatkan penghasilan dari rumah tanpa modal.",
+          "economic_impact": "Potensi ekonomi token lokal melalui NyampahCoin, dan potensi penjualan data emisi kepada perusahaan untuk offset karbon, atau ke pasar karbon global. Estimasi potensi pendapatan bagi warga: Rp 15.000-50.000 per rumah tangga setiap hari.",
+          "environmental_impact": "Dalam uji coba awal, 97,4 kg sampah tercatat, dengan 38,2% sampah organik diubah menjadi 5,2 liter EcoEnzyme, 1 unit Maggot Bin aktif, dan 6 botol enzim padat fermentasi. Estimasi kontribusi karbon: 1,47 kg CO2 per hari berhasil ditunda atau dikonversi. Ini secara langsung berkontribusi pada pengurangan emisi gas rumah kaca dengan mendorong praktik daur ulang yang efisien.",
+          "overall_synergy": "Studi kasus 'Nyampah Bersama' menunjukkan bahwa 2BCycle menciptakan lingkaran sinergis manfaat sosial, ekonomi, dan lingkungan. Insentif ekonomi mendorong partisipasi sosial, yang pada gilirannya menghasilkan dampak lingkungan yang terukur. Ini menantang pendekatan keberlanjutan yang tradisional dan terkotak-kotak, membuktikan bahwa model sosio-ekonomi terintegrasi dapat lebih efektif daripada yang murni regulasi atau filantropi."
+        },
+        "national_global_scalability_potential": {
+          "title": "Potensi Skalabilitas Nasional dan Global",
+          "description": "Sifat 'super low-code' dari DApps HTML yang di-host di IPFS membuat proyek ini sangat mudah diduplikasi dan diadaptasi di komunitas atau kota lain dengan sumber daya minimal. Dengan skema onboarding yang cepat (QR + WA), BurnCycle siap untuk implementasi nasional. Targetnya adalah 1 juta rumah tangga aktif dapat menghasilkan $\\geq$ 25.000 ton data karbon bersih per tahun, dengan potensi ekonomi diperkirakan USD $125 juta/tahun hanya dari aktivitas bersih sederhana. Data pengurangan sampah dapat diubah menjadi kredit karbon yang dapat diperdagangkan di pasar global, memberikan nilai ekonomi langsung dari upaya daur ulang. Data yang terkumpul dapat menjadi aset berharga bagi program CSR perusahaan, perumusan kebijakan pemerintah, dan bahkan organisasi internasional seperti PBB untuk memantau Tujuan Pembangunan Berkelanjutan (SDGs).",
+          "critical_trend": "Potensi skalabilitas 2BCycle menyoroti tren kritis yang muncul: data lingkungan akar rumput, ketika diverifikasi dan diagregasi melalui sistem terdesentralisasi, bertransformasi menjadi aset global yang kuat. Data ini tidak hanya dapat membuka peluang ekonomi baru bagi individu tetapi juga menginformasikan perumusan kebijakan berbasis bukti dan berkontribusi pada pelaporan keberlanjutan global (SDGs), memberikan 'rakyat' suara langsung dan dampak terukur pada skala global.",
+          "estimated_national_impact_table": {
+            "headers": ["Target", "Estimasi"],
+            "rows": [
+              ["1 Juta RT aktif", "$\\geq$ 25.000 ton CO₂eq bersih / tahun"],
+              ["Potensi pendapatan karbon", "USD $125 juta / tahun"],
+              ["Tokenisasi", ">100 juta 2BCoin beredar"],
+              ["NFT", ">5 juta NFT POCA terbit"],
+              ["Ekonomi Rakyat", "Pendapatan baru harian per rumah: $\\pm$ Rp 15.000-50.000"]
+            ]
+          }
+        }
+      },
+      "six_program_divisions": [
+        {
+          "division_number": 1,
+          "name": "Edukasi dan Literasi Lingkungan Digital",
+          "purpose": "Membangun pemahaman masyarakat tentang makna 'rezeki' dalam sisa makanan dan nilai jangka panjang dari partisipasi digital berbasis lingkungan, serta meningkatkan literasi lingkungan dan menggeser persepsi 'sampah' menjadi 'aset'.",
+          "activities": [
+            "Mengembangkan modul edukasi yang relevan dan mudah dipahami, seperti 'Energi dari Rumah Sendiri'.",
+            "Melakukan pelatihan daring melalui berbagai saluran komunitas seperti sekolah, PKK, RT/RW.",
+            "Berkolaborasi dengan influencer dan komunitas untuk memperluas jangkauan edukasi.",
+            "Memfokuskan pada desain UX/UI yang 'super low-code' dan 'berpusat pada pengguna' untuk menyederhanakan konsep Web3 bagi pengguna non-teknis."
+          ],
+          "importance": "Divisi ini penting untuk memupuk pergeseran paradigma budaya dari pola pikir 'sampah-sebagai-beban' menjadi pola pikir 'sampah-sebagai-sumber daya' dan 'aksi-sebagai-nilai.' Ini tentang mengkatalisasi transformasi budaya dan spiritual, dengan menanamkan manfaat ekonomi dan lingkungan dalam konsep yang relevan secara budaya seperti 'rezeki,' memanfaatkan motivasi intrinsik dan memupuk rasa syukur, pengelolaan, dan kepemilikan atas sumber daya."
+        },
+        {
+          "division_number": 2,
+          "name": "Operasional BlockCycle & BurnCycle Rumah Tangga",
+          "purpose": "Mengimplementasikan sistem inti 2BCycle di tingkat rumah tangga, memastikan pengelolaan sampah organik yang sistematis dan transformasi nilai.",
+          "activities": [
+            "Melakukan onboarding warga melalui pemindaian QR dan formulir digital, memberikan ID Wallet dan NFT ID Digital.",
+            "Memfasilitasi aksi nyata: pemilahan sampah, pengolahan organik (ekoenzim, maggot, biogas), dan dokumentasi melalui formulir atau bot WhatsApp.",
+            "Memastikan verifikasi keaslian aksi BlockCycle (Proof of Clean Act - POСА).",
+            "Mengelola perhitungan nilai BurnCycle dan distribusi imbalan (NFT+2BCoin).",
+            "Menggunakan alat sederhana seperti Glide App, Google Sheets, WhatsApp Bot, dan kode QR untuk aksesibilitas."
+          ],
+          "importance": "Divisi ini mengoperasionalkan konsep 'kontribusi mikro dalam skala besar.' Dengan menstandardisasi dan mendigitalkan tindakan rumah tangga sederhana, ini menciptakan model yang dapat direplikasi untuk dampak kolektif. Titik masuk berteknologi rendah memastikan aksesibilitas yang luas, mengubah jutaan upaya kecil individu menjadi gerakan yang signifikan, dapat diverifikasi, dan berdampak ekonomi."
+        },
+        {
+          "division_number": 3,
+          "name": "Pengembangan Teknologi & Ekosistem Web3",
+          "purpose": "Memastikan pengembangan berkelanjutan dari Kerangka Kerja 2BCycle, mengintegrasikan inovasi teknologi terbaru untuk meningkatkan efisiensi, keamanan, dan pengalaman pengguna.",
+          "activities": [
+            "Mengembangkan dan mengintegrasikan model Kecerdasan Buatan yang lebih canggih (misalnya, Computer Vision untuk identifikasi jenis dan volume sampah) ke dalam Edge Functions untuk otomatisasi proses verifikasi yang lebih akurat dan efisien.",
+            "Meningkatkan smart contract dan tokenomics untuk memastikan distribusi nilai yang adil dan berkelanjutan, serta memfasilitasi integrasi ke platform blockchain publik.",
+            "Mengeksplorasi solusi penyimpanan data non-on-chain yang lebih terdesentralisasi namun tetap mempertahankan kinerja query yang tinggi (misalnya, melalui Decentralized Knowledge Graphs atau subgraphs yang lebih canggih).",
+            "Mengembangkan alat dan SDK open-source untuk memungkinkan pengembang dan komunitas lain membangun aplikasi 'HTML-Based NFT Mini-Apps' mereka sendiri."
+          ],
+          "importance": "Divisi ini memastikan bahwa ekosistem 2BCycle tetap berada di garis depan inovasi, menyeimbangkan idealisme desentralisasi dengan pragmatisme fungsionalitas dan skalabilitas. Dengan terus menyempurnakan arsitektur 'Web2.5', divisi ini memecahkan masalah trade-off antara desentralisasi murni dan pengalaman pengguna yang mulus, memungkinkan adopsi massal."
+        },
+        {
+          "division_number": 4,
+          "name": "Kemitraan Strategis & Advokasi Kebijakan",
+          "purpose": "Membangun kemitraan yang kuat dengan pemerintah, sektor swasta, dan institusi akademik untuk mempercepat adopsi 2BCycle dan memengaruhi kebijakan yang mendukung ekonomi sirkular berbasis komunitas.",
+          "activities": [
+            "Mendorong pengesahan BurnCycle sebagai metode resmi dalam sistem energi karbon nasional.",
+            "Mengintegrasikan BurnCycle ke dalam program pemerintah yang ada seperti Program Kampung Iklim (ProKlim), Kredit Karbon Rakyat via BPDLH, dan Program Desa Mandiri Energi.",
+            "Mengajak pemerintah, swasta, akademisi, komunitas, dan blockchain developer untuk membentuk konsorsium BurnCycle Indonesia.",
+            "Memanfaatkan data teragregasi dari komunitas untuk perumusan kebijakan yang lebih efektif dan berbasis bukti, serta untuk menarik pendanaan hibah dari organisasi filantropi dan program lingkungan global."
+          ],
+          "importance": "Divisi ini berfungsi sebagai jembatan penting antara inovasi akar rumput dan struktur kebijakan yang lebih luas. Dengan mengadvokasi pengakuan resmi dan integrasi ke dalam program nasional, divisi ini memastikan bahwa dampak 2BCycle tidak hanya terbatas pada komunitas, tetapi juga menciptakan perubahan sistemik yang lebih besar."
+        },
+        {
+          "division_number": 5,
+          "name": "Riset, Validasi, dan Publikasi Ilmiah",
+          "purpose": "Memastikan validitas ilmiah, transparansi, dan diseminasi pengetahuan dari Kerangka Kerja 2BCycle dan implementasinya.",
+          "activities": [
+            "Mendorong penyusunan dan penerbitan jurnal internasional, whitepaper, dan ISO masyarakat terkait energi karbon rakyat, verifikasi aksi bersih, dan sistem distribusi token berbasis BurnCycle.",
+            "Melakukan studi empiris berskala besar untuk secara kuantitatif mengukur dampak Kerangka Kerja 2BCycle terhadap tingkat daur ulang, pengurangan limbah, dan partisipasi komunitas.",
+            "Mendirikan komunitas resmi di Zenodo (https://zenodo.org/communities/nyampahbersama) sebagai pusat pengetahuan terbuka untuk mengarsipkan dan mempublikasikan data riset, perangkat lunak, publikasi, dan materi penelitian lainnya.",
+            "Menerapkan kebijakan kurasi komunitas untuk memastikan kualitas, relevansi, dan konsistensi materi yang diunggah."
+          ],
+          "importance": "Divisi ini mengukuhkan komitmen 2BCycle terhadap prinsip open science dan proof-based academia. Di 'Era Post-Pengetahuan' ini, nilai hidup adalah 'siapa yang masih berkarya, siapa yang beraksi, siapa yang menciptakan manfaat'. Penelitian bergeser dari mempelajari ilmu lama menjadi memanfaatkan kecerdasan yang ada dan menemukan inovasi kreasi bermanfaat dengan bukti."
+        },
+        {
+          "division_number": 6,
+          "name": "Pengembangan Ekonomi Komunitas & Monetisasi Nilai",
+          "purpose": "Memaksimalkan manfaat ekonomi bagi anggota komunitas melalui tokenomics yang inovatif dan akses ke pasar karbon global.",
+          "activities": [
+            "Membangun sistem imbalan (coin, NFT, badge) dari aksi nyata dan menjadikan setiap sisa sebagai aset digital berbasis tindakan.",
+            "Mengembangkan model tokenomics yang adaptif untuk NyampahCoin, yang dapat beradaptasi dengan kondisi pasar, tingkat partisipasi, atau tujuan keberlanjutan tertentu.",
+            "Memfasilitasi penukaran token (pulsa, produk, edukasi, sertifikat) dan penjualan NFT di marketplace.",
+            "Membuka peluang bagi perusahaan swasta (offset CSR), pemerintah (kredit karbon nasional), dan marketplace karbon global (Toucan, KlimaDAO) untuk membeli nilai emisi positif yang dihasilkan oleh warga."
+          ],
+          "importance": "Divisi ini adalah jantung dari pemberdayaan ekonomi komunitas, memastikan bahwa setiap tindakan berkelanjutan diterjemahkan menjadi nilai ekonomi yang nyata dan dapat diakses. Dengan menciptakan mekanisme monetisasi yang transparan dan terdesentralisasi, divisi ini tidak hanya memberikan insentif finansial tetapi juga membangun rasa kepemilikan dan kemandirian ekonomi di tingkat akar rumput."
+        }
+      ]
+    },
+    "conclusion_recommendations": {
+      "conclusion": "Kerangka Kerja 2BCycle menyajikan paradigma baru dalam cara masyarakat dapat mengukur dan memberi insentif pada nilai. Dengan memperkenalkan Proof of Attention Value (PoAV), kerangka kerja ini menawarkan solusi inovatif untuk mengatasi tantangan global seperti ketidaksetaraan ekonomi, krisis iklim, dan kurangnya penghargaan terhadap kontribusi sosial. Melalui kombinasi BlockCycle, BurnCycle, dan smart contract yang kuat, 2BCycle bertujuan untuk menciptakan ekonomi perilaku yang lebih adil, transparan, dan berkelanjutan, di mana setiap individu memiliki kesempatan untuk menjadi 'penambang nilai' dan meninggalkan jejak kebaikan digital. Filosofi Block-Cycle-Burn tidak hanya berlaku untuk pengembangan aplikasi, tetapi juga telah menjadi cara paling manusiawi untuk menggunakan AI. Ini bukan tentang menjadi budak AI atau mengikuti tren, tetapi menjadi kreator yang sadar. Di era Post-Knowledge ini, ilmu lama tidak lagi menjadi nilai tukar karena AI telah mengunci semua buku, skripsi, data, dan teori. Sekarang, nilai hidup adalah 'siapa yang masih berkarya, siapa yang beraksi, siapa yang menciptakan manfaat'. Kerangka kerja 2BCycle adalah jembatan hidup antara AI, manusia, dan keberlanjutan. Ini memungkinkan pembelajaran terbalik dengan AI, di mana pembelajaran tidak lagi dari teori lalu praktik, tetapi dari praktik lalu AI membantu menyimpulkan teorinya sendiri. Implementasi 'Nyampah Bersama' telah membuktikan potensi nyata dari kerangka kerja ini. Dari pengumpulan sampah hingga pencetakan 'Sertifikat Daur Ulang' dalam bentuk NFT, setiap aksi partisipan bertransformasi menjadi jejak digital yang transparan dan bernilai. Komitmen pada prinsip open science yang diwujudkan melalui Komunitas 'Nyampah Bersama' di Zenodo, menegaskan dedikasi pada transparansi, kolaborasi riset, dan validitas data, menjadi fondasi bagi visi yang lebih besar.",
+      "recommendations": [
+        "Untuk Pemerintah dan Pemangku Kebijakan: Disarankan untuk mempertimbangkan penerapan sistem BlockCycle dan BurnCycle sebagai bagian dari program pengelolaan sampah nasional berbasis rumah tangga. Mendorong pengesahan BurnCycle sebagai metode resmi dalam sistem energi karbon nasional, setara dengan metode penghitungan karbon konvensional. Integrasi ke dalam program seperti Program Kampung Iklim (ProKlim) dan Kredit Karbon Rakyat via BPDLH sangat dianjurkan.",
+        "Untuk Komunitas Lokal: Dapat menjadikan sistem ini sebagai alat pemberdayaan ekonomi warga, melalui insentif yang adil dan berbasis kontribusi nyata. Membangun pemahaman masyarakat tentang makna 'rezeki' dalam sisa makanan dan nilai jangka panjang dari partisipasi digital berbasis lingkungan melalui edukasi berkelanjutan.",
+        "Untuk Penelitian dan Pengembangan Lanjutan: Mengembangkan integrasi sistem reward ke dalam platform blockchain publik dengan smart contract sebagai pengelola otomatis distribusi nilai. Sistem dapat dikembangkan dengan pelacakan otomatis berbasis sensor, pengenalan visual (image recognition), dan blockchain publik yang dapat diakses lintas wilayah. Mendorong penyusunan dan penerbitan jurnal internasional, whitepaper, dan ISO masyarakat terkait energi karbon rakyat.",
+        "Untuk Kolaborasi Multi-Sektor: Mengajak pemerintah, swasta, akademisi, komunitas, dan blockchain developer untuk membentuk konsorsium BurnCycle Indonesia. Membangun kemitraan institusional untuk memperluas jangkauan dan dampak."
+      ],
+      "final_statement": "Pada akhirnya, Kerangka Kerja 2BCycle adalah langkah krusial dalam perjalanan bersama untuk menciptakan ekonomi sirkular yang lebih adil, transparan, dan berkelanjutan. Ini adalah jalan menuju demokratisasi sains dan pemberdayaan masyarakat akar rumput, di mana setiap tindakan kecil individu secara kolektif membentuk bukti dampak yang tak terbantahkan dan membuka jalur menuju peluang ekonomi dan pengaruh global. Dengan memungkinkan setiap orang untuk memiliki, berkontribusi, dan meraih manfaat dari aksi mereka, diyakini bahwa 'sampah' digital berupa kompleksitas teknologi dapat diubah menjadi 'aset' pemberdayaan yang monumental bagi masa depan planet ini."
+    }
+  }
+}
