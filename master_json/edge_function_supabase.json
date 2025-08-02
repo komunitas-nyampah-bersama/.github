@@ -1,0 +1,133 @@
+{
+  "edge_functions": {
+    "authentication": [
+      {
+        "id": "auth-001",
+        "name": "blockchain-auth",
+        "slug": "blockchain-auth",
+        "description": "Autentikasi dan registrasi menggunakan blockchain",
+        "features": [
+          "Magic link authentication",
+          "Blockchain wallet creation",
+          "User verification"
+        ],
+        "status": "production",
+        "last_updated": "2024-07-15",
+        "dependencies": ["supabase-auth", "thirdweb-sdk"]
+      },
+      {
+        "id": "auth-002",
+        "name": "magic-link-auth",
+        "slug": "magic-link-auth",
+        "description": "Autentikasi menggunakan magic link",
+        "features": [
+          "OTP authentication",
+          "Redirect after verification",
+          "Flexible auth methods"
+        ],
+        "status": "beta",
+        "last_updated": "2024-07-20"
+      }
+    ],
+    "user_management": [
+      {
+        "id": "user-001",
+        "name": "register_user",
+        "slug": "register_user",
+        "description": "Registrasi pengguna baru dengan validasi data",
+        "features": [
+          "Email validation",
+          "User metadata storage",
+          "Error handling"
+        ],
+        "status": "production",
+        "integrations": ["supabase-users", "mongodb-backup"]
+      },
+      {
+        "id": "user-002",
+        "name": "user-registration",
+        "slug": "user-registration",
+        "description": "Manajemen registrasi pengguna dengan magic link",
+        "features": [
+          "Magic link generation",
+          "Token verification",
+          "User status update"
+        ],
+        "status": "production"
+      }
+    ],
+    "blockchain_operations": [
+      {
+        "id": "bc-001",
+        "name": "base-account-registration",
+        "slug": "base-account-registration",
+        "description": "Registrasi akun blockchain di Base Chain",
+        "features": [
+          "Account abstraction",
+          "NFT minting",
+          "Wallet integration"
+        ],
+        "status": "development",
+        "estimated_release": "2024-08-15"
+      }
+    ],
+    "data_management": [
+      {
+        "id": "data-001",
+        "name": "store-data",
+        "slug": "store-data",
+        "description": "Fungsi umum untuk menyimpan data ke tabel",
+        "features": [
+          "Generic data insertion",
+          "Authorization check",
+          "Error handling"
+        ],
+        "status": "production",
+        "usage_stats": {
+          "daily_calls": 1250,
+          "success_rate": 99.2
+        }
+      }
+    ],
+    "ui_components": [
+      {
+        "id": "ui-001",
+        "name": "register_ui",
+        "slug": "register_ui",
+        "description": "Antarmuka registrasi pengguna dengan HTML dan JavaScript",
+        "features": [
+          "Responsive design",
+          "Client-side validation",
+          "Dynamic form handling"
+        ],
+        "status": "production",
+        "framework": "react-18"
+      }
+    ],
+    "wallet_management": [
+      {
+        "id": "wallet-001",
+        "name": "community-wallet-management",
+        "slug": "community-wallet-management",
+        "description": "Manajemen dompet komunitas dengan fitur transfer dan top up",
+        "features": [
+          "Fund transfer",
+          "Balance top-up",
+          "Role-based access control",
+          "Audit logging",
+          "Notifications"
+        ],
+        "status": "beta",
+        "security_level": "high",
+        "supported_chains": ["Base", "Polygon", "Ethereum"]
+      }
+    ],
+    "monitoring": {
+      "total_functions": 8,
+      "production_ready": 5,
+      "in_development": 1,
+      "in_beta": 2,
+      "next_release": "2024-08-30"
+    }
+  }
+}
