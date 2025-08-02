@@ -1,0 +1,177 @@
+{
+  "title": "Nyampah Bersama: Platform Terdesentralisasi untuk Ekonomi Sirkular Berbasis Komunitas melalui Web3 dan Teknologi Hijau",
+  "creators": [
+    {
+      "name": "Muhlisin, Muhamad Oky",
+      "orcid": "0009-0003-5705-8107",
+      "affiliation": "Nyampah Bersama",
+      "role": "Pendiri & Manajer Komunitas"
+    }
+  ],
+  "description": "Nyampah Bersama (didirikan 2023) merupakan ekosistem terdesentralisasi yang mengintegrasikan model 2BCycle Framework (BlockCycle & BurnCycle), Proof of Clean Act (PoCA), dan NyampahCoin untuk transformasi pengelolaan sampah berbasis blockchain. Platform ini menghubungkan aksi lingkungan akar rumput dengan ekonomi digital melalui NFT, smart contract, dan sistem insentif terdesentralisasi.",
+  "publication_date": "2025-07-31",
+  "keywords": [
+    "Desentralized Circular Economy",
+    "Web3 Community Governance",
+    "Tokenized Environmental Action",
+    "Blockchain Waste Management",
+    "NFT-based Incentives",
+    "Erasmus+ Partnerships"
+  ],
+  "organizational_info": {
+    "name": "Nyampah Bersama",
+    "legal_name": "Nyampah Bersama",
+    "erasmus_id": "E10404020",
+    "address": "Jl. Talang Keramat, 30151 Palembang, Sumatera Selatan, Indonesia",
+    "tax_id": "397576190016000",
+    "phone": "+62 831-7782-8139",
+    "founding_year": 2023,
+    "mission": "Menjembatani aksi lingkungan konkret dengan inovasi teknologi untuk ekonomi sirkular inklusif"
+  },
+  "core_frameworks": [
+    {
+      "name": "2BCycle Framework",
+      "components": ["BlockCycle", "BurnCycle"],
+      "doi": "10.5281/zenodo.16208527",
+      "description": "Ekosistem Web3 untuk inisiatif ekonomi sirkular berbasis HTML/NFT"
+    },
+    {
+      "name": "Proof of Clean Act (PoCA)",
+      "type": "Sistem Verifikasi Lingkungan",
+      "description": "Merekam aksi kebersihan di blockchain sebagai bukti kontribusi ekologis"
+    }
+  ],
+  "blockchain_assets": {
+    "tokens": [
+      {
+        "name": "NyampahCoin",
+        "chain": "Base",
+        "contract": "0xcEcaab4eb1222244Ea0cF4428d700C282F0f3830"
+      },
+      {
+        "name": "NyampahTcoin",
+        "chain": "Base",
+        "contract": "0x1677f2e3288d2df530f2C854Acf431BaBB228716"
+      }
+    ],
+    "nft_collections": [
+      {
+        "chain": "Ethereum",
+        "contract": "0xf518d31C41D2c67355e88F76AE5fa1b9356f0213"
+      },
+      {
+        "chain": "Base",
+        "contract": "0x23fE3881cb4A57179DF5CC53802f7B0B49E8F8Af"
+      }
+    ],
+    "smart_contracts": [
+      {
+        "name": "Marketplace V3",
+        "chain": "Base",
+        "contract": "0x17db4e933c77A89aF3DA1620c91167A3C951B75c"
+      },
+      {
+        "name": "Edition Airdrop",
+        "chain": "Base",
+        "contract": "0xA68350a929955002FD6FeD76C2b6d25D93D9363E"
+      }
+    ]
+  },
+  "publications": [
+    {
+      "title": "The 2BCycle Framework: A Resilient Web3 Ecosystem for Community-Driven Circular Economy Initiatives",
+      "type": "Preprint",
+      "doi": "10.5281/zenodo.16208527",
+      "year": 2025
+    },
+    {
+      "title": "Profil Internasional Komunitas Nyampah Bersama",
+      "type": "Data set",
+      "doi": "10.5281/zenodo.16663697",
+      "year": 2025
+    },
+    {
+      "title": "Implementasi Proof of Attention Value dalam Ekosistem Digital Sosial",
+      "type": "Journal article",
+      "journal": "Jurnal Teknologi dan Inovasi",
+      "volume": "12(3)",
+      "pages": "45-62",
+      "year": 2024
+    }
+  ],
+  "digital_links": {
+    "research": [
+      {
+        "platform": "Zenodo",
+        "url": "https://zenodo.org/authors/muhamad-oky-muhlisin"
+      },
+      {
+        "platform": "ResearchGate",
+        "url": "https://researchgate.net/profile/Muhamad-Oky-Muhlisin"
+      }
+    ],
+    "social_media": [
+      {
+        "platform": "WhatsApp Community",
+        "url": "https://chat.whatsapp.com/L7haZTMkqCk6kdzjslw8Vn"
+      },
+      {
+        "platform": "Discord",
+        "url": "https://discord.gg/V77nh6KS"
+      },
+      {
+        "platform": "TikTok",
+        "url": "https://tiktok.com/@bang_nyampahin"
+      }
+    ],
+    "development": [
+      {
+        "platform": "GitHub",
+        "url": "https://github.com/komunitas-nyampah-bersama"
+      },
+      {
+        "platform": "Community Dashboard",
+        "url": "https://komunitas-nyampah-bersama.github.io"
+      }
+    ],
+    "administrative": [
+      {
+        "platform": "EU Survey Form",
+        "url": "https://ec.europa.eu/eusurvey/runner/d9508257-4c05-4109-74d8-cac7c261a9a6"
+      }
+    ]
+  },
+  "license": {
+    "id": "CC BY-SA 4.0",
+    "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  "funding": [
+    {
+      "source": "Hibah Erasmus+",
+      "identifier": "Organisation ID E10404020"
+    },
+    {
+      "source": "Pendanaan Komunitas",
+      "mechanism": "NFT Sales"
+    }
+  ],
+  "zenodo_config": {
+    "upload_type": "software",
+    "communities": [{"identifier": "nyampahbersama"}],
+    "related_identifiers": [
+      {
+        "relation": "isSupplementTo",
+        "identifier": "10.5281/zenodo.16208527"
+      },
+      {
+        "relation": "isDocumentedBy",
+        "identifier": "https://github.com/komunitas-nyampah-bersama"
+      }
+    ],
+    "subjects": [
+      {"term": "Social Sciences", "identifier": "social_sciences"},
+      {"term": "Environmental Engineering", "identifier": "environmental_engineering"}
+    ]
+  },
+  "impact_statement": "Mengubah sampah menjadi aset digital melalui desentralisasi. Setiap aksi kebersihan tercatat di blockchain sebagai bukti kontribusi ekologis yang terdokumentasi abadi."
+}
