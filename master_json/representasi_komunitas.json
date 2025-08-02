@@ -1,0 +1,253 @@
+{
+  "profil_organisasi": {
+    "nama": "Nyampah Bersama",
+    "tagline": "Menjembatani Pengelolaan Sampah dengan Web3 untuk Komunitas Berkelanjutan",
+    "tahun_berdiri": 2023,
+    "lokasi": "Palembang, Indonesia",
+    "visi": "Membangun pusat riset berbasis rakyat, teknologi desentralisasi, dan aksi lingkungan",
+    "misi": "Mengintegrasikan Proof of Attention Value (PoAV), Kerangka Kerja 2BCycle, dan prinsip ekonomi sirkular ke dalam riset sosial-terapan",
+    "model_komunitas": "Keanggotaan terdistribusi skala terbuka tanpa hambatan teknologi/finansial"
+  },
+  
+  "fokus_dan_inisiatif": {
+    "fokus_utama": [
+      "Edukasi Lingkungan & Pengelolaan Sampah Digital",
+      "Teknologi Berbasis Insentif (NyampahCoin, NFT PoCA)",
+      "Sistem Riset & Verifikasi Terbuka (Proof of Clean Act)",
+      "Ekosistem Berbasis Web3 (DAO, Smart Contracts)",
+      "Infrastruktur Keberlanjutan yang Dapat Direplikasi"
+    ],
+    "inisiatif_utama": [
+      "Nyampah Academy",
+      "Kerangka Kerja 2BCycle (BlockCycle & BurnCycle)",
+      "Paspor Sampah Digital",
+      "Eksperimen AI, IPFS, dan Sistem Terdesentralisasi"
+    ]
+  },
+  
+  "ad_art": {
+    "jenis_keanggotaan": [
+      "Anggota Umum (Reguler)",
+      "Anggota Aktif",
+      "Pengurus (Struktural)",
+      "Dewan Pengawas/Komite Etik"
+    ],
+    "syarat_keanggotaan": {
+      "anggota_umum": [
+        "Warga Negara Indonesia/izin tinggal sah",
+        "Minimal 17 tahun",
+        "Peduli isu lingkungan dan ekonomi sirkular",
+        "Setuju dengan visi-misi organisasi",
+        "Mematuhi AD/ART dan kode etik"
+      ],
+      "anggota_aktif": [
+        "Terdaftar sebagai Anggota Umum minimal 3 bulan",
+        "Partisipasi konsisten dalam kegiatan",
+        "Kontribusi nyata dalam pencapaian tujuan"
+      ],
+      "pengurus": [
+        "Anggota Aktif minimal 6 bulan",
+        "Memiliki integritas dan kepemimpinan",
+        "Sanggup mengalokasikan waktu"
+      ]
+    },
+    "hak_dan_kewajiban": {
+      "hak_anggota_umum": [
+        "Mengikuti kegiatan komunitas",
+        "Mendapatkan informasi transparan",
+        "Memberikan masukan konstruktif"
+      ],
+      "kewajiban_umum": [
+        "Menjaga nama baik komunitas",
+        "Menjunjung tinggi nilai-nilai komunitas",
+        "Berpartisipasi aktif sesuai kemampuan"
+      ]
+    },
+    "berakhirnya_keanggotaan": {
+      "sebab": [
+        "Mengundurkan diri",
+        "Meninggal dunia",
+        "Pemecatan",
+        "Tidak aktif 6 bulan tanpa alasan"
+      ],
+      "prosedur_pemberhentian": [
+        "Diajukan secara tertulis dengan bukti",
+        "Investigasi oleh Dewan Pengawas",
+        "Kesempatan klarifikasi anggota",
+        "Keputusan final oleh Rapat Pengurus"
+      ]
+    }
+  },
+  
+  "manifesto_2bcycle": {
+    "ideologi_inti": {
+      "karbon_rakyat": "Energi terukur dari aksi bersih warga (pengelolaan sampah organik, daur ulang)",
+      "filosofi_block_cycle_burn": {
+        "block": "Menyimpan semua catatan/ide walau belum dipahami",
+        "cycle": "Membiarkan ide hidup tanpa kesimpulan instan",
+        "burn": "Transformasi ketika sudah menemukan bentuk"
+      },
+      "proof_of_attention_value": {
+        "konsep": "Model konsensus yang mengukur dan memberi penghargaan pada aksi nyata berdampak sosial/lingkungan",
+        "formula": "Value = (QAV × T × F)"
+      }
+    },
+    "kerangka_kerja": {
+      "blockcycle": {
+        "fungsi": "Penjagaan nilai dan verifikasi proses",
+        "implementasi": "Identifikasi, pemisahan, penyimpanan, dan pencatatan digital sisa dapur"
+      },
+      "burncycle": {
+        "fungsi": "Transformasi nilai menjadi kontribusi digital",
+        "implementasi": "Konversi kontribusi nyata menjadi nilai digital terverifikasi (token, NFT)"
+      },
+      "teknologi_web3": [
+        "HTML-Based NFT Mini-Apps di IPFS",
+        "Account Abstraction (ERC-4337)",
+        "Smart Contracts (TwoBCycle.sol, PoCA.sol, etc.)",
+        "Decentralized Storage (IPFS/Arweave)",
+        "Serverless Backend (Edge Functions)"
+      ]
+    },
+    "keunggulan_komparatif": {
+      "data_realtime": true,
+      "akses_warga": "Tanpa aplikasi khusus",
+      "insentif_langsung": "Token dan NFT",
+      "energi_karbon_rakyat": true
+    }
+  },
+  
+  "implementasi_dan_dampak": {
+    "model_operasional": [
+      "Login mudah via email/akun sosial",
+      "Upload foto/video sampah terpilah",
+      "Minting NFT Sertifikat Daur Ulang",
+      "Distribusi NyampahCoin sebagai reward"
+    ],
+    "dampak": {
+      "sosial": {
+        "peningkatan_interaksi": "147% dalam 10 hari",
+        "motivasi_partisipan": "83% merasa termotivasi"
+      },
+      "ekonomi": {
+        "potensi_pendapatan": "Rp 15.000-50.000/hari per rumah tangga",
+        "potensi_nasional": "USD $125 juta/tahun"
+      },
+      "lingkungan": {
+        "pengurangan_sampah": "97.4 kg dalam uji coba",
+        "konversi_organik": "38.2% menjadi produk ramah lingkungan"
+      }
+    },
+    "potensi_skalabilitas": {
+      "target": "1 juta rumah tangga aktif",
+      "potensi_pengurangan_co2": "≥25.000 ton/tahun",
+      "strategi": "Replikasi DApps HTML super low-code di IPFS"
+    }
+  },
+  
+  "divisi_program": [
+    {
+      "nama": "Edukasi dan Literasi Lingkungan Digital",
+      "tujuan": "Membangun pemahaman masyarakat tentang nilai partisipasi digital berbasis lingkungan",
+      "aktivitas": [
+        "Pengembangan modul edukasi",
+        "Pelatihan daring melalui sekolah/PKK/RT-RW",
+        "Kolaborasi dengan influencer"
+      ]
+    },
+    {
+      "nama": "Operasional BlockCycle & BurnCycle Rumah Tangga",
+      "tujuan": "Implementasi sistem inti 2BCycle di tingkat rumah tangga",
+      "aktivitas": [
+        "Onboarding warga via QR dan formulir digital",
+        "Verifikasi aksi BlockCycle (POCA)",
+        "Distribusi imbalan (NFT + 2BCoin)"
+      ]
+    },
+    {
+      "nama": "Pengembangan Teknologi & Ekosistem Web3",
+      "tujuan": "Pengembangan berkelanjutan Kerangka Kerja 2BCycle",
+      "aktivitas": [
+        "Integrasi model AI canggih",
+        "Peningkatan smart contract dan tokenomics",
+        "Pengembangan alat open-source"
+      ]
+    },
+    {
+      "nama": "Kemitraan Strategis & Advokasi Kebijakan",
+      "tujuan": "Membangun kemitraan untuk percepatan adopsi 2BCycle",
+      "aktivitas": [
+        "Integrasi dengan Program Kampung Iklim (ProKlim)",
+        "Pembentukan konsorsium BurnCycle Indonesia",
+        "Pemanfaatan data untuk perumusan kebijakan"
+      ]
+    },
+    {
+      "nama": "Riset, Validasi, dan Publikasi Ilmiah",
+      "tujuan": "Memastikan validitas ilmiah dan diseminasi pengetahuan",
+      "aktivitas": [
+        "Penerbitan jurnal internasional dan whitepaper",
+        "Studi empiris berskala besar",
+        "Komunitas Zenodo sebagai pusat pengetahuan terbuka"
+      ]
+    },
+    {
+      "nama": "Pengembangan Ekonomi Komunitas & Monetisasi Nilai",
+      "tujuan": "Memaksimalkan manfaat ekonomi bagi anggota komunitas",
+      "aktivitas": [
+        "Pengembangan model tokenomics adaptif",
+        "Fasilitasi penukaran token dan penjualan NFT",
+        "Koneksi ke pasar karbon global"
+      ]
+    }
+  ],
+  
+  "riset_dan_publikasi": {
+    "area_fokus": [
+      "Proof of Attention Value",
+      "Behavioral Economics dan Kepercayaan",
+      "Teknologi Blockchain Sosial",
+      "Desentralisasi Sistem Sosial Digital"
+    ],
+    "publikasi_pilihan": [
+      {
+        "penulis": "Muhlisin, M.O.",
+        "tahun": 2024,
+        "judul": "Implementasi Proof of Attention Value dalam Ekosistem Digital Sosial",
+        "jurnal": "Jurnal Teknologi dan Inovasi, 12(3), 45-62"
+      },
+      {
+        "penulis": "Oky & Nyampah Bersama",
+        "tahun": 2025,
+        "judul": "[Whitepaper 2BCycle & PoAV]",
+        "platform": "IPFS",
+        "cid": "bafkreihmp4xvifhw6gqebgyijizylsdlgomedq5qc22ulpc6dhraynjcry"
+      }
+    ],
+    "repositori": "Zenodo (https://zenodo.org/communities/nyampahbersama)"
+  },
+  
+  "informasi_kontak": {
+    "lokasi": "Palembang, Indonesia (Kode Plus: 6P962QW7+25)",
+    "email": "admin@nyampahbersama.com",
+    "telepon_whatsapp": "+62 831-7782-8139",
+    "linktree": "https://linktr.ee/nyampahbersama",
+    "identitas_digital": {
+      "wallet_resmi": "0x7Af07c98e1B47FD928E5e761B7477074DD536162",
+      "orcid": "0009-0003-5705-8107",
+      "id_erasmus": "E10404020"
+    },
+    "jejak_profesional": [
+      "LinkedIn: linkedin.com/in/oky-muhlisin",
+      "ResearchGate: researchgate.net/profile/Muhamad-Oky-Muhlisin",
+      "GitHub: github.com/okymuhlisin"
+    ]
+  },
+  
+  "peta_jalan": [
+    "Integrasi publikasi ke ORCID",
+    "Pengembangan endpoint API publikasi ORCID",
+    "Aplikasi hibah (Horizon, Gitcoin, UNDP)",
+    "Pengembangan Koleksi Dokumen Ilmiah dan Identitas NFT"
+  ]
+}
