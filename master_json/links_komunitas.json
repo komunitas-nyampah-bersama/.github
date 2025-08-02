@@ -1,0 +1,57 @@
+[
+  {
+    "kategori": "Portal & Identitas",
+    "link": [
+      {
+        "nama": "Portal Utama",
+        "url": "https://komunitas-nyampah-bersama.github.io/.github/portal.html",
+        "thumb": "thumbs/portal.jpg"
+      },
+      {
+        "nama": "Index Utama",
+        "url": "https://komunitas-nyampah-bersama.github.io/.github/index.html",
+        "thumb": "thumbs/index.jpg"
+      },
+      {
+        "nama": "AD/ART Komunitas",
+        "url": "https://komunitas-nyampah-bersama.github.io/.github/ad_ardt.html",
+        "thumb": "thumbs/ad_ardt.jpg"
+      }
+    ]
+  },
+  {
+    "kategori": "Visi-Struktur",
+    "link": [
+      {
+        "nama": "Akademi Nyampah",
+        "url": "https://komunitas-nyampah-bersama.github.io/Visi-Struktur-Komunitas-Bersama/program/akademi_nyampah_bersama.html",
+        "thumb": "thumbs/akademi.jpg"
+      },
+      {
+        "nama": "Reward & Insentif",
+        "url": "https://komunitas-nyampah-bersama.github.io/Visi-Struktur-Komunitas-Bersama/program/reward_insentif.html",
+        "thumb": "thumbs/reward.jpg"
+      }
+    ]
+  },
+  {
+    "kategori": "Dashboard",
+    "link": [
+      {
+        "nama": "Dashboard Beranda",
+        "url": "https://komunitas-nyampah-bersama.github.io/Dashboard-Platform-Komunitas/dashboard/Beranda.html",
+        "thumb": "thumbs/dashboard.jpg"
+      }
+    ]
+  },
+  {
+    "kategori": "Banner",
+    "link": [
+      {
+        "nama": "Profil Komunitas",
+        "url": "https://komunitas-nyampah-bersama.github.io/Banner-Content-Bersama/profil_komunitas.html",
+        "thumb": "thumbs/profil.jpg"
+      }
+    ]
+  }
+]
